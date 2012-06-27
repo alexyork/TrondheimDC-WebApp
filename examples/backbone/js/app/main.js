@@ -19,7 +19,7 @@ require.config({
 require([
   "backbone",
   "app/views/TalksList",
-  "app/collections/Talk"
+  "app/collections/Talks"
 ],
 function( Backbone, TalksListView, TalksCollection ) {
   var talksListView, talks
@@ -28,9 +28,17 @@ function( Backbone, TalksListView, TalksCollection ) {
   
   //create a new talks collection
   talks = new TalksCollection()
-  //add the bootstraped data to the collection
-  talks.reset(window.bootstrapData.talks)
-
+  
+  if( !window.localStorage.getItem("talks") ) {
+    //save bootstrapdata to localstorage
+    talks.reset(window.bootstrapData.talks) 
+    talks.each(function( talk ) {
+      talk.save()
+    })
+  } else {
+    //fetch from localstorage
+    talks.fetch()
+  }
   //create a new Talks listview
   talksListView = new TalksListView({
     collection: talks

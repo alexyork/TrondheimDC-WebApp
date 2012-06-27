@@ -1,0 +1,15 @@
+{
+  "asi"          : true,
+  "indent"       : 2,
+
+  "predef"     : [
+    "defines",
+    "require",
+    "describe",
+    "it",
+    "expect",
+    "spyOn",
+    "_",
+    "Backbone"
+  ]
+}

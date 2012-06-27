@@ -1,7 +1,7 @@
 define("app/views/TalksList",[
   "backbone",
   "app/views/Talk",
-  "app/collections/Talk"
+  "app/collections/Talks"
 ], 
 function( Backbone, TalkView, TalkCollection ){
 
@@ -14,7 +14,7 @@ function( Backbone, TalkView, TalkCollection ){
     },
     template: _.template( $('#talks-list-template').html() ),
     initialize: function() {
-      window.app.on("filter:tag", this.search, this)
+      window.app.on( "filter:tag", this.search, this )
     },
     render: function( collection ) {
       var html, collection
@@ -39,20 +39,7 @@ function( Backbone, TalkView, TalkCollection ){
     search: function( value ) {
       var value, talks
       value = value || this.$el.find('.searchbar input').val()
-      talks = new TalkCollection()
-      talks.reset(this.collection.filter(function( talk ) {
-        var tagmatch
-        tagmatch = false
-        if( talk.get("title").match(new RegExp(value, "gi")) )
-          return true
-        if( talk.get("speaker").match(new RegExp(value, "gi")) )
-          return true
-        _.each(talk.get("tags"), function( tag ) {
-          if( tag.match(new RegExp(value, "gi")) )
-            tagmatch = true
-        })
-        return tagmatch
-      }))
+      talks = this.collection.search( value )
       this.render( talks )
     },
     reset: function() {
