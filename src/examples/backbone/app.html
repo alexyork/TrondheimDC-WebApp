@@ -12,27 +12,32 @@
         {
           title: "Html5 and progressive enhanchment",
           speaker: "Alex York",
-          tags: ["html5", "design", "progressive-enhancement", "js"]
+          tags: ["html5", "design", "progressive-enhancement", "js"],
+          going: false
         },
         {
           title: "Javascript game development",
-          speaker: "Pål strøm",
-          tags: ["js", "games"]
+          speaker: "Pål Strøm",
+          tags: ["js", "games"],
+          going: false
         },
         {
           title: "Importance of meetups",
           speaker: "Hege Røkenes",
-          tags: ["meetups", "social", "mingeling"]
+          tags: ["meetups", "social", "mingeling"],
+          going: false
         },
         {
           title: "Kittens and retina displays",
           speaker: "Alex York",
-          tags: ["html5", "Kittens", "retina", "web"]
+          tags: ["html5", "Kittens", "retina", "web"],
+          going: false
         },
         {
           title: "AMD modules",
           speaker: "Trygve lie",
-          tags: ["js", "modulepattern", "web"]
+          tags: ["js", "modulepattern", "web"],
+          going: false
         }
       ]
     }
@@ -46,7 +51,15 @@
 
   <!-- talk view template -->
   <script id="talk-template"type="text/template">
-    <h1><%= title %></h1>
+    <h1>
+      <%= title %> 
+      <span class="going">
+        <% if(going){ %>
+          you are going
+        <% } %>
+      </span> 
+    </h1> 
+    <input type="checkbox" <% if(going){ %> checked <% } %>/>
     <h2><%= speaker %></h2>
     <ul class="tags">
     <% _.each(tags, function( tag ){ %>
@@ -60,7 +73,7 @@
     <div class="searchbar">
       <input type="text"/>
       <div class="search">search</div> 
-      <div class="reset">×</div>     
+      <div class="reset">x</div>     
     </div>
     <ul class="talks"></ul>  
   </script>
