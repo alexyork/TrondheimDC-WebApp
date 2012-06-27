@@ -7,11 +7,11 @@ function( Backbone, Talk ){
     model: Talk,
     localStorage: new Backbone.LocalStorage("talks"),
     search: function( value ) {
-      var talks
+      var talks, test
       talks = new Talks()
+      test = new RegExp(value, "gi")
       talks.reset(this.filter(function( talk ) {
-        var test, tagmatch
-        test = new RegExp(value, "gi")
+        var tagmatch
         tagmatch = false
         if( talk.get("title").match(test) )
           return true
