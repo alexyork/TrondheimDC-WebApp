@@ -10,11 +10,18 @@ function( Backbone, TalkView, TalkCollection ){
     events: {
       "click .search": "search",
       "click .reset": "reset",
-      "keydown .searchbar input": "searchinput"
+      "keydown .searchbar input": "searchinput",
+      "click h2": "talkerclicked"
     },
     template: _.template( $('#talks-list-template').html() ),
     initialize: function() {
       window.app.on( "filter:tag", this.search, this )
+    },
+    talkerclicked: function(e) {
+      var name, talks
+      name = e.target.innerHTML;
+      talks = this.collection.search( name )
+      talks.first().lol();
     },
     render: function( collection ) {
       var html, collection
@@ -40,6 +47,7 @@ function( Backbone, TalkView, TalkCollection ){
       var value, talks
       value = value || this.$el.find('.searchbar input').val()
       talks = this.collection.search( value )
+      this.render( talks )
       this.render( talks )
     },
     reset: function() {
