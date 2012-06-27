@@ -10,14 +10,15 @@ function( Backbone, Talk ){
       var talks
       talks = new Talks()
       talks.reset(this.filter(function( talk ) {
-        var tagmatch
+        var test, tagmatch
+        test = new RegExp(value, "gi")
         tagmatch = false
-        if( talk.get("title").match(new RegExp(value, "gi")) )
+        if( talk.get("title").match(test) )
           return true
-        if( talk.get("speaker").match(new RegExp(value, "gi")) )
+        if( talk.get("speaker").match(test) )
           return true
         _.each(talk.get("tags"), function( tag ) {
-          if( tag.match(new RegExp(value, "gi")) )
+          if( tag.match(test) )
             tagmatch = true
         })
         return tagmatch
