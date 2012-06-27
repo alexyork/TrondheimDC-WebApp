@@ -48,7 +48,6 @@ function( Backbone, TalkView, TalkCollection ){
       value = value || this.$el.find('.searchbar input').val()
       talks = this.collection.search( value )
       this.render( talks )
-      this.render( talks )
     },
     reset: function() {
       this.render()
