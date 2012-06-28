@@ -3,9 +3,13 @@ define("app/collections/Talks",[
   "app/models/Talk"
 ], 
 function( Backbone, Talk ){
+
   var Talks = Backbone.Collection.extend({
+    
     model: Talk,
+    
     localStorage: new Backbone.LocalStorage("talks"),
+
     search: function( value ) {
       var talks, test
       talks = new Talks()
@@ -25,6 +29,8 @@ function( Backbone, Talk ){
       }))
       return talks
     }
+
   })
+
   return Talks
 })
