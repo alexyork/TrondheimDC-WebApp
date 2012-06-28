@@ -8,11 +8,12 @@
 
         getAll: function() {
             var talks = window.bootstrapData.talks;
-            var speakers = [];
-            for (var i = 0; i < talks.length; i++) {
-                speakers.push(talks[i].speaker);
-            }
-            return speakers;
+            
+            // Use linq.js to filter
+            return Enumerable.From(talks)
+                             .Select(function(talk) { return talk.speaker; })
+                             .Distinct()
+                             .ToArray();
         }
 		
     };
