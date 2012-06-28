@@ -40,29 +40,33 @@
 	
 		<section id="app"></section>
 		
-		<!-- talk view template -->
-		<script id="talk-template"type="text/template">
-			<h1><%= title %></h1>
-			<h2><%= speaker %></h2>
-			<ul class="tags">
-				<% _.each(tags, function( tag ){ %>
-					<li class="tag"><%= tag %></li>      
-				<% }); %>
-			</ul>
-		</script>
-		
 		<!-- talksList view template -->
-		<script id="talks-list-template"type="text/template">
-			<div class="searchbar">
-				<input type="text"/>
-				<div class="search">search</div> 
-				<div class="reset">x</div>     
-			</div>
-			<ul class="talks"></ul>  
+		<script id="talksListTemplate" type="text/html">
+			<ul class="talks">
+			
+    			<% for (var i = 0; i < talks.length; i++) { %>
+    			    <% var talk = talks[i]; %>
+    			    <li class="talk">
+            			<h1><%= talk.title %></h1>
+                        <h2><%= talk.speaker %></h2>
+                        <ul class="tags">
+                            <% for (var j = 0; j < talk.tags.length; j++) { %>
+                                <li class="tag"><%= talk.tags[j] %></li>
+                            <% } %>
+                        </ul>
+                    </li>
+               <% } %>
+               
+			</ul>  
 		</script>
 	
         <script type="text/javascript" src="js/vendor/jquery-1.7.2.min.js"></script>
         <script type="text/javascript" src="js/vendor/microTemplating.js"></script>
         <script type="text/javascript" src="js/vendor/linq.min.js"></script>
+        
+        <script type="text/javascript" src="js/TrondheimDC.Speakers.js"></script>
+        <script type="text/javascript" src="js/TrondheimDC.Talks.js"></script>
+        <script type="text/javascript" src="js/TrondheimDC.Templating.js"></script>
+        <script type="text/javascript" src="js/app.js"></script>
 	</body>
 </html>
