@@ -38,28 +38,28 @@
 	</head>
 	<body>
 	
-	<section id="app"></section>
-	
-	<!-- talk view template -->
-	<script id="talk-template"type="text/template">
-		<h1><%= title %></h1>
-		<h2><%= speaker %></h2>
-		<ul class="tags">
-			<% _.each(tags, function( tag ){ %>
-				<li class="tag"><%= tag %></li>      
-			<% }); %>
-		</ul>
-	</script>
-	
-	<!-- talksList view template -->
-	<script id="talks-list-template"type="text/template">
-		<div class="searchbar">
-			<input type="text"/>
-			<div class="search">search</div> 
-			<div class="reset">x</div>     
-		</div>
-		<ul class="talks"></ul>  
-	</script>
+		<section id="app"></section>
+		
+		<!-- talk view template -->
+		<script id="talk-template"type="text/template">
+			<h1><%= title %></h1>
+			<h2><%= speaker %></h2>
+			<ul class="tags">
+				<% _.each(tags, function( tag ){ %>
+					<li class="tag"><%= tag %></li>      
+				<% }); %>
+			</ul>
+		</script>
+		
+		<!-- talksList view template -->
+		<script id="talks-list-template"type="text/template">
+			<div class="searchbar">
+				<input type="text"/>
+				<div class="search">search</div> 
+				<div class="reset">x</div>     
+			</div>
+			<ul class="talks"></ul>  
+		</script>
 	
 	</body>
 </html>
