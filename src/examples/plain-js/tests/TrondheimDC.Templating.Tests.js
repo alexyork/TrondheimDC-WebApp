@@ -1,8 +1,4 @@
-describe("Templating", function() {
-
-	beforeEach(function() {
-		// Setup
-	});
+describe("TrondheimDC.Templating", function() {
 
 	it("should render a simple template", function() {
 		// Arrange
