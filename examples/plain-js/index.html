@@ -40,14 +40,14 @@
 	
 		<section id="app"></section>
 		
-		<!-- talksList view template -->
-		<script id="talksListTemplate" type="text/html">
-			<ul class="talks">
-			
-    			<% for (var i = 0; i < talks.length; i++) { %>
-    			    <% var talk = talks[i]; %>
-    			    <li class="talk">
-            			<h1><%= talk.title %></h1>
+        <!-- talksList view template -->
+        <script id="talksListTemplate" type="text/html">
+            <ul class="talks">
+            
+                <% for (var i = 0; i < talks.length; i++) { %>
+                    <% var talk = talks[i]; %>
+                    <li class="talk">
+                        <h1><%= talk.title %></h1>
                         <h2><%= talk.speaker %></h2>
                         <ul class="tags">
                             <% for (var j = 0; j < talk.tags.length; j++) { %>
@@ -55,10 +55,10 @@
                             <% } %>
                         </ul>
                     </li>
-               <% } %>
+                <% } %>
                
-			</ul>  
-		</script>
+            </ul> 
+        </script>
 	
         <script type="text/javascript" src="js/vendor/jquery-1.7.2.min.js"></script>
         <script type="text/javascript" src="js/vendor/microTemplating.js"></script>
