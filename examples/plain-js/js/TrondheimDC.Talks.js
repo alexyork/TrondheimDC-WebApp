@@ -8,7 +8,10 @@
 
         getAll: function() {
             var talks = window.bootstrapData.talks;
-            return talks;
+            
+            return Enumerable.From(talks)
+                             .OrderBy(function(talk) { return talk.title; })
+                             .ToArray();
         }
 		
     };
