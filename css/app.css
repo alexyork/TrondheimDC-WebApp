@@ -5,8 +5,10 @@ body {
 }
 body #app {
     font-family: "Helvetica Neue";
-    width: 660px;
-    margin: 50px auto 0px auto;
+    width: 60%;
+    max-width: 700px;
+    margin: 2em auto;
+    border: solid 1px #ccc;
 }
 
 /*
@@ -16,30 +18,28 @@ body #app .sessions-list {
     list-style-type: none;
 }
 body #app .sessions-list .session {
-    margin: 30px 0px 15px 0px;
-    padding: 10px;
+    padding: 1em;
 }
 body #app .sessions-list .session h1 {
-    font-size: 28px;
-    margin-bottom: 5px;
+    font-size: 2em;
+    margin-bottom: 0.3em;
     display: inline-block;
     vertical-align: top;
 }
 body #app .sessions-list .session h2 {
-    font-size: 18px;
-    margin-bottom: 5px;
+    font-size: 1.3em;
+    margin-bottom: 0.5em;
 }
 body #app .sessions-list .session .tags {
     list-style-type: none;
 }
 body #app .sessions-list .session .tags .tag {
     display: inline-block;
-    vertical-align: top;
-    padding: 5px 7px 5px 7px;
+    padding: 0.3em 0.5em;
     background: #72B372;
     color: whitesmoke;
     text-shadow: 1px 1px 1px #5D945D;
-    margin-right: 5px;
+    margin-right: 0.3em;
     border-radius: 3px;
 }
 
