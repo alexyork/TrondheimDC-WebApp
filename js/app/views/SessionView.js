@@ -2,12 +2,11 @@ var SessionView = Backbone.View.extend({
     
     tagName: 'li',
     className: 'session',
+    template: _.template( document.getElementById('session-template').innerHTML ),
     
     events: {
       "click .tag": "filterByTag"
     },
-    
-    template: _.template( document.getElementById('session-template').innerHTML ),
     
     initialize: function() {
     },

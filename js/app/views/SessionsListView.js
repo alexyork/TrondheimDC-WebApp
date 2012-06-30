@@ -1,5 +1,7 @@
 var SessionsListView = Backbone.View.extend({
     
+    tagName: 'div',
+    className: 'sessions-list',
     template: _.template( document.getElementById('sessions-list-template').innerHTML ),
     
     initialize: function() {
@@ -15,7 +17,7 @@ var SessionsListView = Backbone.View.extend({
         collection.each(function(session) {
             var sessionView = new SessionView({ model: session });
             sessionView.render();
-            this.$el.find("ul.sessions").append(sessionView.el);
+            this.$el.find('ul').append(sessionView.el);
         }, this);
         return this;
     }
