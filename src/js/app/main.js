@@ -14,4 +14,4 @@ sessions.reset([
 
 var sessionsListView = new SessionsListView({ collection: sessions });
 sessionsListView.render();
-$('#app').append(sessionsListView.el);
+$('#app-content').append(sessionsListView.el);

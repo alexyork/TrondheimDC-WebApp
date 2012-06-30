@@ -12,9 +12,36 @@
     </head>
     <body>
         
-        <section id="app">
-            <!-- Content loaded in here dynamically -->
-        </section>
+        <div id="wrapper">
+            <header>
+                <hgroup>
+                    <h1>Trondheim Developer Conference</h1>
+                    <h2>Rica Nidelven, 29.10.2012</h2>
+                </hgroup>
+                <nav>
+                    <ul>
+                        <li class="selected">
+                            <a href="#"><span>Sessions</span></a>
+                        </li>
+                        <li>
+                            <a href="#"><span>Speakers</span></a>
+                        </li>
+                        <li>
+                            <a href="#"><span>Favourites</span></a>
+                        </li>
+                        <li>
+                            <a href="#"><span>Tweets</span></a>
+                        </li>
+                    </ul>
+                </nav>
+            </header>
+            <section id="app-content">
+                <!-- Content loaded in here dynamically -->
+            </section>
+            <footer>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.</p>
+            </footer>
+        </div>
         
         <!-- Template: Session -->
         <script id="session-template" type="text/template">
