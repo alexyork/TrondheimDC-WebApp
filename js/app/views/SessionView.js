@@ -1,4 +1,11 @@
-var SessionView = Backbone.View.extend({
+if (typeof TrondheimDC === "undefined" || !TrondheimDC) {
+    TrondheimDC = {};
+}
+if (typeof TrondheimDC.Views === "undefined" || !TrondheimDC.Views) {
+    TrondheimDC.Views = {};
+}
+
+TrondheimDC.Views.SessionView = Backbone.View.extend({
     
     tagName: 'li',
     className: 'session',
