@@ -1,20 +1,12 @@
 (function() {
-
-    var sessions = new TrondheimDC.Collections.SessionsList();
-    sessions.reset([
-        {
-            title: "Maybe Backbone.js rocks, afterall...",
-            speaker: "Alex York",
-            tags: [ "backbone", "javascript", "lolcats" ]
-        },
-        {
-            title: "See! I told you Backbone.js rocks!",
-            speaker: "Andre Tangen",
-            tags: [ "backbone", "javascript", "bill-murray" ]
-        }
-    ]);
     
-    var sessionsListView = new TrondheimDC.Views.SessionsListView({ collection: sessions });
+    // Get the sessions data into a list
+    var sessionsList = new TrondheimDC.Collections.SessionsList();
+    var sessionData = TrondheimDC.getAllSessions();
+    sessionsList.reset(sessionData);
+    
+    // Render the list into a view, and add to the DOM
+    var sessionsListView = new TrondheimDC.Views.SessionsListView({ collection: sessionsList });
     sessionsListView.render();
     $('#app-content').append(sessionsListView.el);
 
