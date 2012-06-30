@@ -12,27 +12,27 @@ body #app {
 /*
  * Sessions
  **************************************/
-body #app .sessions {
+body #app .sessions-list {
     list-style-type: none;
 }
-body #app .sessions .session {
+body #app .sessions-list .session {
     margin: 30px 0px 15px 0px;
     padding: 10px;
 }
-body #app .sessions .session h1 {
+body #app .sessions-list .session h1 {
     font-size: 28px;
     margin-bottom: 5px;
     display: inline-block;
     vertical-align: top;
 }
-body #app .sessions .session h2 {
+body #app .sessions-list .session h2 {
     font-size: 18px;
     margin-bottom: 5px;
 }
-body #app .sessions .session .tags {
+body #app .sessions-list .session .tags {
     list-style-type: none;
 }
-body #app .sessions .session .tags .tag {
+body #app .sessions-list .session .tags .tag {
     display: inline-block;
     vertical-align: top;
     padding: 5px 7px 5px 7px;
