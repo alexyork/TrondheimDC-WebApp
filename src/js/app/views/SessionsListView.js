@@ -1,7 +1,7 @@
-if (typeof TrondheimDC === "undefined" || !TrondheimDC) {
+if (typeof TrondheimDC === 'undefined' || !TrondheimDC) {
     TrondheimDC = {};
 }
-if (typeof TrondheimDC.Views === "undefined" || !TrondheimDC.Views) {
+if (typeof TrondheimDC.Views === 'undefined' || !TrondheimDC.Views) {
     TrondheimDC.Views = {};
 }
 
@@ -12,6 +12,7 @@ TrondheimDC.Views.SessionsListView = Backbone.View.extend({
     template: _.template( document.getElementById('sessions-list-template').innerHTML ),
     
     initialize: function() {
+        window.app.on('filter:tag', this.search, this);
     },
     
     render: function(collection) {
@@ -27,6 +28,11 @@ TrondheimDC.Views.SessionsListView = Backbone.View.extend({
             this.$el.find('ul').append(sessionView.el);
         }, this);
         return this;
+    },
+    
+    search: function(searchTerm) {
+        var matchedSessions = this.collection.search(searchTerm);
+        this.render(matchedSessions);
     }
     
 });
