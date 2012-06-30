@@ -2,11 +2,12 @@
  * Main layout containers
  **************************************/
 body {
+    font-size: 16px;
 }
 body #app {
     font-family: "Helvetica Neue";
-    width: 60%;
-    max-width: 700px;
+    width: 80%;
+    max-width: 900px;
     margin: 2em auto;
     border: 1px solid #ccc;
 }
@@ -47,6 +48,7 @@ body #app .sessions-list .session .tags .tag {
 @media all and (max-width: 600px) {
     /* Main layout containers */
     body {
+        font-size: 14px;
     }
     body #app {
         width: 100%;
@@ -61,9 +63,7 @@ body #app .sessions-list .session .tags .tag {
         border-bottom: 1px solid #ccc;
     }
     body #app .sessions-list .session h1 {
-        font-size: 1.3em;
     }
     body #app .sessions-list .session h2 {
-        font-size: 1.1em;
     }
 }
