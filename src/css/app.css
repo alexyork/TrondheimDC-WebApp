@@ -8,12 +8,10 @@ body #app {
     width: 60%;
     max-width: 700px;
     margin: 2em auto;
-    border: solid 1px #ccc;
+    border: 1px solid #ccc;
 }
 
-/*
- * Sessions
- **************************************/
+/* Sessions */
 body #app .sessions-list {
     list-style-type: none;
 }
@@ -43,3 +41,29 @@ body #app .sessions-list .session .tags .tag {
     border-radius: 3px;
 }
 
+/*
+ * Mobile
+ **************************************/
+@media all and (max-width: 600px) {
+    /* Main layout containers */
+    body {
+    }
+    body #app {
+        width: 100%;
+        margin: 0;
+        border: none;
+    }
+    
+    /* Sessions */
+    body #app .sessions-list {
+    }
+    body #app .sessions-list .session {
+        border-bottom: 1px solid #ccc;
+    }
+    body #app .sessions-list .session h1 {
+        font-size: 1.3em;
+    }
+    body #app .sessions-list .session h2 {
+        font-size: 1.1em;
+    }
+}
