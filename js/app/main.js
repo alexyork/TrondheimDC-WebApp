@@ -1,5 +1,7 @@
 (function() {
     
+    window.app = Object.create(Backbone.Events);
+    
     // Get the sessions data into a list
     var sessionsList = new TrondheimDC.Collections.SessionsList();
     var sessionData = TrondheimDC.getAllSessions();

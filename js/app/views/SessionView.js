@@ -25,6 +25,8 @@ TrondheimDC.Views.SessionView = Backbone.View.extend({
     },
     
     filterByTag: function(e) {
+        var tag = e.currentTarget.innerText;
+        window.app.trigger("filter:tag", tag);
     }
     
 });
