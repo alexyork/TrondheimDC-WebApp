@@ -1,5 +1,12 @@
-var SessionsList = Backbone.Collection.extend({
+if (typeof TrondheimDC === "undefined" || !TrondheimDC) {
+    TrondheimDC = {};
+}
+if (typeof TrondheimDC.Collections === "undefined" || !TrondheimDC.Collections) {
+    TrondheimDC.Collections = {};
+}
+
+TrondheimDC.Collections.SessionsList = Backbone.Collection.extend({
     
-    model: Session
+    model: TrondheimDC.Models.Session
     
 });

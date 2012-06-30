@@ -1,4 +1,4 @@
-var sessions = new SessionsList();
+var sessions = new TrondheimDC.Collections.SessionsList();
 sessions.reset([
     {
         title: "Maybe Backbone.js rocks, afterall...",
@@ -12,6 +12,6 @@ sessions.reset([
     }
 ]);
 
-var sessionsListView = new SessionsListView({ collection: sessions });
+var sessionsListView = new TrondheimDC.Views.SessionsListView({ collection: sessions });
 sessionsListView.render();
 $('#app-content').append(sessionsListView.el);
