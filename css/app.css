@@ -71,21 +71,53 @@ header nav ul li.selected a {
 
 /* Sessions */
 #app-content .sessions-list {
+}
+#app-content .sessions-list .searchbar {
+    text-align: center;
+    border-top: 1px solid #ccc;
+    padding: 1em 0;
+}
+#app-content .sessions-list .searchbar .searchTerm,
+#app-content .sessions-list .searchbar .search,
+#app-content .sessions-list .searchbar .reset {
+    display: inline-block;
+    font-size: 1.5em;
+    height: 1em;
+    padding: 0.3em;
+    border-radius: 3px;
+}
+#app-content .sessions-list .searchbar .searchTerm {
+    width: 60%;
+    border: 1px solid black;
+    box-shadow: inset 0px 0px 12px 1px rgba(20, 20, 20, 0.1);
+}
+#app-content .sessions-list .searchbar .search {
+    background-color: #4D6EAB;
+    color: whitesmoke;
+    text-shadow: 1px 1px 1px #5D945D;
+}
+#app-content .sessions-list .searchbar .reset {
+    color: rgba(0,0,0, 0.6);
+    background-color: #B55061;
+    color: whitesmoke;
+    text-shadow: 1px 1px 1px #5D945D;
+}
+#app-content .sessions-list ul {
     list-style-type: none;
     border-top: 1px solid #ccc;
 }
-#app-content .sessions-list .session {
+#app-content .sessions-list ul .session {
     padding: 1em 0;
     border-bottom: 1px solid #ccc;
 }
-#app-content .sessions-list .session h1 {
+#app-content .sessions-list ul .session h1 {
 }
-#app-content .sessions-list .session h2 {
+#app-content .sessions-list ul .session h2 {
 }
-#app-content .sessions-list .session .tags {
+#app-content .sessions-list ul .session .tags {
     list-style-type: none;
 }
-#app-content .sessions-list .session .tags .tag {
+#app-content .sessions-list ul .session .tags .tag {
     display: inline-block;
     padding: 0.3em 0.5em;
     background: #72B372;
@@ -117,7 +149,10 @@ footer p {
     }
     
     /* Sessions */
-    #app-content .sessions-list .session {
+    #app-content .sessions-list .searchbar .searchTerm {
+        width: 50%;
+    }
+    #app-content .sessions-list ul .session {
         border-bottom: 1px solid #ccc;
     }
 }
