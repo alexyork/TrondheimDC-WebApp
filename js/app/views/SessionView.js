@@ -12,7 +12,7 @@ TrondheimDC.Views.SessionView = Backbone.View.extend({
     template: _.template( document.getElementById('session-template').innerHTML ),
     
     events: {
-      "click .tag": "filterByTag"
+        "click .tag": "filterByTag"
     },
     
     initialize: function() {

@@ -11,6 +11,10 @@ TrondheimDC.Views.SessionsListView = Backbone.View.extend({
     className: 'sessions-list',
     template: _.template( document.getElementById('sessions-list-template').innerHTML ),
     
+    events: {
+        'click .search': 'searchButtonClicked'
+    },
+    
     initialize: function() {
         window.app.on('filter:tag', this.search, this);
     },
@@ -28,6 +32,12 @@ TrondheimDC.Views.SessionsListView = Backbone.View.extend({
             this.$el.find('ul').append(sessionView.el);
         }, this);
         return this;
+    },
+    
+    searchButtonClicked: function(e) {
+        e.preventDefault();
+        var searchTerm = this.$el.find('.searchTerm').val();
+        this.search(searchTerm);
     },
     
     search: function(searchTerm) {
