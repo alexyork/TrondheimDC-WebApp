@@ -26,4 +26,28 @@ describe("Session", function() {
         
     });
     
+    describe("matchesTitle", function() {
+    
+        it("should match search terms if it is found in the session title", function() {
+            var session = new TrondheimDC.Models.Session({
+                title: "Jasmine is a great test framework!"
+            });
+            
+            var result = session.matchesTitle("great");
+            
+            expect(result).toEqual(true);
+        });
+        
+        it("should not match search terms if it is not found in the session title", function() {
+            var session = new TrondheimDC.Models.Session({
+                title: "Jasmine is a great test framework!"
+            });
+            
+            var result = session.matchesTitle("foobar");
+            
+            expect(result).toEqual(false);
+        });
+    
+    });
+    
 });
