@@ -13,7 +13,9 @@ TrondheimDC.Collections.SessionsList = Backbone.Collection.extend({
         var filteredSessionsList = new TrondheimDC.Collections.SessionsList();
         filteredSessionsList.reset(
             this.filter(function(session) {
-                return session.containsTag(searchTerm);
+                var matchesTag = session.containsTag(searchTerm);
+                var matchesTitle = session.matchesTitle(searchTerm);
+                return matchesTag || matchesTitle; 
             })
         );
         return filteredSessionsList;
