@@ -72,31 +72,31 @@ header nav ul li.selected a {
 /* Sessions */
 #app-content .sessions-list {
 }
-#app-content .sessions-list .searchbar {
+#app-content .searchbar {
     text-align: center;
     border-top: 1px solid #ccc;
     padding: 1em 0;
 }
-#app-content .sessions-list .searchbar .searchTerm,
-#app-content .sessions-list .searchbar .search,
-#app-content .sessions-list .searchbar .reset {
+#app-content .searchbar .searchTerm,
+#app-content .searchbar .search,
+#app-content .searchbar .reset {
     display: inline-block;
     font-size: 1.5em;
     height: 1em;
     padding: 0.3em;
     border-radius: 3px;
 }
-#app-content .sessions-list .searchbar .searchTerm {
+#app-content .searchbar .searchTerm {
     width: 60%;
     border: 1px solid black;
     box-shadow: inset 0px 0px 12px 1px rgba(20, 20, 20, 0.1);
 }
-#app-content .sessions-list .searchbar .search {
+#app-content .searchbar .search {
     background-color: #4D6EAB;
     color: whitesmoke;
     text-shadow: 1px 1px 1px #5D945D;
 }
-#app-content .sessions-list .searchbar .reset {
+#app-content .searchbar .reset {
     color: rgba(0,0,0, 0.6);
     background-color: #B55061;
     color: whitesmoke;

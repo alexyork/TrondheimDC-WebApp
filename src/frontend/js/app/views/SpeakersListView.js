@@ -5,13 +5,13 @@ if (typeof TrondheimDC.Views === 'undefined' || !TrondheimDC.Views) {
     TrondheimDC.Views = {};
 }
 
-TrondheimDC.Views.SessionsListView = Backbone.View.extend({
+TrondheimDC.Views.SpeakersListView = Backbone.View.extend({
     
     tagName: 'div',
-    className: 'sessions-list',
+    className: 'speakers-list',
     template: _.template( document.getElementById('list-template').innerHTML ),
     
-    sessionViews: {},
+    speakerViews: {},
 
     events: {
         'click .search': 'searchButtonClicked',
@@ -25,16 +25,16 @@ TrondheimDC.Views.SessionsListView = Backbone.View.extend({
     
     render: function(collection) {
         var collection = collection || this.collection;
-        var sessionListHtml = this.template(this.model);
+        var speakerListHtml = this.template(this.model);
         
         this.$el.empty();
-        this.$el.html(sessionListHtml);
+        this.$el.html(speakerListHtml);
 
-        collection.each(function(session) {
-            var sessionView = new TrondheimDC.Views.SessionView({ model: session });
-            sessionView.render();
-            this.$el.find('ul').append(sessionView.el);
-            this.sessionViews[session.get('id')] = sessionView
+        collection.each(function(speaker) {
+            var speakerView = new TrondheimDC.Views.SpeakerView({ model: speaker });
+            speakerView.render();
+            this.$el.find('ul').append(speakerView.el);
+            this.speakerViews[speaker.get('id')] = speakerView;
         }, this);
         return this;
     },
@@ -51,19 +51,13 @@ TrondheimDC.Views.SessionsListView = Backbone.View.extend({
     },
     
     search: function(searchTerm) {
-        var matchedSessions = this.collection.search(searchTerm);
+        /*var matchedSessions = this.collection.search(searchTerm);
         this.render(matchedSessions);
-        $(".searchTerm").val(searchTerm);
+        $(".searchTerm").val(searchTerm);*/
     },
     
     resetButtonClicked: function(e) {
         this.render();
-    },
-
-    toggleOpenSessionBySessionId: function(sessionId, ms) {
-        if(typeof this.sessionViews[sessionId] !== 'undefined') {
-            this.sessionViews[sessionId].toggleOpen(ms)   
-        }
     }
     
 });

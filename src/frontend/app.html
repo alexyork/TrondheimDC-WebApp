@@ -56,13 +56,18 @@
         </script>
         
         <!-- Template: Sessions List -->
-        <script id="sessions-list-template" type="text/template">
+        <script id="list-template" type="text/template">
             <div class="searchbar">
                 <input class="searchTerm" type="text" placeholder="Search for a session..." />
                 <a href="#" class="search">search</a>
                 <a href="#" class="reset">x</a>
             </div>
             <ul></ul>
+        </script>
+
+        <script id="speaker-template" type="text/template">
+            <h1 class="speaker"><%= name %></h1>
+            <p><%= description %></p>
         </script>
         
         <!-- Scripts: Theirs -->
@@ -81,6 +86,8 @@
         <!-- SPEAKERS -->
         <script type="text/javascript" src="js/app/models/Speaker.js"></script>
         <script type="text/javascript" src="js/app/collections/SpeakersList.js"></script>
+        <script type="text/javascript" src="js/app/views/SpeakerView.js"></script>
+        <script type="text/javascript" src="js/app/views/SpeakersListView.js"></script>
 
         <!-- APP -->
         <script type="text/javascript" src="js/app/views/AppView.js"></script>
