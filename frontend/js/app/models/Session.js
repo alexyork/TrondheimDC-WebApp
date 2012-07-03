@@ -16,8 +16,9 @@ TrondheimDC.Models.Session = Backbone.Model.extend({
     },
 
     isPresentedBy: function(speakerId) {
-        for (var i = 0; i < this.speakers.length; i++) {
-            if (this.speakers[i].id == speakerId)
+        var speakers = this.get("speakers");
+        for (var i = 0; i < speakers.length; i++) {
+            if (speakers[i].id == speakerId)
                 return true;
         }
         return false;
@@ -25,7 +26,13 @@ TrondheimDC.Models.Session = Backbone.Model.extend({
     
     containsTag: function(tag) {
         var tags = this.get("tags");
-        return _.indexOf(tags, tag) > -1;
+        var matchFound = false;
+        _.each(tags, function(t) {
+            if (tag.toLowerCase().indexOf(t) > -1) {
+                matchFound = true;
+            }
+        })
+        return matchFound;
     }
     
 });
