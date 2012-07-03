@@ -127,6 +127,11 @@ header nav ul li.selected a {
     border-radius: 3px;
 }
 
+#app-content .sessions-list ul .session .details {
+    display: none;
+    margin: 10px 0px 10px 0px;
+}
+
 /* Footer */
 footer {
     font-size: 0.9em;
