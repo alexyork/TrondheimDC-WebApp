@@ -30,19 +30,20 @@ describe("SessionsList", function() {
     });
 
     describe("getBySpeakerId", function() {
+        
         it("should return the correct speaker based on the speaker id", function() {
             var sessionsList = new TrondheimDC.Collections.SessionsList();
             sessionsList.reset([
-                { title: "TDDing is smart" }
+                { title: "TDDing is smart", speakers: [{ id: 37, name: "Pauline" }] },
+                { title: "Backbone kicks ass", speakers: [{ id: 43, name: "Alex" }, { id: 84, name: "Andre" }] }
             ]);
 
-            sessionsList.models[0].speakers = [{ id: 1, name: "Paulini" }, { id: 2, name: "Alex" }]
-
-            var searchResults = sessionsList.getBySpeakerId(1);
+            var searchResults = sessionsList.getBySpeakerId(37);
 
             expect(searchResults.length).toEqual(1);
-            expect(searchResults.models[0].speakers[0].name).toEqual("Paulini");
-        })
+            expect(searchResults.models[0].get("speakers")[0].name).toEqual("Pauline");
+        });
+        
     })
     
 });
