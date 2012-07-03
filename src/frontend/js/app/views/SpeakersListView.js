@@ -51,9 +51,9 @@ TrondheimDC.Views.SpeakersListView = Backbone.View.extend({
     },
     
     search: function(searchTerm) {
-        /*var matchedSessions = this.collection.search(searchTerm);
-        this.render(matchedSessions);
-        $(".searchTerm").val(searchTerm);*/
+        var matchedSpeakers = this.collection.search(searchTerm);
+        this.render(matchedSpeakers);
+        $(".searchTerm").val(searchTerm);
     },
     
     resetButtonClicked: function(e) {

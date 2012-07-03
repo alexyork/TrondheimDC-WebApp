@@ -9,6 +9,16 @@ TrondheimDC.Collections.SpeakersList = Backbone.Collection.extend({
     
     model: TrondheimDC.Models.Speaker,
     
+	search: function(searchTerm) {
+        var filteredSpeakersList = new TrondheimDC.Collections.SpeakersList();
+        filteredSpeakersList.reset(
+            this.filter(function(speaker) {
+                return speaker.matchesName(searchTerm);
+            })
+        );
+        return filteredSpeakersList;
+    },
+
     getById: function(id) {
         for (var i = 0; i < this.length; i++) {
         	if (this.models[i].get("id") == id)
