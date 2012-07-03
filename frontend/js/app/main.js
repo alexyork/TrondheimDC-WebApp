@@ -1,44 +1,54 @@
 (function() {
     
+    //Core pub sub message handler for cross module messaging.
     window.app = Object.create(Backbone.Events);
     
-    var appView = new TrondheimDC.Views.AppView()
+    app.view = new TrondheimDC.Views.AppView()
 
-    var router = new TrondheimDC.Routers.AppRouter({
-      delegateView: appView
+    app.router = new TrondheimDC.Routers.AppRouter({
+      delegateView: app.view
     })
 
-    router.route('sessions', 'sessions', function() {
-        // Get the sessions data into a list
-        var sessionsList = new TrondheimDC.Collections.SessionsList();
-        var sessionData = TrondheimDC.getAllSessions();
-        sessionsList.reset(sessionData);
+    // Get the sessions data into a list
+    app.sessionsList = new TrondheimDC.Collections.SessionsList();
+    app.sessionsList.reset(
+        TrondheimDC.getAllSessions()
+    );
 
-        var speakersList = new TrondheimDC.Collections.SpeakersList();
-        var speakersData = TrondheimDC.getAllSpeakers();
-        speakersList.reset(speakersData);
+    app.speakersList = new TrondheimDC.Collections.SpeakersList();
+    app.speakersList.reset(
+        TrondheimDC.getAllSpeakers()
+    );
 
-        sessionsList.setUpSpeakers(speakersList);
-        
+    app.sessionsList.setUpSpeakers(app.speakersList);
+
+    app.router.route('sessions', 'sessions', function() {
         // Render the list into a view, and add to the DOM
-        var sessionsListView = new TrondheimDC.Views.SessionsListView({ collection: sessionsList });
+        var sessionsListView = new TrondheimDC.Views.SessionsListView({ collection: app.sessionsList });
         sessionsListView.render();
-        appView.setContentView(sessionsListView)
+        app.view.setContentView(sessionsListView)
     })
 
-    router.route('speakers', 'speakers', function() {
+    app.router.route('sessions/:id', 'sessions', function(id) {
+        var sessionsListView = new TrondheimDC.Views.SessionsListView({ collection: app.sessionsList });
+        sessionsListView.render();
+        app.view.setContentView(sessionsListView)
+        sessionsListView.toggleSessionDetailsBySessionId(id)
+    })
+
+    app.router.route('speakers', 'speakers', function() {
         //!TODO: render speaksers
-        appView.setContentView(/* speakers */)
+        app.view.setContentView(/* speakers */)
     })
 
-    router.route('favourites', 'favourites', function() {
+    app.router.route('favourites', 'favourites', function() {
         //!TODO: render favourites
-        appView.setContentView( /* favourites */)
+        app.view.setContentView( /* favourites */)
     })
 
-    router.route('tweets', 'tweets', function() {
+    app.router.route('tweets', 'tweets', function() {
         //!TODO: render tweets
-        appView.setContentView( /* tweets */)
+        app.view.setContentView( /* tweets */)
     })
 
     Backbone.history.start()
