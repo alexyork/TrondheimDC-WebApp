@@ -1,71 +1,86 @@
 (function() {
     
-    // Core pub sub message handler for cross module messaging
-    window.app = Object.create(Backbone.Events);
-    
-    app.view = new TrondheimDC.Views.AppView()
+    //
+    // Startup
+    //
+    setupApp();
 
-    app.router = new TrondheimDC.Routers.AppRouter({
-        delegateView: app.view
-    });
-
-    // Create speakers list
-    app.speakersList = new TrondheimDC.Collections.SpeakersList();
-    app.speakersList.reset(
-        TrondheimDC.speakersBootstrapData
-    );
+    setupSpeakersList();
+    setupSessionsList();
     
-    // Attach minimal speaker info to each session
-    for (var i = 0; i < TrondheimDC.sessionsBootstrapData.length; i++) {
-        var session = TrondheimDC.sessionsBootstrapData[i];
-        var speaker = app.speakersList.getById(session.speakerId);
-        session.speaker = { id: speaker.get('id'), name: speaker.get('name') };
+    setupRoutes();
+    
+    
+    //
+    // Helpers
+    //
+    function setupApp() {
+        // Core pub sub message handler for cross module messaging
+        window.app = Object.create(Backbone.Events);
+        
+        app.view = new TrondheimDC.Views.AppView()
+    
+        app.router = new TrondheimDC.Routers.AppRouter({
+            delegateView: app.view
+        });
     }
     
-    // Create sessions list
-    app.sessionsList = new TrondheimDC.Collections.SessionsList();
-    app.sessionsList.reset(
-        TrondheimDC.sessionsBootstrapData
-    );
+    function setupSpeakersList() {
+        app.speakersList = new TrondheimDC.Collections.SpeakersList();
+        app.speakersList.reset(TrondheimDC.Data.speakers);
+    }
     
-
-    app.router.route('sessions', 'sessions', function() {
-        // Render the list into a view, and add to the DOM
-        var sessionsListView = new TrondheimDC.Views.SessionsListView({ collection: app.sessionsList });
-        sessionsListView.render();
-        app.view.setContentView(sessionsListView);
-    });
-
-    app.router.route('sessions/:id', 'sessions', function(id) {
-        var sessionsListView = new TrondheimDC.Views.SessionsListView({ collection: app.sessionsList });
-        sessionsListView.render();
-        app.view.setContentView(sessionsListView);
-        sessionsListView.toggleOpenSessionBySessionId(id, 0);
-    });
-
-    app.router.route('speakers', 'speakers', function() {
-        //!TODO: render speaksers
-        var speakersListView = new TrondheimDC.Views.SpeakersListView({ collection: app.speakersList });
-        speakersListView.render();
-        app.view.setContentView(speakersListView);
-    });
-
-    app.router.route('speakers/:id', 'speakers', function(id) {
-        var speakerView = new TrondheimDC.Views.SpeakerDetailView({ collection: app.speakersList.getById(id) });
-        speakerView.render();
-        app.view.setContentView(speakerView);
-    });
-
-    app.router.route('favourites', 'favourites', function() {
-        //!TODO: render favourites
-        app.view.setContentView( /* favourites */);
-    });
-
-    app.router.route('tweets', 'tweets', function() {
-        //!TODO: render tweets
-        app.view.setContentView( /* tweets */);
-    });
-
-    Backbone.history.start();
+    function setupSessionsList() {
+        // Attach minimal speaker info to each session
+        for (var i = 0; i < TrondheimDC.Data.sessions.length; i++) {
+            var session = TrondheimDC.Data.sessions[i];
+            var speaker = app.speakersList.getById(session.speakerId);
+            session.speaker = { id: speaker.get('id'), name: speaker.get('name') };
+        }
+        
+        app.sessionsList = new TrondheimDC.Collections.SessionsList();
+        app.sessionsList.reset(TrondheimDC.Data.sessions);
+    }
+    
+    function setupRoutes() {
+        app.router.route('sessions', 'sessions', function() {
+            // Render the list into a view, and add to the DOM
+            var sessionsListView = new TrondheimDC.Views.SessionsListView({ collection: app.sessionsList });
+            sessionsListView.render();
+            app.view.setContentView(sessionsListView);
+        });
+    
+        app.router.route('sessions/:id', 'sessions', function(id) {
+            var sessionsListView = new TrondheimDC.Views.SessionsListView({ collection: app.sessionsList });
+            sessionsListView.render();
+            app.view.setContentView(sessionsListView);
+            sessionsListView.toggleOpenSessionBySessionId(id, 0);
+        });
+    
+        app.router.route('speakers', 'speakers', function() {
+            // TODO: render speakers
+            var speakersListView = new TrondheimDC.Views.SpeakersListView({ collection: app.speakersList });
+            speakersListView.render();
+            app.view.setContentView(speakersListView);
+        });
+    
+        app.router.route('speakers/:id', 'speakers', function(id) {
+            var speakerView = new TrondheimDC.Views.SpeakerDetailView({ collection: app.speakersList.getById(id) });
+            speakerView.render();
+            app.view.setContentView(speakerView);
+        });
+    
+        app.router.route('favourites', 'favourites', function() {
+            // TODO: render favourites
+            app.view.setContentView( /* favourites */);
+        });
+    
+        app.router.route('tweets', 'tweets', function() {
+            // TODO: render tweets
+            app.view.setContentView( /* tweets */);
+        });
+        
+        Backbone.history.start();
+    }
 
 })();
