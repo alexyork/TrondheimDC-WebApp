@@ -47,7 +47,12 @@
         <!-- Template: Session -->
         <script id="session-template" type="text/template">
             <h1 class="title"><%= title %></h1>
-            <h2 class="speaker">by <%= speaker.name %></h2>
+            <h2 class="speakers">
+                by
+                <% _.each(speakers, function(speaker, index) { %>
+                    <span class="speaker"><%= speaker.name %></span>
+                <% }); %>
+            </h2>
             <div class="tags">
                 <% _.each(tags, function(tag, index) { %>
                     <span class="tag"><%= tag %></span>
