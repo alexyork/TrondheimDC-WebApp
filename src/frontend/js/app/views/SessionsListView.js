@@ -13,7 +13,8 @@ TrondheimDC.Views.SessionsListView = Backbone.View.extend({
     
     events: {
         'click .search': 'searchButtonClicked',
-        'click .reset': 'resetButtonClicked'
+        'click .reset': 'resetButtonClicked',
+        'keydown .searchTerm': 'keydownSearch'
     },
     
     initialize: function() {
@@ -39,6 +40,11 @@ TrondheimDC.Views.SessionsListView = Backbone.View.extend({
         e.preventDefault();
         var searchTerm = this.$el.find('.searchTerm').val();
         this.search(searchTerm);
+    },
+
+    keydownSearch: function(e) {
+        if (e.keyCode == 13)
+            this.search($(".searchTerm").val());
     },
     
     search: function(searchTerm) {
