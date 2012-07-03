@@ -22,7 +22,7 @@
 
     router.route('speakers', 'speakers', function() {
         //!TODO: render speaksers
-        appView.setContentView( /* speakers */)
+        appView.setContentView(/* speakers */)
     })
 
     router.route('favourites', 'favourites', function() {
