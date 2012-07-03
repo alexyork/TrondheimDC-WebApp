@@ -33,7 +33,7 @@
         var sessionsListView = new TrondheimDC.Views.SessionsListView({ collection: app.sessionsList });
         sessionsListView.render();
         app.view.setContentView(sessionsListView)
-        sessionsListView.toggleSessionDetailsBySessionId(id)
+        sessionsListView.toggleOpenSessionBySessionId(id, 0)
     })
 
     app.router.route('speakers', 'speakers', function() {
