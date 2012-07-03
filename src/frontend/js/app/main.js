@@ -1,26 +1,33 @@
 (function() {
     
-    //Core pub sub message handler for cross module messaging.
+    // Core pub sub message handler for cross module messaging
     window.app = Object.create(Backbone.Events);
     
     app.view = new TrondheimDC.Views.AppView()
 
     app.router = new TrondheimDC.Routers.AppRouter({
-      delegateView: app.view
-    })
+        delegateView: app.view
+    });
 
-    // Get the sessions data into a list
-    app.sessionsList = new TrondheimDC.Collections.SessionsList();
-    app.sessionsList.reset(
-        TrondheimDC.sessionsBootstrapData
-    );
-
+    // Create speakers list
     app.speakersList = new TrondheimDC.Collections.SpeakersList();
     app.speakersList.reset(
         TrondheimDC.speakersBootstrapData
     );
-
-    app.sessionsList.setUpSpeakers(app.speakersList);
+    
+    // Attach minimal speaker info to each session
+    for (var i = 0; i < TrondheimDC.sessionsBootstrapData.length; i++) {
+        var session = TrondheimDC.sessionsBootstrapData[i];
+        var speaker = app.speakersList.getById(session.speakerId);
+        session.speaker = { id: speaker.get('id'), name: speaker.get('name') };
+    }
+    
+    // Create sessions list
+    app.sessionsList = new TrondheimDC.Collections.SessionsList();
+    app.sessionsList.reset(
+        TrondheimDC.sessionsBootstrapData
+    );
+    
 
     app.router.route('sessions', 'sessions', function() {
         // Render the list into a view, and add to the DOM
