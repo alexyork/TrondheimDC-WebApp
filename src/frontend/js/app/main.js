@@ -12,12 +12,12 @@
     // Get the sessions data into a list
     app.sessionsList = new TrondheimDC.Collections.SessionsList();
     app.sessionsList.reset(
-        TrondheimDC.getAllSessions()
+        TrondheimDC.sessionsBootstrapData
     );
 
     app.speakersList = new TrondheimDC.Collections.SpeakersList();
     app.speakersList.reset(
-        TrondheimDC.getAllSpeakers()
+        TrondheimDC.speakersBootstrapData
     );
 
     app.sessionsList.setUpSpeakers(app.speakersList);
