@@ -11,8 +11,6 @@ TrondheimDC.Views.SpeakersListView = Backbone.View.extend({
     className: 'speakers-list',
     template: _.template( document.getElementById('list-template').innerHTML ),
     
-    speakerViews: {},
-
     events: {
         'click .search': 'searchButtonClicked',
         'click .reset': 'resetButtonClicked',
@@ -34,7 +32,6 @@ TrondheimDC.Views.SpeakersListView = Backbone.View.extend({
             var speakerView = new TrondheimDC.Views.SpeakerView({ model: speaker });
             speakerView.render();
             this.$el.find('ul').append(speakerView.el);
-            this.speakerViews[speaker.get('id')] = speakerView;
         }, this);
         return this;
     },
