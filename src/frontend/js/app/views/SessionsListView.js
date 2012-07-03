@@ -11,6 +11,8 @@ TrondheimDC.Views.SessionsListView = Backbone.View.extend({
     className: 'sessions-list',
     template: _.template( document.getElementById('sessions-list-template').innerHTML ),
     
+    sessionViews: {},
+
     events: {
         'click .search': 'searchButtonClicked',
         'click .reset': 'resetButtonClicked',
@@ -32,6 +34,7 @@ TrondheimDC.Views.SessionsListView = Backbone.View.extend({
             var sessionView = new TrondheimDC.Views.SessionView({ model: session });
             sessionView.render();
             this.$el.find('ul').append(sessionView.el);
+            this.sessionViews[session.get('id')] = sessionView
         }, this);
         return this;
     },
@@ -55,6 +58,10 @@ TrondheimDC.Views.SessionsListView = Backbone.View.extend({
     
     resetButtonClicked: function(e) {
         this.render();
+    },
+
+    toggleSessionDetailsBySessionId: function(sessionId) {
+        this.sessionViews[sessionId].toggleDetails()
     }
     
 });
