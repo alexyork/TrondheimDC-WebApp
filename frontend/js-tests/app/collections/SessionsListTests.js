@@ -28,5 +28,21 @@ describe("SessionsList", function() {
             expect(searchResults.models[0].get("title")).toEqual("Jasmine is awesome");
         });
     });
+
+    describe("getBySpeakerId", function() {
+        it("should return the correct speaker based on the speaker id", function() {
+            var sessionsList = new TrondheimDC.Collections.SessionsList();
+            sessionsList.reset([
+                { title: "TDDing is smart" }
+            ]);
+
+            sessionsList.models[0].speakers = [{ id: 1, name: "Paulini" }, { id: 2, name: "Alex" }]
+
+            var searchResults = sessionsList.getBySpeakerId(1);
+
+            expect(searchResults.length).toEqual(1);
+            expect(searchResults.models[0].speakers[0].name).toEqual("Paulini");
+        })
+    })
     
 });
