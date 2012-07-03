@@ -49,5 +49,23 @@ describe("Session", function() {
         });
     
     });
+
+    describe("matchesSpeaker", function() {
+
+        it("should match search term if it is found in the session speaker name", function() {
+            var session = new TrondheimDC.Models.Session({
+                speakerId: 1
+            });
+            var speakers = new TrondheimDC.Collections.SpeakersList();
+            speakers.reset([
+                { name: "Paulini", id: 1 }
+            ]);
+
+            var result = session.speaker(speakers).get("name");
+
+            expect(result).toEqual("Paulini");
+        })
+
+    });
     
 });
