@@ -19,7 +19,9 @@ TrondheimDC.Views.SessionView = Backbone.View.extend({
     },
     
     render: function() {
-        var sessionHtml = this.template( this.model.toJSON() );
+        var json = this.model.toJSON();
+        json.speaker = this.model.speaker.toString();
+        var sessionHtml = this.template(json);
         this.$el.html(sessionHtml);
         return this;
     },

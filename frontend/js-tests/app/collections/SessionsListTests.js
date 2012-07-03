@@ -28,5 +28,26 @@ describe("SessionsList", function() {
             expect(searchResults.models[0].get("title")).toEqual("Jasmine is awesome");
         });
     });
+
+    describe("setUpSpeakers", function() {
+        it("should set up a speaker model for each session", function() {
+            var sessionsList = new TrondheimDC.Collections.SessionsList();
+            sessionsList.reset([
+                { speakerId: 1 },
+                { speakerId: 2 }
+            ]);
+
+            var speakersList = new TrondheimDC.Collections.SpeakersList();
+            speakersList.reset([
+                { id: 1, name: "Paulini" },
+                { id: 2, name: "Alex" }
+            ]);
+
+            sessionsList.setUpSpeakers(speakersList);
+
+            expect(sessionsList.models[0].speaker.get("name")).toEqual("Paulini");
+            expect(sessionsList.models[1].speaker.get("name")).toEqual("Alex");
+        })
+    });
     
 });

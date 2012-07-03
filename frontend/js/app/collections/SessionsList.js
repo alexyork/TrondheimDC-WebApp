@@ -19,6 +19,12 @@ TrondheimDC.Collections.SessionsList = Backbone.Collection.extend({
             })
         );
         return filteredSessionsList;
+    },
+
+    setUpSpeakers: function(speakers) {
+        for (var i = 0; i < this.length; i++) {
+            this.models[i].speaker = speakers.getById(this.models[i].get("speakerId"));
+        }
     }
     
 });

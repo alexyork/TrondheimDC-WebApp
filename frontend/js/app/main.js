@@ -13,6 +13,12 @@
         var sessionsList = new TrondheimDC.Collections.SessionsList();
         var sessionData = TrondheimDC.getAllSessions();
         sessionsList.reset(sessionData);
+
+        var speakersList = new TrondheimDC.Collections.SpeakersList();
+        var speakersData = TrondheimDC.getAllSpeakers();
+        speakersList.reset(speakersData);
+
+        sessionsList.setUpSpeakers(speakersList);
         
         // Render the list into a view, and add to the DOM
         var sessionsListView = new TrondheimDC.Views.SessionsListView({ collection: sessionsList });
