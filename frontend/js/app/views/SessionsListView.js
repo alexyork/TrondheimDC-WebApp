@@ -42,9 +42,9 @@ TrondheimDC.Views.SessionsListView = Backbone.View.extend({
     },
     
     search: function(searchTerm) {
-        alert('s')
         var matchedSessions = this.collection.search(searchTerm);
         this.render(matchedSessions);
+        $(".searchTerm").val(searchTerm);
     },
     
     resetButtonClicked: function(e) {
