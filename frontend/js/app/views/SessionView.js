@@ -12,7 +12,7 @@ TrondheimDC.Views.SessionView = Backbone.View.extend({
     template: _.template( document.getElementById('session-template').innerHTML ),
     
     events: {
-        "click .title": "toggleDetails",
+        "click .title": "toggleOpen",
         "click .tag": "filterByTag"
     },
     
@@ -32,8 +32,11 @@ TrondheimDC.Views.SessionView = Backbone.View.extend({
         window.app.trigger("filter:tag", tag);
     },
 
-    toggleDetails: function() {
-        this.$el.find('.details').slideToggle()
+    toggleOpen: function(ms) {
+        var details = this.$el.find('.details')
+        if(!details.is(':visible'))
+            app.router.navigate('sessions/' + this.model.get('id'), {trigger: false})   
+        details.slideToggle(ms)
     }
     
 });
