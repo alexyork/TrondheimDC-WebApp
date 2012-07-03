@@ -45,13 +45,14 @@
         
         <!-- Template: Session -->
         <script id="session-template" type="text/template">
-            <h1><%= title %></h1>
-            <h2>by <%= speaker %></h2>
+            <h1 class="title"><%= title %></h1>
+            <h2 class="speaker">by <%= speaker %></h2>
             <div class="tags">
                 <% _.each(tags, function(tag, index) { %>
                     <span class="tag"><%= tag %></span>
                 <% }); %>
             </div>
+            <div class="details"> Details go here bro. </div>
         </script>
         
         <!-- Template: Sessions List -->
