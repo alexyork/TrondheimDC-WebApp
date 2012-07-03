@@ -38,12 +38,3 @@ TrondheimDC.Data.speakers = [
         description: "Bill Murray..?"
     }
 ];
-
-TrondheimDC.Data.attachSpeakerNamesToSessions = function() {
-    // Attach minimal speaker info to each session
-    for (var i = 0; i < TrondheimDC.Data.sessions.length; i++) {
-        var session = TrondheimDC.Data.sessions[i];
-        var speaker = app.speakersList.getById(session.speakerId);
-        session.speaker = { id: speaker.get('id'), name: speaker.get('name') };
-    }    
-}
