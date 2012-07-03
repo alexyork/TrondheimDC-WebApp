@@ -7,10 +7,6 @@ if (typeof TrondheimDC.Models === "undefined" || !TrondheimDC.Models) {
 
 TrondheimDC.Models.Speaker = Backbone.Model.extend({
 
-    toString: function() {
-    	return this.get("name");
-    },
-
     matchesName: function(searchTerm) {
     	return this.get("name").toLowerCase().indexOf(searchTerm.toLowerCase()) > -1;
     }
