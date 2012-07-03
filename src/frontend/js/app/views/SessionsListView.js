@@ -60,8 +60,10 @@ TrondheimDC.Views.SessionsListView = Backbone.View.extend({
         this.render();
     },
 
-    toggleSessionDetailsBySessionId: function(sessionId) {
-        this.sessionViews[sessionId].toggleDetails()
+    toggleOpenSessionBySessionId: function(sessionId, ms) {
+        if(typeof this.sessionViews[sessionId] !== 'undefined') {
+            this.sessionViews[sessionId].toggleOpen(ms)   
+        }
     }
     
 });
