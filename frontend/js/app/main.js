@@ -26,19 +26,21 @@
         // Render the list into a view, and add to the DOM
         var sessionsListView = new TrondheimDC.Views.SessionsListView({ collection: app.sessionsList });
         sessionsListView.render();
-        app.view.setContentView(sessionsListView)
+        app.view.setContentView(sessionsListView);
     })
 
     app.router.route('sessions/:id', 'sessions', function(id) {
         var sessionsListView = new TrondheimDC.Views.SessionsListView({ collection: app.sessionsList });
         sessionsListView.render();
-        app.view.setContentView(sessionsListView)
-        sessionsListView.toggleOpenSessionBySessionId(id, 0)
+        app.view.setContentView(sessionsListView);
+        sessionsListView.toggleOpenSessionBySessionId(id, 0);
     })
 
     app.router.route('speakers', 'speakers', function() {
         //!TODO: render speaksers
-        app.view.setContentView(/* speakers */)
+        var speakersListView = new TrondheimDC.Views.SpeakersListView({ collection: app.speakersList });
+        speakersListView.render();
+        app.view.setContentView(speakersListView);
     })
 
     app.router.route('favourites', 'favourites', function() {
