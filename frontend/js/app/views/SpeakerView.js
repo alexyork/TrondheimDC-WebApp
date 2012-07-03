@@ -27,7 +27,6 @@ TrondheimDC.Views.SpeakerView = Backbone.View.extend({
     },
 
     navigateToSpeaker: function(ms) {
-        console.log(ms);
         app.router.navigate('speakers/' + this.model.get('id'), { trigger: true });
     }
     
