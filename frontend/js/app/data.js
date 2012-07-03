@@ -1,8 +1,11 @@
 if (typeof TrondheimDC === "undefined" || !TrondheimDC) {
     TrondheimDC = {};
 }
+if (typeof TrondheimDC.Data === "undefined" || !TrondheimDC.Data) {
+    TrondheimDC.Data = {};
+}
 
-TrondheimDC.sessionsBootstrapData = [
+TrondheimDC.Data.sessions = [
     {   
         id: 1,
         title: "Maybe Backbone.js rocks, afterall...",
@@ -23,7 +26,7 @@ TrondheimDC.sessionsBootstrapData = [
     },
 ];
 
-TrondheimDC.speakersBootstrapData = [
+TrondheimDC.Data.speakers = [
     {
         id: 1,
         name: "Alex York",
@@ -35,3 +38,12 @@ TrondheimDC.speakersBootstrapData = [
         description: "Bill Murray..?"
     }
 ];
+
+TrondheimDC.Data.attachSpeakerNamesToSessions = function() {
+    // Attach minimal speaker info to each session
+    for (var i = 0; i < TrondheimDC.Data.sessions.length; i++) {
+        var session = TrondheimDC.Data.sessions[i];
+        var speaker = app.speakersList.getById(session.speakerId);
+        session.speaker = { id: speaker.get('id'), name: speaker.get('name') };
+    }    
+}
