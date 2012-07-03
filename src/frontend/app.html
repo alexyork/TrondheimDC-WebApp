@@ -78,6 +78,11 @@
 
         <script id="speaker-detail-template" type="text/template">
             <h1><%= name %></h1>
+            <ul>
+            <% _.each(sessions, function(session, index) { %>
+                <li><%= session.title %>
+            <% }); %>
+            </ul>
         </script>
         
         
