@@ -49,5 +49,19 @@ describe("Session", function() {
         });
     
     });
+
+    describe("isPresentedBy", function() {
+        it("should return true if the session is presented by this speaker", function() {
+            var session = new TrondheimDC.Models.Session({
+                title: "TDDing is smart"
+            });
+
+            session.speakers = [{ id: 1, name: "Paulini" }, { id: 2, name: "Alex" }];
+
+            var result = session.isPresentedBy(1);
+
+            expect(result).toEqual(true);
+        });
+    });
     
 });
