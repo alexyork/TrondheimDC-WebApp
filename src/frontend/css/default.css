@@ -108,7 +108,7 @@ footer {
 /* SEARCH */
 .searchbar {
     text-align: center;
-    border-top: 1px solid #ccc;
+    border-top: 1px solid #fff;
     padding: 1em 0;
     }
     
@@ -156,7 +156,7 @@ footer {
     width: 80%;
     max-width: 675px;
     margin: 0.5em auto;
-    border: 1px solid #ccc;
+    border: 1px solid #fff;
     padding: 1em;
     }
 
