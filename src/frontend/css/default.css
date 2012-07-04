@@ -1,0 +1,166 @@
+/* -------------
+THIS DOCUMENT SHOULD ONLY CONTAIN COMMON STYLES AND BASIC LAYOUT STYLES
+-----------------*/
+
+/* FONT IMPORT - WILL NOT WORK UNTILL WE ARE ON THE RIGHT DOMAIN */
+@import url("http://fnt.webink.com/wfs/webink.css?project=048E1F9E-653B-46E4-95B5-B105967752C5&fonts=C62E2C20-BEE2-86B6-FE22-96C38B6818CF:family=AbrilText-Bold,459E4BD0-C12A-EE14-2ABB-37D7192D1AAA:family=AbrilText-ExtraBold,20615D9B-B1A8-988E-EF5E-4BF7DB5C8886:family=AbrilText-ExtraBoldItalic,3E55D2F1-1F5E-63EE-5EC0-8AE57E0AB083:family=AbrilText-Regular");
+
+/* BASE TYPOGRAPHY */
+body { font: normal normal normal 1em/1.2em 'AbrilText', Georgia, Serif; }
+
+h1 {
+    font-size: 1.7em;
+    line-height: 1.3em;
+    margin-bottom: 0.3em;
+    }
+
+h2 {
+    font-size: 1.2em;
+    margin-bottom: 0.5em;
+    }
+
+h3 {}
+
+p {}
+
+a {
+    text-decoration: underline;
+    font-weight: bold;
+    background-color: #06F4ED;
+    color: #000;
+    }
+
+a:hover { text-decoration: none; }
+
+/* Elements */
+body { background: #6cfffe; }
+
+/* MAIN LAYOUT CONTAINERS */
+#wrapper {
+    width: 96%;
+    margin: 1em auto;
+    border: none;
+    }
+
+/* Header */
+header { text-align: center; }
+
+    header hgroup h1 { font-size: 1.3em; }
+
+    header hgroup h2 {
+        font-size: 1em;
+        font-style: italic;
+        }
+
+    /* NAV */
+    header nav {}
+
+    header nav ul {}
+
+    header nav li {
+        display: inline-block;
+        width: 48%;
+        margin-bottom: 0.3em;
+        }
+
+        header nav a {
+            text-decoration: none;
+            font-size: 1.3em;
+            display: block;
+            padding: 0.4em 0.6em;
+            background-color: #C898C8;
+            color: whitesmoke;
+            text-shadow: 1px 1px 1px #999;
+            margin-right: 0.3em;
+            border-radius: 3px;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            }
+
+        header li.selected a, 
+        header li a:hover,
+        header li a:focus { background-color: #9170B2; }
+
+/* Footer */
+footer { 
+    margin: 20px auto 0;
+    font-size: 0.65em; 
+    text-align: center;
+    width: 80%; 
+    }
+
+/* REUSABLES */
+.tags { list-style-type: none; }
+
+    .tag {
+        display: inline-block;
+        padding: 0.3em 0.5em;
+        background: #72B372;
+        color: whitesmoke;
+        text-shadow: 1px 1px 1px #5D945D;
+        margin-right: 0.3em;
+        border-radius: 3px;
+        cursor: pointer;
+        }
+
+    .tag:hover, .tag:focus { background: #9170B2; }
+
+/* SEARCH */
+.searchbar {
+    text-align: center;
+    border-top: 1px solid #ccc;
+    padding: 1em 0;
+    }
+    
+    .searchTerm,
+    .search,
+    .reset {
+        display: inline-block;
+        font-size: 1.5em;
+        height: 1em;
+        padding: 0.3em;
+        border-radius: 3px;
+        }
+
+    .searchTerm {
+        width: 60%;
+        border: 1px solid black;
+        box-shadow: inset 0px 0px 12px 1px rgba(20, 20, 20, 0.1);
+        }
+
+    .search {
+        background-color: #4D6EAB;
+        color: whitesmoke;
+        text-shadow: 1px 1px 1px #5D945D;
+        }
+
+    .reset {
+        color: rgba(0,0,0, 0.6);
+        background-color: #B55061;
+        color: whitesmoke;
+        text-shadow: 1px 1px 1px #5D945D;
+        }
+
+
+/*
+ * Smaller units
+ **************************************/
+@media all and (min-width: 400px) {
+    
+}/* /media all min-width 400px  */
+
+
+@media all and (min-width: 600px) {
+
+#wrapper {
+    width: 80%;
+    max-width: 675px;
+    margin: 0.5em auto;
+    border: 1px solid #ccc;
+    padding: 1em;
+    }
+
+#app-content { padding: 1em 0; }
+
+    
+} /* /media all min width 600px */
