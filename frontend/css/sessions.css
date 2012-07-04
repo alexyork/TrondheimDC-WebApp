@@ -1,0 +1,29 @@
+/* Sessions */
+#app-content .sessions-list ul {
+    list-style-type: none;
+    border-top: 1px solid #ccc;
+    }
+
+#app-content .sessions-list ul .session {
+    padding: 1em 0;
+    border-bottom: 1px solid #ccc;
+    }
+
+/* DETAILS */
+.session .details {
+    display: none;
+    margin: 10px 0px 10px 0px;
+    }
+
+/* SEARCH */
+.sessions-list .searchTerm { width: 50%; }
+    
+    .sessions-list .session { border-bottom: 1px solid #ccc; }
+
+
+@media all and (min-width: 600) {
+
+/* Sessions */
+#app-content .searchTerm { width: 60%; }
+
+} /* /media all min-width 600px */
