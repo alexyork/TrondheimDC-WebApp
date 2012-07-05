@@ -7,13 +7,6 @@ if (typeof TrondheimDC.Models === "undefined" || !TrondheimDC.Models) {
 
 TrondheimDC.Models.Session = Backbone.Model.extend({
 
-    initialize: function() {
-        if(this.isFavourited())
-            this.set('favourited', true)
-        else
-            this.set('favourited', false)
-    },
-
     matchesTitle: function(searchTerm) {
         return this.get("title").toLowerCase().indexOf(searchTerm.toLowerCase()) > -1;
     },
@@ -42,6 +35,17 @@ TrondheimDC.Models.Session = Backbone.Model.extend({
         return matchFound;
     },
 
+    timeslotConflictsWith: function(session) {
+        if(
+            (session.get('starts') >= this.get('starts') && session.get('starts') <= this.get('ends')) ||
+            (session.get('ends') >= this.get('starts') && session.get('ends') <= this.get('ends'))
+        ) {
+            return true
+        } else {
+            return false
+        }
+    },
+
     isFavourited: function() {
         var currentFavourites
         currentFavourites = JSON.parse( localStorage.getItem(TrondheimDC.Models.Session.localStorageFavouritesKey) )
@@ -56,10 +60,10 @@ TrondheimDC.Models.Session = Backbone.Model.extend({
             currentFavourites = JSON.parse( localStorage.getItem(TrondheimDC.Models.Session.localStorageFavouritesKey) )
             if(!currentFavourites)
                 currentFavourites = []
-            if(!this.isFavourited())
-                currentFavourites.push(this.get('id'))
+            if(this.isFavourited()) 
+                return null
+            currentFavourites.push(this.get('id'))
             localStorage.setItem( TrondheimDC.Models.Session.localStorageFavouritesKey, JSON.stringify(currentFavourites) )
-            this.set('favourited', true)
         } catch (e) {
             this.trigger('error', e)
         }
@@ -74,7 +78,6 @@ TrondheimDC.Models.Session = Backbone.Model.extend({
                 if(idIndex !== -1)
                     currentFavourites.splice(idIndex, 1)
                 localStorage.setItem( TrondheimDC.Models.Session.localStorageFavouritesKey, JSON.stringify(currentFavourites) )
-                this.set('favourited', false)
             }   
         } catch(e) {
             this.trigger('error', e)
