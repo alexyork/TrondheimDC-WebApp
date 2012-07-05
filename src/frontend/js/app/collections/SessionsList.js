@@ -29,6 +29,18 @@ TrondheimDC.Collections.SessionsList = Backbone.Collection.extend({
             })
         );
         return filteredSessionsList;
+    },
+
+    getFavourited: function() {
+        var currentFavourites, filteredSessionsList
+        currentFavourites = JSON.parse( localStorage.getItem(this.model.localStorageFavouritesKey) )
+        filteredSessionsList = new TrondheimDC.Collections.SessionsList();
+        filteredSessionsList.reset(
+            this.filter(function(session) {
+                return (currentFavourites.indexOf(session.get('id')) !== -1)
+            })
+        )
+        return filteredSessionsList
     }
     
 });
