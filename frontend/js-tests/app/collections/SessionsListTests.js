@@ -45,5 +45,34 @@ describe("SessionsList", function() {
         });
         
     })
+
+    describe("getFavourited", function() {
+        
+        it("should return all sessions where sessions id is contained by array stored on key TrondheimDC.Models.Session.localStorageFavouritesKey in localStorage", function() {
+            var sessionsList = new TrondheimDC.Collections.SessionsList();
+
+            var sessA = new TrondheimDC.Models.Session({ id: 101 })
+            var sessB = new TrondheimDC.Models.Session({ id: 102 })
+            var sessC = new TrondheimDC.Models.Session({ id: 103 })
+
+            sessionsList.reset([ sessA, sessB, sessC ])
+
+            sessB.favourite()
+            sessC.favourite()
+
+            var favourited = sessionsList.getFavourited()
+            expect(favourited.length).toEqual(2)
+
+            var favouritedIds = favourited.map(function( favourite ) { 
+                return favourite.get('id')
+            })
+
+            expect(favouritedIds).toNotContain(101)
+            expect(favouritedIds).toContain(102)
+            expect(favouritedIds).toContain(103)
+        })
+        
+
+    })
     
 });
