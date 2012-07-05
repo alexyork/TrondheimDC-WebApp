@@ -13,7 +13,8 @@ TrondheimDC.Views.SessionView = Backbone.View.extend({
     
     events: {
         "click .title": "toggleOpen",
-        "click .tag": "filterByTag"
+        "click .tag": "filterByTag",
+        "click .favourite": "favourite"
     },
     
     initialize: function() {
@@ -36,6 +37,32 @@ TrondheimDC.Views.SessionView = Backbone.View.extend({
         if(!details.is(':visible'))
             app.router.navigate('sessions/' + this.model.get('id'), {trigger: false})   
         details.slideToggle(ms)
+    },
+
+    favourite: function(event) {
+        var conflicts
+        if(event.currentTarget.checked) {
+            conflicts = app.sessionsList
+                            .getFavourited()
+                            .filter(function(favourite){
+                                if(favourite.timeslotConflictsWith(this.model)) {
+                                    return true
+                                }
+                            }, this)
+            if(conflicts.length > 0) {
+                event.preventDefault()
+                return alert(
+                    "Favourites with conflicting timeslot: \n\n" + 
+                    JSON.stringify(conflicts.map(function(m) {
+                        return m.get('title')
+                    }))
+                    + "\n\n todo!: alerts suck"
+                )
+            }
+            this.model.favourite()
+        } else {
+            this.model.unfavourite()
+        }
     }
     
 });
