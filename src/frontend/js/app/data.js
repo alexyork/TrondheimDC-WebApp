@@ -18,7 +18,7 @@ TrondheimDC.Data.sessions = [
         id: 2,
         title: "See! I told you Backbone.js rocks!",
         speakerIds: [2],
-        tags: [ "backbone", "javascript", "bill-murray" ]
+        tags: [ "backbone", "javascript", "bill-murray" ],
         starts: new Date(),
         ends: new Date()
     },
@@ -26,7 +26,7 @@ TrondheimDC.Data.sessions = [
         id: 3,
         title: "The art of changing your mind",
         speakerIds: [1, 2],
-        tags: [ "no-backbone", "mindset", "lol" ]
+        tags: [ "no-backbone", "mindset", "lol" ],
         starts: new Date(),
         ends: new Date()
     },
