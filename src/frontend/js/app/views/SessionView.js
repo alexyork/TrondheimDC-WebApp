@@ -43,12 +43,12 @@ TrondheimDC.Views.SessionView = Backbone.View.extend({
         var conflicts
         if(event.currentTarget.checked) {
             conflicts = app.sessionsList
-                            .getFavourited()
-                            .filter(function(favourite){
-                                if(favourite.timeslotConflictsWith(this.model)) {
-                                    return true
-                                }
-                            }, this)
+                           .getFavourited()
+                           .filter(function(favourite){
+                               if(favourite.timeslotConflictsWith(this.model)) {
+                                   return true
+                               }
+                           }, this)
             if(conflicts.length > 0) {
                 event.preventDefault()
                 return alert(
