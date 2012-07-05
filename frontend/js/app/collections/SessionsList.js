@@ -37,7 +37,7 @@ TrondheimDC.Collections.SessionsList = Backbone.Collection.extend({
         filteredSessionsList = new TrondheimDC.Collections.SessionsList();
         filteredSessionsList.reset(
             this.filter(function(session) {
-                return (currentFavourites.indexOf(session.get('id')) !== -1)
+                return session.isFavourited()
             })
         )
         return filteredSessionsList
