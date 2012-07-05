@@ -53,7 +53,7 @@
             <h2 class="speakers">
                 by
                 <% _.each(speakers, function(speaker, index) { %>
-                    <span class="speaker"><%= speaker.name %></span>
+                    <a class="speaker" href="speakers/<%= speaker.id %>"><%= speaker.name %></a>
                 <% }); %>
             </h2>
             <div class="tags">
