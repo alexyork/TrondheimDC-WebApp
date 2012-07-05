@@ -82,6 +82,12 @@ TrondheimDC.Models.Session = Backbone.Model.extend({
         } catch(e) {
             this.trigger('error', e)
         }
+    },
+
+    toJSON: function() {
+        var json = this.attributes
+        json.favourited = this.isFavourited()
+        return json
     }
     
 },
