@@ -14,7 +14,7 @@ TrondheimDC.Views.SessionView = Backbone.View.extend({
     events: {
         "click .title": "toggleOpen",
         "click .tag": "filterByTag",
-        "click .favourite": "favourite"
+        "click .favourite": "toggleFavourite"
     },
     
     initialize: function() {
@@ -39,7 +39,7 @@ TrondheimDC.Views.SessionView = Backbone.View.extend({
         details.slideToggle(ms)
     },
 
-    favourite: function(event) {
+    toggleFavourite: function(event) {
         var conflicts
         if(event.currentTarget.checked) {
             conflicts = app.sessionsList
