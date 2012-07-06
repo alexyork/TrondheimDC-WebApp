@@ -45,15 +45,39 @@ body { background: #6cfffe; }
 /* Header */
 header { text-align: center; }
 
-    header hgroup h1 { font-size: 1.3em; }
+#MastHead {
+    display: table;
+    margin-bottom: 20px;
+    }
+
+    #MastHead hgroup {}
+
+    #MastHead h1 {
+        background: url(../graphics/app_logo.jpg) top left no-repeat;
+        background-size: 100%;
+        text-indent: -9999em;
+        overflow: hidden;
+        width: 100%;
+        max-width: 120px;
+        height: 114px;
+        
+        }
+
+    #MastHead hgroup {
+        float: left;
+        width: 25%;
+        }
 
     header hgroup h2 {
-        font-size: 1em;
         font-style: italic;
+        display: none;
         }
 
     /* NAV */
-    header nav {}
+    #MastHead nav {
+        float: right;
+        width: 73%;
+        }
 
     header nav ul {}
 
@@ -67,7 +91,7 @@ header { text-align: center; }
             text-decoration: none;
             font-size: 1.3em;
             display: block;
-            padding: 0.4em 0.6em;
+            padding: 1em 0.6em;
             background-color: #C898C8;
             color: whitesmoke;
             text-shadow: 1px 1px 1px #999;
