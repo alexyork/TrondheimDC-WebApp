@@ -30,11 +30,11 @@ TrondheimDC.Views.SessionsListView = Backbone.View.extend({
         this.$el.empty();
         this.$el.html(sessionListHtml);
 
-        collection.each(function(session) {
+        collection.each(function( session ) {
             var sessionView = new TrondheimDC.Views.SessionView({ model: session });
             sessionView.render();
-            this.$el.find('ul').append(sessionView.el);
-            this.sessionViews[session.get('id')] = sessionView
+            this.$el.find('ul').append( sessionView.el );
+            this.sessionViews[ session.get('id') ] = sessionView;
         }, this);
         return this;
     },
@@ -42,18 +42,19 @@ TrondheimDC.Views.SessionsListView = Backbone.View.extend({
     searchButtonClicked: function(e) {
         e.preventDefault();
         var searchTerm = this.$el.find('.searchTerm').val();
-        this.search(searchTerm);
+        this.search( searchTerm );
     },
 
     keydownSearch: function(e) {
-        if (e.keyCode == 13)
-            this.search($(".searchTerm").val());
+        if ( e.keyCode == 13 ) {
+            this.search( $(".searchTerm").val() );   
+        }
     },
     
     search: function(searchTerm) {
-        var matchedSessions = this.collection.search(searchTerm);
-        this.render(matchedSessions);
-        $(".searchTerm").val(searchTerm);
+        var matchedSessions = this.collection.search( searchTerm );
+        this.render( matchedSessions );
+        $(".searchTerm").val( searchTerm );
     },
     
     resetButtonClicked: function(e) {
@@ -61,7 +62,7 @@ TrondheimDC.Views.SessionsListView = Backbone.View.extend({
     },
 
     toggleOpenSessionBySessionId: function(sessionId, ms) {
-        if(typeof this.sessionViews[sessionId] !== 'undefined') {
+        if( typeof this.sessionViews[sessionId] !== 'undefined' ) {
             this.sessionViews[sessionId].toggleOpen(ms)   
         }
     }
