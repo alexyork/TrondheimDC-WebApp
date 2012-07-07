@@ -105,27 +105,27 @@ describe("Session", function() {
 
         describe("favourite", function() {
           
-            it("should save the session id to and array of favourite session ids in localStorage  on key TrondheimDC.Models.Session.localStorageFavouritesKey", function() {
+            it("should save the session ID to an array of favourite session ID's in localStorage", function() {
                 var sessionA = new TrondheimDC.Models.Session({ id: 123 });
                 var sessionB = new TrondheimDC.Models.Session({ id: 124 });
                 
                 sessionA.favourite();
                 sessionB.favourite();
                 
-                var favouriteIds = JSON.parse(localStorage.getItem(TrondheimDC.Models.Session.localStorageFavouritesKey));
+                var favouriteIds = getFavourites();
                 
                 expect(favouriteIds.length).toEqual(2);
                 expect(favouriteIds).toContain(123);
                 expect(favouriteIds).toContain(124);
             });
 
-            it("should not create duplicate id in array if allready favourtied", function() {
+            it("should not create duplicate ID in array if already favourited", function() {
                 var sessionA = new TrondheimDC.Models.Session({ id: 122 });
                 
                 sessionA.favourite();
                 sessionA.favourite();
                 
-                var favouriteIds = JSON.parse(localStorage.getItem(TrondheimDC.Models.Session.localStorageFavouritesKey));
+                var favouriteIds = getFavourites();
                 
                 expect(favouriteIds.length).toEqual(1);
                 expect(favouriteIds).toContain(122);
@@ -134,42 +134,26 @@ describe("Session", function() {
         });
 
         describe("unfavourite", function() {
-        
-            var sessionA;
-            var sessionB;
-        
-            beforeEach(function() {
-                localStorage.clear();
             
-                sessionA = new TrondheimDC.Models.Session({ id: 123 });
-                sessionB = new TrondheimDC.Models.Session({ id: 124 });
-                  
-                sessionA.favourite();
-                sessionB.favourite();
-                  
-                var favouriteIds = JSON.parse(localStorage.getItem(TrondheimDC.Models.Session.localStorageFavouritesKey));
-                expect(favouriteIds.length).toEqual(2);
+            it("should delete a session ID from the array stored in localStorage", function() {
+                var session = new TrondheimDC.Models.Session({ id: 123 });
+                session.favourite();
+                
+                var favouriteIds = getFavourites();
                 expect(favouriteIds).toContain(123);
-                expect(favouriteIds).toContain(124);
-            });
-            
-            it("should delete the sessions id from the array stored in localStorage on key TrondheimDC.Models.Session.localStorageFavouritesKey", function() {
-                      
-                sessionA.unfavourite();
                 
-                var favouriteIds = JSON.parse(localStorage.getItem(TrondheimDC.Models.Session.localStorageFavouritesKey));
-                expect(favouriteIds.length).toEqual(1);
-                expect(favouriteIds).toNotContain(123);
-                expect(favouriteIds).toContain(124);
+                session.unfavourite();
                 
-                sessionB.unfavourite();
-                
-                var favouriteIds = JSON.parse(localStorage.getItem(TrondheimDC.Models.Session.localStorageFavouritesKey));
+                favouriteIds = getFavourites();
                 expect(favouriteIds.length).toEqual(0);
-            
             });
         
         });
+        
+        function getFavourites() {
+            var favouritesKey = TrondheimDC.Models.Session.localStorageFavouritesKey;
+            return JSON.parse( localStorage.getItem(favouritesKey) );
+        }
 
     });
     
