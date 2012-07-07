@@ -22,30 +22,30 @@ TrondheimDC.Views.SessionView = Backbone.View.extend({
     
     render: function() {
         var json = this.model.toJSON();
-        var sessionHtml = this.template(json);
-        this.$el.html(sessionHtml);
+        var sessionHtml = this.template( json );
+        this.$el.html( sessionHtml );
         return this;
     },
     
-    filterByTag: function(e) {
-        var tag = e.currentTarget.innerText;
-        window.app.trigger("filter:tag", tag);
+    filterByTag: function( event ) {
+        var tag = event.currentTarget.innerText;
+        window.app.trigger( "filter:tag", tag );
     },
 
-    toggleOpen: function(ms) {
-        var details = this.$el.find('.details')
-        if(!details.is(':visible'))
-            app.router.navigate('sessions/' + this.model.get('id'), {trigger: false})   
-        details.slideToggle(ms)
+    toggleOpen: function( ms ) {
+        var details = this.$el.find( '.details' )
+        if( !details.is(':visible') )
+            app.router.navigate( 'sessions/' + this.model.get('id'), {trigger: false} )   
+        details.slideToggle( ms )
     },
 
-    toggleFavourite: function(event) {
+    toggleFavourite: function( event ) {
         var conflicts
         if(event.currentTarget.checked) {
             conflicts = app.sessionsList
                            .getFavourited()
-                           .filter(function(favourite){
-                               if(favourite.timeslotConflictsWith(this.model)) {
+                           .filter(function( favourite ) {
+                               if( favourite.timeslotConflictsWith(this.model) ) {
                                    return true
                                }
                            }, this)
