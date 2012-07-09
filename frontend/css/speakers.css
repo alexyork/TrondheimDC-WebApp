@@ -1,7 +1,9 @@
-.speakers-list ul {
-	}
+.speakers-list ul { border-top: 1px solid #fff; }
 
 	.speakers-list li {
 		border-bottom: 1px solid #fff;
 		padding: 1em 0;
+		cursor: pointer;
 		}
+	
+	.speakers-list li:hover, .speakers-list li:focus { background-color: #06F4ED; }
