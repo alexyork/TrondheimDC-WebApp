@@ -33,8 +33,12 @@ a {
 a:hover { text-decoration: none; }
 
 /* Elements */
+html { background: #6cfffe url(../graphics/bg_dots.png) top center repeat; }
+
 body { 
-    background: #6cfffe; 
+    height: 100%;
+    min-height: 100%;
+    min-width: 320px;
     /* TODO: ADD GRADIENT BACKGROUND */
     }
 
@@ -48,67 +52,69 @@ body {
 /* Header */
 header { text-align: center; }
 
-#MastHead {
+#mastHead {
     display: table;
     margin-bottom: 20px;
+    width: 100%;
     }
 
-    #MastHead hgroup {
+    #mastHead hgroup {
         float: left;
         width: 25%;
+        background: url(../graphics/app_logo.jpg) top left no-repeat;
+        background-size: 100%;
+        text-indent: -9999em;
+        overflow: hidden;
+        max-width: 120px;
+        height: 114px;   
         }
 
-        #MastHead h1 {
-            background: url(../graphics/app_logo.jpg) top left no-repeat;
-            background-size: 100%;
-            text-indent: -9999em;
-            overflow: hidden;
-            width: 100%;
-            max-width: 120px;
-            height: 114px;        
+        #mastHead h1 {
+            display: none;        
             }        
 
-        #MastHead h2 {
-            font-style: italic;
+        #mastHead h2 {
             display: none;
             }
 
     /* NAV */
-    #MastHead nav {
+    #mastHead nav {
         float: right;
-        width: 73%;
+        width: 72%;
         }
 
-        header nav li {
+        #mastHead nav li {
             display: inline-block;
-            width: 49%;
+            width: 48.5%;
             margin-bottom: 0.3em;
+            margin-right: 1%;
             }
+        #mastHead nav li.even, header nav li.last { margin-right: 0; }
 
-            header nav a {
+            #mastHead nav a {
                 text-decoration: none;
-                font-size: 0.8em;
+                font-size: 0.7em;
                 text-transform: uppercase;
                 font-family: Trebuchet, Verdana, sans-serif;
                 line-height: 1em;
+                letter-spacing: 1px;
                 font-weight: normal;
-                color: whitesmoke;
+                color: #333;
                 text-overflow: ellipsis;
                 overflow: hidden;
                 display: block;
-                padding: 3.8em 0.6em 0.7em;
-                background-color: #C898C8;
-                margin-right: 0.3em;
+                padding: 1.1em 0.6em 1em;
+                background: rgb(188, 237, 109);
                 border-radius: 3px;
                 }
 
-            header li.selected a, 
-            header li a:hover,
-            header li a:focus { background-color: #9170B2; }
+            #mastHead li.selected a, 
+            #mastHead li a:hover,
+            #mastHead li a:focus { background: rgb(241, 254, 126); }
 
 /* Footer */
 footer { 
-    margin: 4em auto 0;
+    margin: 8em auto 0;
     font-size: 0.65em; 
     text-align: center;
     width: 80%; 
@@ -130,42 +136,46 @@ footer {
                 /* TODO: ADD STAR ICON; CHECKED AND UNCEHCKED */
                 float: left;
                 margin-top: 1em;
-                margin-right: 0.7em;
+                margin-right: 1.2em;
                 }
 
             .sessions-list h1 {
+                display: inline;                
                 }
 
             .sessions-list h2 {
-                clear: both;
+                display: inline;
                 font-size: 0.8em;
                 font-family: Trebuchet, Verdana, sans-serif;
                 }
 
     /* TAGS */
-    .tags { list-style-type: none; }
+    .tags { 
+        list-style-type: none; 
+        margin-top: 8px;
+        }
 
         .tag {
             display: inline-block;
             padding: 0.3em 0.5em;
-            background: #72B372;
-            color: whitesmoke;
+            background: rgb(155, 229, 153);
+            color: #000;
             font-size: 0.7em;
             font-family: Trebuchet, Verdana, sans-serif;
-            text-shadow: 1px 1px 1px #5D945D;
             margin-right: 0.3em;
             border-radius: 3px;
             cursor: pointer;
             }
 
-        .tag:hover, .tag:focus { background: #9170B2; }
+        .tag:hover, .tag:focus { background: rgb(241, 254, 126); }
 
 /* SEARCH */
 .searchbar {
     text-align: center;
     text-decoration: none;
-    margin: 1.2em 0;
+    margin: 1.5em 0;
     position: relative;
+    width: 100%;
     }
     
     .searchTerm,
@@ -175,23 +185,26 @@ footer {
         font-size: 1em;
         font-family: Trebuchet, Verdana, sans-serif;
         height: 1em;
-        padding: 0.4em 0.3em;
+        padding: 0.4em 0;
         border-radius: 3px;
         }
 
     .searchTerm {
-        width: 68%;
-        border: 1px solid black;
+        width: 72%;
+        text-indent: 2%;
+        float: left;
+        border: 0;
         box-shadow: inset 0px 0px 12px 1px rgba(20, 20, 20, 0.1);
         }
 
     .search {
-        background-color: #4D6EAB;
-        color: whitesmoke;
-        text-shadow: 1px 1px 1px #5D945D;
+        background: rgb(155, 229, 153);
         width: 25%;
         padding-bottom: 0.5em;
         text-decoration: none;
+        font-weight: normal;
+        text-transform: lowercase;
+        color: #000;
         /* TODO: ADD SEARCH ICON */
         }
 
@@ -200,11 +213,10 @@ footer {
         color: rgba(0,0,0, 0.6);
         background-color: #B55061;
         color: whitesmoke;
-        text-shadow: 1px 1px 1px #5D945D;
         position: absolute;
-        left: 63%;
-        top: 0.1em;
-        padding: 0.4em 0.5em;
+        left: 66.5%;
+        top: 0.07;
+        padding: 0.4em 1.5%;
         width: 3%;
         }
 
@@ -217,17 +229,48 @@ footer {
 }/* /media all min-width 400px  */
 
 
-@media all and (min-width: 600px) {
+@media all and (min-width: 675px) {
 
-#wrapper {
-    width: 80%;
-    max-width: 675px;
-    margin: 0.5em auto;
-    border: 1px solid #fff;
-    padding: 1em;
-    }
+    body { padding-top: 2em; } 
 
-#app-content { padding: 1em 0; }
+    #wrapper {
+        width: 80%;
+        max-width: 675px;
+        }
 
+    #app-content { margin-top: 2em; }
+
+    .searchbar { max-width: 300px; }
+
+    #mastHead hgroup { 
+        width: 100%;
+        max-width: 100%;
+        text-indent: 0; 
+        height: 125px;
+        margin-bottom: 20px;
+        background-size: auto;
+        text-align: left;
+        padding-top: 30px;
+        }
+
+        #mastHead h1, #mastHead h2 {
+            display: block;
+            margin-left: 180px;
+            margin-bottom: 0;
+            text-decoration: none;
+            }
+
+        #mastHead nav {
+            width: 100%;
+            float: none;
+            clear: both;
+            }
+
+            #mastHead nav li, #mastHead nav li.even, #mastHead nav li.odd {
+                width: 23%;
+                margin-right: 2%;
+                }
+
+            #mastHead nav li.last { margin-right: 0;
     
 } /* /media all min width 600px */
