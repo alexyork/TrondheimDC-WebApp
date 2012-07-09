@@ -1,14 +1,3 @@
-/* Sessions */
-.sessions-list ul {
-    list-style-type: none;
-    border-top: 1px solid #fff;
-    }
-
-    .sessions-list li {
-        padding: 1em 0;
-        border-bottom: 1px solid #fff;
-        }
-
 /* DETAILS */
 .session .details {
     display: none;

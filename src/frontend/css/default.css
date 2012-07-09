@@ -33,7 +33,10 @@ a {
 a:hover { text-decoration: none; }
 
 /* Elements */
-body { background: #6cfffe; }
+body { 
+    background: #6cfffe; 
+    /* TODO: ADD GRADIENT BACKGROUND */
+    }
 
 /* MAIN LAYOUT CONTAINERS */
 #wrapper {
@@ -93,7 +96,7 @@ header { text-align: center; }
             font-family: Trebuchet, Verdana, sans-serif;
             font-weight: normal;
             display: block;
-            padding: 3.5em 0.6em 0.5em;
+            padding: 3.8em 0.6em 0.5em;
             background-color: #C898C8;
             color: whitesmoke;
             margin-right: 0.3em;
@@ -108,34 +111,65 @@ header { text-align: center; }
 
 /* Footer */
 footer { 
-    margin: 20px auto 0;
+    margin: 4em auto 0;
     font-size: 0.65em; 
     text-align: center;
     width: 80%; 
     }
 
 /* REUSABLES */
-.tags { list-style-type: none; }
-
-    .tag {
-        display: inline-block;
-        padding: 0.3em 0.5em;
-        background: #72B372;
-        color: whitesmoke;
-        text-shadow: 1px 1px 1px #5D945D;
-        margin-right: 0.3em;
-        border-radius: 3px;
-        cursor: pointer;
+    /* SESSION LIST */
+    .sessions-list ul {
+        list-style-type: none;
         }
 
-    .tag:hover, .tag:focus { background: #9170B2; }
+        .sessions-list li {
+            padding: 1em 0;
+            border-bottom: 1px solid #fff;
+            }
+
+            .favourite {
+                /* TODO: ADD STAR ICON; CHECKED AND UNCEHCKED */
+                float: left;
+                margin-top: 1em;
+                margin-right: 0.7em;
+                }
+
+            .sessions-list h1 {
+                }
+
+            .sessions-list h2 {
+                clear: both;
+                font-size: 0.8em;
+                font-family: Trebuchet, Verdana, sans-serif;
+                }
+
+
+
+    /* TAGS */
+    .tags { list-style-type: none; }
+
+        .tag {
+            display: inline-block;
+            padding: 0.3em 0.5em;
+            background: #72B372;
+            color: whitesmoke;
+            text-shadow: 1px 1px 1px #5D945D;
+            margin-right: 0.3em;
+            border-radius: 3px;
+            cursor: pointer;
+            }
+
+        .tag:hover, .tag:focus { background: #9170B2; }
 
 /* SEARCH */
 .searchbar {
     text-align: center;
     border-top: 1px solid #fff;
+    border-bottom: 1px solid #fff;
     padding: 1em 0;
     text-decoration: none;
+    margin-bottom: 1em;
     }
     
     .searchTerm,
