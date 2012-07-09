@@ -59,8 +59,7 @@ header { text-align: center; }
         overflow: hidden;
         width: 100%;
         max-width: 120px;
-        height: 114px;
-        
+        height: 114px;        
         }
 
     #MastHead hgroup {
@@ -89,12 +88,14 @@ header { text-align: center; }
 
         header nav a {
             text-decoration: none;
-            font-size: 1.3em;
+            font-size: 0.8em;
+            text-transform: uppercase;
+            font-family: Trebuchet, Verdana, sans-serif;
+            font-weight: normal;
             display: block;
-            padding: 1em 0.6em;
+            padding: 3.5em 0.6em 0.5em;
             background-color: #C898C8;
             color: whitesmoke;
-            text-shadow: 1px 1px 1px #999;
             margin-right: 0.3em;
             border-radius: 3px;
             text-overflow: ellipsis;
@@ -134,13 +135,15 @@ footer {
     text-align: center;
     border-top: 1px solid #fff;
     padding: 1em 0;
+    text-decoration: none;
     }
     
     .searchTerm,
     .search,
     .reset {
         display: inline-block;
-        font-size: 1.5em;
+        font-size: 1em;
+        font-family: Trebuchet, Verdana, sans-serif;
         height: 1em;
         padding: 0.3em;
         border-radius: 3px;
@@ -156,9 +159,11 @@ footer {
         background-color: #4D6EAB;
         color: whitesmoke;
         text-shadow: 1px 1px 1px #5D945D;
+        /* TODO: ADD SEARCH ICON */
         }
 
     .reset {
+        /* TODO: ADD CLEAR ICON */
         color: rgba(0,0,0, 0.6);
         background-color: #B55061;
         color: whitesmoke;
