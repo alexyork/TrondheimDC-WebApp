@@ -33,14 +33,12 @@ a {
 a:hover { text-decoration: none; }
 
 /* Elements */
-html { background: #6cfffe url(../graphics/bg_dots.png) top center repeat; }
-
-body { 
-    height: 100%;
-    min-height: 100%;
-    min-width: 320px;
-    /* TODO: ADD GRADIENT BACKGROUND */
+html { 
+    border-top: 10px solid #fff;
+    background: #6cfffe url(../graphics/bg_dots.png) top center repeat; 
     }
+
+body { min-width: 320px; }
 
 /* MAIN LAYOUT CONTAINERS */
 #wrapper {
@@ -50,9 +48,8 @@ body {
     }
 
 /* Header */
-header { text-align: center; }
-
 #mastHead {
+    text-align: center;
     display: table;
     margin-bottom: 20px;
     width: 100%;
@@ -69,13 +66,7 @@ header { text-align: center; }
         height: 114px;   
         }
 
-        #mastHead h1 {
-            display: none;        
-            }        
-
-        #mastHead h2 {
-            display: none;
-            }
+        #mastHead h1, #mastHead h2 { display: none; }
 
     /* NAV */
     #mastHead nav {
@@ -182,10 +173,10 @@ footer {
     .search,
     .reset {
         display: inline-block;
-        font-size: 1em;
+        font-size: 0.8em;
         font-family: Trebuchet, Verdana, sans-serif;
         height: 1em;
-        padding: 0.4em 0;
+        padding: 0.9em 0;
         border-radius: 3px;
         }
 
@@ -200,35 +191,39 @@ footer {
     .search {
         background: rgb(155, 229, 153);
         width: 25%;
-        padding-bottom: 0.5em;
+        padding-bottom: 1em;
         text-decoration: none;
         font-weight: normal;
         text-transform: lowercase;
         color: #000;
+        cursor: pointer;
         /* TODO: ADD SEARCH ICON */
         }
+    .search:hover, .search:focus { background: rgb(241, 254, 126); }
 
     .reset {
         /* TODO: ADD CLEAR ICON */
-        color: rgba(0,0,0, 0.6);
-        background-color: #B55061;
+        color: #ccc;
+        text-decoration: none;  
+        background-color: #ccc;
         color: whitesmoke;
         position: absolute;
-        left: 66.5%;
-        top: 0.07;
-        padding: 0.4em 1.5%;
-        width: 3%;
+        left: 64.5%;
+        top: 7px;
+        padding: 0;
+        border-radius: 30px;
+        display: block;
+        width: 20px;
+        height: 20px;
         }
+    .reset:hover, .reset:focus { color: #000; }
 
 
-/*
- * Smaller units
- **************************************/
 @media all and (min-width: 400px) {
     
 }/* /media all min-width 400px  */
 
-
+/* FULL WIDTH */
 @media all and (min-width: 675px) {
 
     body { padding-top: 2em; } 
