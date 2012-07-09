@@ -14,23 +14,23 @@
     <body>
         
         <div id="wrapper">
-            <header id="MastHead">
+            <header id="mastHead">
                 <hgroup>
                     <a href="/" title="hjem"><h1>Trondheim Developer Conference</h1></a>
                     <h2>Rica Nidelven, 29.10.2012</h2>
                 </hgroup>
                 <nav>
                     <ul>
-                        <li class="selected">
+                        <li class="selected odd">
                             <a href="sessions">Foredrag</a>
                         </li>
-                        <li>
+                        <li class="even">
                             <a href="speakers">Foredragsholdere</a>
                         </li>
-                        <li>
+                        <li class="odd">
                             <a href="favourites">Favoritter</a>
                         </li>
-                        <li>
+                        <li class="even last">
                             <a href="tweets">Kvitter</a>
                         </li>
                     </ul>
@@ -43,11 +43,11 @@
             <footer>
                 <p>
                     Trondheim Developer Conference er et samarbeid mellom fagmiljøene i Trondheim.
+                    <a href="http://www.trondheimdc.no">www.trondheimdc.no</a>
                     <address><a href="mailto:connect@trondheimdc.no" title="Kontakt oss via e-post">connect@trondheimdc.no</a></adress>
                 </p>
             </footer>
         </div>
-        
         
         <!-- Template: Session -->
         <script id="session-template" type="text/template">
@@ -95,7 +95,9 @@
             <h1><%= name %></h1>
             <ul>
             <% _.each(sessions, function(session, index) { %>
-                <li><%= session.title %>
+                <li>
+                    <%= session.title %>
+                </li>
             <% }); %>
             </ul>
         </script>
