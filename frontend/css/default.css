@@ -223,7 +223,7 @@ footer {
     
 }/* /media all min-width 400px  */
 
-/* FULL WIDTH */
+/* FULLWIDTH */
 @media all and (min-width: 675px) {
 
     body { padding-top: 2em; } 
