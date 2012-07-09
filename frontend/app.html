@@ -7,6 +7,7 @@
         <link rel="stylesheet" type="text/css" href="css/reset.css">
         <link rel="stylesheet" type="text/css" href="css/default.css">
         <link rel="stylesheet" type="text/css" href="css/sessions.css">
+        <link rel="stylesheet" type="text/css" href="css/speakers.css">
         
         <script type="text/javascript" src="js/vendor/modernizr-2.5.3.min.js"></script>
     </head>
@@ -65,11 +66,11 @@
             </div>
             <div class="details"> 
                 <div class="starts"> 
-                    <span>Starts: </span>
+                    <span>Starter: </span>
                     <%= starts.getDate() %>/<%= starts.getMonth() %> - <%= starts.getFullYear() %> <%= starts.getHours() %>:<%= starts.getMinutes() %>
                 </div>
                 <div class="ends">
-                    <span>Ends: </span>
+                    <span>Slutter: </span>
                     <%= ends.getDate() %>/<%= ends.getMonth() %> - <%= ends.getFullYear() %> <%= ends.getHours() %>:<%= ends.getMinutes() %>
                 </div>
             </div>
@@ -82,12 +83,12 @@
                 <a href="#" class="search">Søk</a>
                 <a href="#" class="reset">x</a>
             </div>
-            <ul class="session-list"></ul>
+            <ul></ul>
         </script>
         
         <!-- Template: Speaker -->
         <script id="speaker-template" type="text/template">
-            <%= name %>
+            <h2><%= name %></h2>
         </script>
 
         <script id="speaker-detail-template" type="text/template">
