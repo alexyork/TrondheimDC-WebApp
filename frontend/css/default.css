@@ -21,7 +21,7 @@ h2 {
 
 h3 {}
 
-p {}
+p { max-width: 550px; }
 
 a {
     text-decoration: underline;
@@ -118,6 +118,7 @@ footer {
     /* SESSION LIST */
     .sessions-list ul {
         list-style-type: none;
+        border-top: 1px solid #fff;
         }
 
         .sessions-list li {
