@@ -110,6 +110,15 @@
             </ul>
         </script>
         
+        <script id="twitter-list-template" type="text/template">
+            <ul class="tweets"></ul>
+        </script>
+        
+        <script id="twitter-template" type="text/template">
+            <h2>@<%= from_user %></h2>
+            <p><%= text %></p>
+        </script>
+        
         
         <!-- Scripts: Theirs -->
         <script type="text/javascript" src="js/vendor/json2.min.js"></script>
@@ -132,6 +141,8 @@
         <script type="text/javascript" src="js/app/views/SpeakerView.js"></script>
         <script type="text/javascript" src="js/app/views/SpeakersListView.js"></script>
         <script type="text/javascript" src="js/app/views/SpeakerDetailView.js"></script>
+        <script type="text/javascript" src="js/app/views/TwitterListView.js"></script>
+        <script type="text/javascript" src="js/app/views/TwitterView.js"></script>
         <script type="text/javascript" src="js/app/views/AppView.js"></script>
         
         <script type="text/javascript" src="js/app/routers/AppRouter.js"></script>

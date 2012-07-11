@@ -83,8 +83,9 @@
         });
     
         app.router.route('tweets', 'tweets', function() {
-            // TODO: render tweets
-            app.view.setContentView( /* tweets */);
+            var twitterView = new TrondheimDC.Views.TwitterListView();
+            twitterView.initialize();
+            app.view.setContentView(twitterView);
         });
         
         Backbone.history.start();
