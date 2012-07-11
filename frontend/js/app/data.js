@@ -36,11 +36,13 @@ TrondheimDC.Data.speakers = [
     {
         id: 1,
         name: "Alex York",
-        description: "One happy little Englishman."
+        description: "One happy little Englishman.",
+        image: "https://secure.gravatar.com/avatar/ca07b9ee4f081c2c968b59082c4cdc69?s=140&d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png"
     },
     {
         id: 2,
         name: "Andre Tangen",
-        description: "Bill Murray..?"
+        description: "Bill Murray..?",
+        image: "https://secure.gravatar.com/avatar/eb2dba407c818c9ec251c21a100870a5?s=140&d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png"
     }
 ];
