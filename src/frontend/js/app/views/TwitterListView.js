@@ -1,0 +1,44 @@
+if (typeof TrondheimDC === 'undefined' || !TrondheimDC) {
+    TrondheimDC = {};
+}
+if (typeof TrondheimDC.Views === 'undefined' || !TrondheimDC.Views) {
+    TrondheimDC.Views = {};
+}
+
+TrondheimDC.Views.TwitterListView = Backbone.View.extend({
+    
+    tagName: 'ul',
+    className: 'tweets',
+    template: _.template( "" ),
+    
+    events: {
+    },
+
+    tweets: [],
+    
+    initialize: function() {
+        var that = this;
+        $.getJSON("http://search.twitter.com/search.json?q=%23backbonejs&rpp=25&callback=?", function (data) {
+            that.tweets = data.results;
+            that.render();
+        });
+    },
+    
+    render: function() {
+        var twitterListHtml = this.template();
+        
+        this.$el.empty();
+        this.$el.html(twitterListHtml);
+        
+        var that = this;
+        console.log("this.tweets", this.tweets);
+        $.each(this.tweets, function(i, tweet) {
+            var twitterView = new TrondheimDC.Views.TwitterView({ model: tweet });
+            twitterView.render();
+            that.$el.append(twitterView.el);
+        });
+
+        return this;
+    }
+    
+});
