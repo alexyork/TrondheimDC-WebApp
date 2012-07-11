@@ -31,7 +31,7 @@ TrondheimDC.Views.TwitterListView = Backbone.View.extend({
         this.$el.html(twitterListHtml);
         
         var that = this;
-        console.log("this.tweets", this.tweets);
+        
         $.each(this.tweets, function(i, tweet) {
             var twitterView = new TrondheimDC.Views.TwitterView({ model: tweet });
             twitterView.render();
