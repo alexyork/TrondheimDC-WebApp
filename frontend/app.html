@@ -92,10 +92,10 @@
         </script>
 
         <script id="speaker-detail-template" type="text/template">
-            <h1><%= name %></h1>
             <% if (image != "") { %>
             <img src="<%= image %>" alt="Bilde av <%= name %>" />
             <% } %>
+            <h1><%= name %></h1>
             <% if (description != "") { %>
             <p><%= description %></p>
             <% } %>
