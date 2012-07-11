@@ -7,3 +7,20 @@
 		}
 	
 	.speakers-list li:hover, .speakers-list li:focus { background-color: #06F4ED; }
+
+.speaker h1,
+.speaker p {
+	float: left;
+	width: 78%;
+	}
+
+.speaker img {
+	float: left;
+	width: 20%;
+	margin-right: 2%;
+	}
+
+.speaker h2 {
+	clear: left;
+	padding-top: 20px;
+	}
