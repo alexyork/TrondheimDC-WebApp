@@ -78,8 +78,9 @@
         });
     
         app.router.route('favourites', 'favourites', function() {
-            // TODO: render favourites
-            app.view.setContentView( /* favourites */);
+            var favouritesListView = new TrondheimDC.Views.FavouritesListView({ collection: app.sessionsList });
+            favouritesListView.render();
+            app.view.setContentView( favouritesListView );
         });
     
         app.router.route('tweets', 'tweets', function() {
