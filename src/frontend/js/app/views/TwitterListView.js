@@ -18,7 +18,7 @@ TrondheimDC.Views.TwitterListView = Backbone.View.extend({
     
     initialize: function() {
         var that = this;
-        $.getJSON("http://search.twitter.com/search.json?q=%23backbonejs&rpp=25&callback=?", function (data) {
+        $.getJSON("http://search.twitter.com/search.json?q=%23tdconf&rpp=25&callback=?", function (data) {
             that.tweets = data.results;
             that.render();
         });
