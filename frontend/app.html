@@ -93,11 +93,11 @@
 
         <script id="speaker-detail-template" type="text/template">
             <% if (image != "") { %>
-            <img src="<%= image %>" alt="Bilde av <%= name %>" />
+                <img src="<%= image %>" alt="Bilde av <%= name %>" />
             <% } %>
             <h1><%= name %></h1>
-            <% if (description != "") { %>
-            <p><%= description %></p>
+            <% if (description) { %>
+                <p><%= description %></p>
             <% } %>
 
             <h2>Foredrag:</h2>
