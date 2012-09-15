@@ -23,7 +23,7 @@ TrondheimDC.Views.SessionsListView = Backbone.View.extend({
         window.app.on('filter:tag', this.search, this);
     },
     
-    render: function(collection) {
+    render: function(collection, isFavouriteView) {
         var collection = collection || this.collection;
         var sessionListHtml = this.template(this.model);
         
@@ -31,10 +31,12 @@ TrondheimDC.Views.SessionsListView = Backbone.View.extend({
         this.$el.html(sessionListHtml);
 
         collection.each(function( session ) {
-            var sessionView = new TrondheimDC.Views.SessionView({ model: session });
-            sessionView.render();
-            this.$el.find('ul').append( sessionView.el );
-            this.sessionViews[ session.get('id') ] = sessionView;
+            if (!isFavouriteView || session.isFavourited()) {
+                var sessionView = new TrondheimDC.Views.SessionView({ model: session });
+                sessionView.render();
+                this.$el.find('ul').append( sessionView.el );
+                this.sessionViews[ session.get('id') ] = sessionView;
+            }
         }, this);
         return this;
     },
