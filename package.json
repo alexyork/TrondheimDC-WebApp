@@ -2,8 +2,7 @@
     "name": "trondheim-dc-2012",
     "version": "0.0.1",
     "dependencies": {
-      "express": "2.5.1",
-      "jade": ">= 0.0.1"
+      "express": "2.5.1"
   },
   "engines": {
     "node": "0.4.7"
