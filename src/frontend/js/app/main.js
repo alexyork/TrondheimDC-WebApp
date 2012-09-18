@@ -54,13 +54,13 @@
             // Render the list into a view, and add to the DOM
             var sessionsListView = new TrondheimDC.Views.SessionsListView({ collection: app.sessionsList });
             sessionsListView.render();
-            app.view.setContentView( sessionsListView );
+            app.view.setContentView( 'sessions', sessionsListView );
         });
     
         app.router.route('sessions/:id', 'sessions', function(id) {
             var sessionsListView = new TrondheimDC.Views.SessionsListView({ collection: app.sessionsList });
             sessionsListView.render();
-            app.view.setContentView( sessionsListView );
+            app.view.setContentView( 'sessions', sessionsListView );
             sessionsListView.toggleOpenSessionBySessionId( id, 0 );
         });
     
@@ -68,7 +68,7 @@
             // TODO: render speakers
             var speakersListView = new TrondheimDC.Views.SpeakersListView({ collection: app.speakersList });
             speakersListView.render();
-            app.view.setContentView( speakersListView );
+            app.view.setContentView( 'speakers', speakersListView );
         });
     
         app.router.route('speakers/:id', 'speakers', function(id) {
@@ -80,13 +80,13 @@
         app.router.route('favourites', 'favourites', function() {
             var sessionsListView = new TrondheimDC.Views.SessionsListView();
             sessionsListView.render(app.sessionsList, true);
-            app.view.setContentView( sessionsListView );
+            app.view.setContentView( 'favourites', sessionsListView );
         });
     
         app.router.route('tweets', 'tweets', function() {
             var twitterView = new TrondheimDC.Views.TwitterListView();
             twitterView.initialize();
-            app.view.setContentView(twitterView);
+            app.view.setContentView( 'tweets', twitterView );
         });
         
         Backbone.history.start();
