@@ -1,0 +1,47 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+body #app {
+  font-family: "Helvetica Neue";
+  width: 660px;
+  margin: 50px auto 0px auto;
+}
+body #app .talks {
+  list-style-type: none;
+}
+body #app .talks .talk {
+  margin: 30px 0px 15px 0px;
+  padding: 10px;
+}
+body #app .talks .talk h1 {
+  font-size: 28px;
+  margin-bottom: 5px;
+  display: inline-block;
+  vertical-align: top;
+}
+body #app .talks .talk input[type="checkbox"] {
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 13px;
+  margin-right: 10px;
+  float: right;
+}
+body #app .talks .talk h2 {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+body #app .talks .talk .tags {
+  list-style-type: none;
+}
+body #app .talks .talk .tags .tag {
+  display: inline-block;
+  vertical-align: top;
+  padding: 5px 7px 5px 7px;
+  background: #72B372;
+  color: whitesmoke;
+  text-shadow: 1px 1px 1px #5D945D;
+  margin-right: 5px;
+  border-radius: 3px;
+}
+
