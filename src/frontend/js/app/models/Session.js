@@ -24,11 +24,11 @@ TrondheimDC.Models.Session = Backbone.Model.extend({
         return false;
     },
     
-    containsTag: function(tag) {
+    containsTag: function(tagToSearchFor) {
         var tags = this.get("tags");
         var matchFound = false;
-        _.each(tags, function(t) {
-            if (tag.toLowerCase().indexOf(t) > -1) {
+        _.each(tags, function(tag) {
+            if (tagToSearchFor.toLowerCase() === tag.toLowerCase()) {
                 matchFound = true;
             }
         })

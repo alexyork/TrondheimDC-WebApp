@@ -15,6 +15,19 @@ describe("SessionsList", function() {
             expect(searchResults.models[0].get("title")).toEqual("Jasmine is awesome");
         });
         
+        it("should find sessions with matching tags, and be case-insensitive", function() {
+            var sessionsList = new TrondheimDC.Collections.SessionsList();
+            sessionsList.reset([
+                { title: "ASP.NET ModelViewController is awesome", tags: [ "MVC", ".NET" ] },
+                { title: "JavaScript is awesome", tags: [ "javascript" ] }
+            ]);
+            
+            var searchResults = sessionsList.search("mvc");
+            
+            expect(searchResults.length).toEqual(1);
+            expect(searchResults.models[0].get("title")).toEqual("ASP.NET ModelViewController is awesome");
+        });
+        
         it("should find sessions with matching titles", function() {
             var sessionsList = new TrondheimDC.Collections.SessionsList();
             sessionsList.reset([
