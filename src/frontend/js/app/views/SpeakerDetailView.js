@@ -12,7 +12,6 @@ TrondheimDC.Views.SpeakerDetailView = Backbone.View.extend({
     template: _.template( document.getElementById('speaker-detail-template').innerHTML ),
     
     events: {
-        
     },
     
     initialize: function() {

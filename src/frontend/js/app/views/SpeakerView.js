@@ -20,7 +20,6 @@ TrondheimDC.Views.SpeakerView = Backbone.View.extend({
     
     render: function() {
         var json = this.model.toJSON();
-        //json.speaker = this.model.speaker.toString();
         var speakerHtml = this.template(json);
         this.$el.html(speakerHtml);
         return this;
