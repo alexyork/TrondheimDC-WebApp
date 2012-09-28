@@ -51,7 +51,6 @@
     
     function setupRoutes() {
         app.router.route('sessions', 'sessions', function() {
-            // Render the list into a view, and add to the DOM
             var sessionsListView = new TrondheimDC.Views.SessionsListView({ collection: app.sessionsList });
             sessionsListView.render();
             app.view.setContentView( 'sessions', sessionsListView );
@@ -65,7 +64,6 @@
         });
     
         app.router.route('speakers', 'speakers', function() {
-            // TODO: render speakers
             var speakersListView = new TrondheimDC.Views.SpeakersListView({ collection: app.speakersList });
             speakersListView.render();
             app.view.setContentView( 'speakers', speakersListView );

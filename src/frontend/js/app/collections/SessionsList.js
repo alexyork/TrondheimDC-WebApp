@@ -32,15 +32,15 @@ TrondheimDC.Collections.SessionsList = Backbone.Collection.extend({
     },
 
     getFavourited: function() {
-        var currentFavourites, filteredSessionsList
-        currentFavourites = JSON.parse( localStorage.getItem(this.model.localStorageFavouritesKey) )
+        var currentFavourites, filteredSessionsList;
+        currentFavourites = JSON.parse( localStorage.getItem(this.model.localStorageFavouritesKey) );
         filteredSessionsList = new TrondheimDC.Collections.SessionsList();
         filteredSessionsList.reset(
             this.filter(function(session) {
-                return session.isFavourited()
+                return session.isFavourited();
             })
-        )
-        return filteredSessionsList
+        );
+        return filteredSessionsList;
     }
     
 });
