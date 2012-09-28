@@ -72,7 +72,7 @@
         app.router.route('speakers/:id', 'speakers', function(id) {
             var speakerView = new TrondheimDC.Views.SpeakerDetailView({ collection: app.speakersList.getById(id) });
             speakerView.render();
-            app.view.setContentView( speakerView );
+            app.view.setContentView( 'speakers', speakerView );
         });
     
         app.router.route('favourites', 'favourites', function() {
