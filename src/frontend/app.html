@@ -95,13 +95,14 @@
             <h2><%= name %></h2>
         </script>
 
+        <!-- Template: Speaker Detail -->
         <script id="speaker-detail-template" type="text/template">
             <% if (image != "") { %>
                 <img src="<%= image %>" alt="Bilde av <%= name %>" />
             <% } %>
             <h1><%= name %></h1>
             <% if (about) { %>
-            <p><%= about %></p>
+                <p><%= about %></p>
             <% } %>
 
             <h2>Foredrag:</h2>
@@ -114,10 +115,12 @@
             </ul>
         </script>
         
+        <!-- Template: Twitter List -->
         <script id="twitter-list-template" type="text/template">
             <ul class="tweets"></ul>
         </script>
         
+        <!-- Template: Tweet -->
         <script id="twitter-template" type="text/template">
             <h2><a href="http://www.twitter.com/<%= from_user %>">@<%= from_user %></a></h2>
             <p><%= text %></p>
