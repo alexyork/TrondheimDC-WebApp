@@ -78,8 +78,8 @@
         });
     
         app.router.route('favourites', 'favourites', function() {
-            var sessionsListView = new TrondheimDC.Views.SessionsListView();
-            sessionsListView.render(app.sessionsList, true);
+            var sessionsListView = new TrondheimDC.Views.SessionsListView({ collection: app.sessionsList.getFavourited() });
+            sessionsListView.render();
             app.view.setContentView( 'favourites', sessionsListView );
         });
     
