@@ -85,7 +85,24 @@ describe("SessionsList", function() {
             expect(favouritedIds).toContain(103)
         })
         
-
     })
+    
+    describe("getById", function() {
+    
+        it("should return the correct speaker based on the session ID", function() {
+            var sessionsList = new TrondheimDC.Collections.SessionsList();
+
+            var sessionA = new TrondheimDC.Models.Session({ id: 123, title: "Foo" });
+            var sessionB = new TrondheimDC.Models.Session({ id: 666, title: "Bar" });
+
+            sessionsList.reset([ sessionA, sessionB ]);
+            
+            var session = sessionsList.getById(666);
+            
+            expect(session.get('id')).toEqual(666);
+            expect(session.get('title')).toEqual("Bar");
+        });
+    
+    });
     
 });
