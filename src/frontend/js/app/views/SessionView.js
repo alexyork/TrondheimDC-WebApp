@@ -35,8 +35,8 @@ TrondheimDC.Views.SessionView = Backbone.View.extend({
 
     toggleOpen: function( ms ) {
         var details = this.$el.find( '.details' );
-        if ( !details.is(':visible') );
-            app.router.navigate( 'sessions/' + this.model.get('id'), { trigger: false } );   
+        //if ( !details.is(':visible') )
+            //app.router.navigate( 'sessions/' + this.model.get('id'), { trigger: false } );
         details.slideToggle( ms );
     },
 
@@ -50,6 +50,7 @@ TrondheimDC.Views.SessionView = Backbone.View.extend({
     
     navigateToSession: function() {
         console.log("navigateToSession", arguments);
+        app.router.navigate('sessions/' + this.model.get('id'), { trigger: true });
     }
     
 });

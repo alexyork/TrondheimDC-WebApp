@@ -15,11 +15,11 @@ TrondheimDC.Views.AppView = Backbone.View.extend({
     },
 
     setContentView: function( name, view ) {
-        if(this.contentView) {
+        if (this.contentView) {
             this.contentView.unbind();
             this.contentView.remove();
         }
-        if(view) {
+        if (view) {
             this.setSelectedTab( name )
             this.contentView = view;
             this.$el.find("#app-content").html( $(this.contentView.el) );

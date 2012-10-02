@@ -83,7 +83,26 @@
         
         <!-- Template: Session Detail -->
         <script id="session-detail-template" type="text/template">
-            <p>Session detail</p>
+            <h1><%= title %></h1>
+            <p><%= abstract %></p>
+            
+            <p>
+                Speakers:
+                <% _.each(speakerIds, function(speakerId, index) { %>
+                    <span><%= speakerId %></span>,
+                <% }); %>
+            </p>
+            
+            <p>
+                Tags:
+                <% _.each(tags, function(tag, index) { %>
+                    <span><%= tag %></span>,
+                <% }); %>
+            </p>
+            
+            <p>ID: <%= id %></p>
+            <p>Start: <%= starts %></p>
+            <p>End: <%= ends %></p>
         </script>
         
         <!-- Template: Sessions List and Speakers List -->
@@ -151,6 +170,7 @@
         
         <script type="text/javascript" src="js/app/views/SessionView.js"></script>
         <script type="text/javascript" src="js/app/views/SessionsListView.js"></script>
+        <script type="text/javascript" src="js/app/views/SessionDetailView.js"></script>
         <script type="text/javascript" src="js/app/views/SpeakerView.js"></script>
         <script type="text/javascript" src="js/app/views/SpeakersListView.js"></script>
         <script type="text/javascript" src="js/app/views/SpeakerDetailView.js"></script>

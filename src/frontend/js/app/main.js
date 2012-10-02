@@ -57,10 +57,10 @@
         });
     
         app.router.route('sessions/:id', 'sessions', function(id) {
-            var sessionsListView = new TrondheimDC.Views.SessionsListView({ collection: app.sessionsList });
-            sessionsListView.render();
-            app.view.setContentView( 'sessions', sessionsListView );
-            sessionsListView.toggleOpenSessionBySessionId( id, 0 );
+            var sessionDetailView = new TrondheimDC.Views.SessionDetailView({ collection: app.sessionsList.getById(id) });
+            sessionDetailView.render();
+            app.view.setContentView( 'sessions', sessionDetailView );
+            //sessionsListView.toggleOpenSessionBySessionId( id, 0 );
         });
     
         app.router.route('speakers', 'speakers', function() {
