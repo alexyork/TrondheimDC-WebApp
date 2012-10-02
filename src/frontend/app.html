@@ -77,8 +77,8 @@
             
             <p>
                 Speakers:
-                <% _.each(speakerIds, function(speakerId, index) { %>
-                    <span><%= speakerId %></span>,
+                <% _.each(speakers, function(speaker, index) { %>
+                    <span><%= speaker.name %></span>,
                 <% }); %>
             </p>
             
