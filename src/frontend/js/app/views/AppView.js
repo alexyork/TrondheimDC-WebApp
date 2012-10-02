@@ -10,8 +10,8 @@ TrondheimDC.Views.AppView = Backbone.View.extend({
     el: $("body"),
 
     setSelectedTab: function( name ) {
-        this.$el.find( 'header nav ul li.selected' ).removeClass( 'selected' )
-        this.$el.find( 'header nav ul li a[href="' +name+ '"]' ).parents( 'li' ).addClass( 'selected' )
+        this.$el.find( 'header nav ul li.selected' ).removeClass( 'selected' );
+        this.$el.find( 'header nav ul li a[href="' + name + '"]' ).parents( 'li' ).addClass( 'selected' );
     },
 
     setContentView: function( name, view ) {
@@ -20,7 +20,7 @@ TrondheimDC.Views.AppView = Backbone.View.extend({
             this.contentView.remove();
         }
         if (view) {
-            this.setSelectedTab( name )
+            this.setSelectedTab( name );
             this.contentView = view;
             this.$el.find("#app-content").html( $(this.contentView.el) );
         }
