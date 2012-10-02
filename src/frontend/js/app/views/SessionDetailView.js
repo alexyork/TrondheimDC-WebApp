@@ -19,14 +19,7 @@ TrondheimDC.Views.SessionDetailView = Backbone.View.extend({
     
     render: function() {
         var json = this.collection.toJSON();
-        
-        var speakers = [];
-        _.each(json.speakerIds, function(speakerId, index) {
-            var speaker = app.speakersList.getById(speakerId).toJSON();
-            speakers.push(speaker);
-        });
-        json.speakers = speakers;
-        console.log(json.speakers);
+        json.speakers = app.speakersList.getByIds(json.speakerIds).toJSON();
         
         var speakerHtml = this.template(json);
         this.$el.html(speakerHtml);
