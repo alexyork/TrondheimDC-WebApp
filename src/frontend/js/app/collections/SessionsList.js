@@ -45,8 +45,9 @@ TrondheimDC.Collections.SessionsList = Backbone.Collection.extend({
     
     getById: function(id) {
         for (var i = 0; i < this.length; i++) {
-            if (this.models[i].get("id") == id)
+            if (this.models[i].get("id") == id) {
                 return this.models[i];
+            }
         }
     }
     
