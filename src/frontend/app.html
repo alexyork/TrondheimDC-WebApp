@@ -56,7 +56,7 @@
         <!-- Template: Session -->
         <script id="session-template" type="text/template">
             <input class="favourite" type="checkbox"  <% if(favourited){ %> checked <% } %> />
-            <h1><%= title %></h1>
+            <h1 class="title"><a href="sessions/<%= id %>"><%= title %></a></h1>
             <h2>
                 av
                 <% _.each(speakers, function(speaker, index) { %>
@@ -68,6 +68,7 @@
                     <span class="tag"><%= tag %></span>
                 <% }); %>
             </div>
+            <a href="#" class="expand">Expand</a>
             <div class="details"> 
                 <div class="starts"> 
                     <span>Starter: </span>
@@ -78,6 +79,11 @@
                     <%= ends.getDate() %>/<%= ends.getMonth() %> - <%= ends.getFullYear() %> <%= ends.getHours() %>:<%= ends.getMinutes() %>
                 </div>
             </div>
+        </script>
+        
+        <!-- Template: Session Detail -->
+        <script id="session-detail-template" type="text/template">
+            <p>Session detail</p>
         </script>
         
         <!-- Template: Sessions List and Speakers List -->
