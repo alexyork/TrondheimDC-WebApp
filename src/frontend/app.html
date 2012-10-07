@@ -82,6 +82,7 @@
                     <a class="speaker" href="speakers/<%= speaker.id %>"><%= speaker.name %></a>
                 <% }); %>
             </h2>
+            <p>Track: <%= track %>. Time: <%= moment(starts).format("HH:mm") %> - <%= moment(ends).format("HH:mm") %></p>
             <div class="tags">
                 <% _.each(tags, function(tag, index) { %>
                     <span class="tag"><%= tag %></span>
