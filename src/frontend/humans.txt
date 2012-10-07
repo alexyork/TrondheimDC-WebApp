@@ -1,0 +1,22 @@
+/* TEAM */
+Art Director: Klaus Nystad
+Art Director: Rolf Anders Storeset
+
+ 
+Developer: Pål Eirik Strøm
+Twitter: @peirix
+Web: flavors.me/peirix
+
+Developer: Alex York
+
+Developer: Andre Tangen
+
+Front end developer: Hege Røkenes
+Twitter: @hegerokenes
+Web: hege.rokenes.com
+
+
+/* CONTENT */
+All content belongs to Trondheim Developer Conference 
+
+Location: Trondheim, Norway 
