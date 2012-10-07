@@ -51,11 +51,11 @@
     
     function setupRoutes() {
         app.router.route('sessions', 'sessions', function() {
-            var sessionsListView = new TrondheimDC.Views.SessionsListView({ collection: app.sessionsList });
-            sessionsListView.render();
-            app.view.setContentView( 'sessions', sessionsListView );
+            var timeslotsListView = new TrondheimDC.Views.SessionsByTimeslotListView({ collection: app.sessionsList.groupByTimeslot() });
+            timeslotsListView.render();
+            app.view.setContentView( 'sessions', timeslotsListView );
         });
-    
+       
         app.router.route('sessions/:id', 'sessions', function(id) {
             var sessionDetailView = new TrondheimDC.Views.SessionDetailView({ collection: app.sessionsList.getById(id) });
             sessionDetailView.render();

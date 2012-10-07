@@ -5,6 +5,22 @@ if (typeof TrondheimDC.Views === "undefined" || !TrondheimDC.Views) {
     TrondheimDC.Views = {};
 }
 
+TrondheimDC.Views.TimeslotView = Backbone.View.extend({
+
+    tagName: 'li',
+    className: 'timeslot',
+    
+    initialize: function() {
+    },
+    
+    render: function() {
+        var sessionHtml = "<span>" + this.model + "</span>";
+        this.$el.html( sessionHtml );
+        return this;
+    }
+
+});
+
 TrondheimDC.Views.SessionView = Backbone.View.extend({
     
     tagName: 'li',

@@ -49,6 +49,20 @@ TrondheimDC.Collections.SessionsList = Backbone.Collection.extend({
                 return this.models[i];
             }
         }
+    },
+    
+    groupByTimeslot: function() {
+        var groupedSessions = _.groupBy(this.models, function(session) {
+            var startingHour = session.get("starts").getHours();
+            switch (startingHour) {
+                case 9:  return "09:00 - 10:00";
+                case 10: return "10:00 - 11:00";
+                case 11: return "11:00 - 12:00";
+                case 12: return "12:00 - 13:00";
+            }
+        });
+        // TODO: should I be returning a backbone collection here?
+        return groupedSessions;
     }
     
 });

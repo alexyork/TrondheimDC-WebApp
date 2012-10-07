@@ -53,6 +53,21 @@
             </footer>
         </div>
         
+        <!-- Template: Timeslots List and Speakers List -->
+        <script id="list-template" type="text/template">
+            <div class="searchbar">
+                <input class="searchTerm" type="text" placeholder="Søk etter foredrag..." />
+                <a href="#" class="search">Søk</a>
+                <a href="#" class="reset">x</a>
+            </div>
+            <ul></ul>
+        </script>
+        
+        <!-- Template: Sessions List -->
+        <script id="sessions-list-template" type="text/template">
+            <ul class="sessions"></ul>
+        </script>
+        
         <!-- Template: Session -->
         <script id="session-template" type="text/template">
             <input class="favourite" type="checkbox"  <% if(favourited){ %> checked <% } %> />
@@ -92,16 +107,6 @@
             <p>ID: <%= id %></p>
             <p>Start: <%= starts %></p>
             <p>End: <%= ends %></p>
-        </script>
-        
-        <!-- Template: Sessions List and Speakers List -->
-        <script id="list-template" type="text/template">
-            <div class="searchbar">
-                <input class="searchTerm" type="text" placeholder="Søk etter foredrag..." />
-                <a href="#" class="search">Søk</a>
-                <a href="#" class="reset">x</a>
-            </div>
-            <ul></ul>
         </script>
         
         <!-- Template: Speaker -->
@@ -157,6 +162,7 @@
         <script type="text/javascript" src="js/app/collections/SessionsList.js"></script>
         <script type="text/javascript" src="js/app/collections/SpeakersList.js"></script>
         
+        <script type="text/javascript" src="js/app/views/SessionsByTimeslotListView.js"></script>
         <script type="text/javascript" src="js/app/views/SessionView.js"></script>
         <script type="text/javascript" src="js/app/views/SessionsListView.js"></script>
         <script type="text/javascript" src="js/app/views/SessionDetailView.js"></script>
