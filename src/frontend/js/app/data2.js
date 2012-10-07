@@ -12,8 +12,9 @@ TrondheimDC.Data.sessions = [
         abstract: "Although a great deal of the enthusiasm for Agile development initially grew from software developers, much of the current focus in Agile circles has moved to on organisational aspects, product management and soft skills. Craftsmanship has long been a quality and a metaphor applied to software development, but more recently software craftsmanship has emerged as a more explicit movement and branding focused on reclaiming and re-emphasising the importance of the detail, of how to code and how to do it well. There are many different perspectives on what the craftsmanship metaphor implies and what benefits and liabilities it may have. This keynote lays out and explores the motivation, implications, pros and cons of a craftsmanship view of software development.",
         speakerIds: [1],
         tags: ["Craftsmanship", "Smidig", "Motiverende", "Utvikling"],
-        starts: new Date(0000, 00, 00, 00, 00, 00),
-        ends: new Date(0000, 00, 00, 00, 00, 00)
+        starts: new Date(2012, 09, 29, 09, 00, 00),
+        ends: new Date(2012, 09, 29, 09, 50, 00),
+        track: 1
     }, 
     {
         id: 2,
@@ -21,8 +22,9 @@ TrondheimDC.Data.sessions = [
         abstract: "Meldinger er en fleksibel, sikker og interoperatibel måte å integrere distribuerte løsninger på. Med skyen hengende over oss trenger vi mekanismer og teknologi som fungerer på tvers av tradisjonelle og nye muligheter å sette sammen løsninger på. I dette foredraget vil vi vise hva .NET, Windows og Windows Azure har å by på i så henseende.",
         speakerIds: [10],
         tags: [ "Arkitektur", "Back-end", "Cloud", "Azure", "Integrasjon" ],
-        starts: new Date(0000, 00, 00, 00, 00, 00),
-        ends: new Date(0000, 00, 00, 00, 00, 00)
+        starts: new Date(2012, 09, 29, 09, 00, 00),
+        ends: new Date(2012, 09, 29, 09, 50, 00),
+        track: 2
     },
     {
         id: 3,
@@ -30,8 +32,9 @@ TrondheimDC.Data.sessions = [
         abstract: "Eclipse er blant verdens største åpen-kildekode-prosjekter. Nærmere to hundre store og små bedrifter, derav industriledere, bidrar med til sammen 650 aktive utviklere. Hvordan henger organisasjonen sammen og hvordan kan titalls millioner linjer kode leveres på dato - hvert år?",
         speakerIds: [17],
         tags: [ "Verktøy", "Smidig", "Team", "Organisasjon", "Java"],
-        starts: new Date(0000, 00, 00, 00, 00, 00),
-        ends: new Date(0000, 00, 00, 00, 00, 00)
+        starts: new Date(2012, 09, 29, 09, 00, 00),
+        ends: new Date(2012, 09, 29, 09, 50, 00),
+        track: 3
     },
     {
         id: 4,
@@ -39,8 +42,9 @@ TrondheimDC.Data.sessions = [
         abstract: "Alle vet at .NET er en Microsoft-teknologi som kjører på Windows. Men ikke alle vet at .NET også kjører på en mengde andre plattformer! Vi snakker om MacOS, Linux, iOS, Android, spillkonsoller og embedded platformer. I dette foredraget vil jeg fortelle om de mulighetene som finnes og hva som gjør de interessante.",
         speakerIds: [16],
         tags: [ ".NET", "Mobil", "Kryss-plattform" ],
-        starts: new Date(0000, 00, 00, 00, 00, 00),
-        ends: new Date(0000, 00, 00, 00, 00, 00)
+        starts: new Date(2012, 09, 29, 09, 00, 00),
+        ends: new Date(2012, 09, 29, 09, 50, 00),
+        track: 4
     },
     {
         id: 5,
@@ -48,8 +52,9 @@ TrondheimDC.Data.sessions = [
         abstract: "Er du nysgjerrig på ASP.NET Web API så er dette presentasjonen for deg. Vi kommer etter en kort bakgrundspresentasjon ha en praktisk gjennomgang på hvor enkelt det er å begynne med ASP.NET Web API.",
         speakerIds: [8],
         tags: [".NET", "Web", "API", "Arkitektur"],
-        starts: new Date(0000, 00, 00, 00, 00, 00),
-        ends: new Date(0000, 00, 00, 00, 00, 00)
+        starts: new Date(2012, 09, 29, 10, 00, 00),
+        ends: new Date(2012, 09, 29, 10, 50, 00),
+        track: 1
     },
     {
         id: 6,
@@ -57,8 +62,9 @@ TrondheimDC.Data.sessions = [
         abstract: "Webprogrammering på klientsiden har vært plaget av manglende struktur og en uheldig sammenblanding av domenemodell og presentasjonslogikk. Dette gir lite testbar kode, og dermed et smertefullt vedlikehold. Kristian presenterer backbone.js kombinert med et REST-api som en mulig vei ut av kaoset.",
         speakerIds: [5],
         tags: [ "JavaScript", "MVC", "Rest", "Backbone", "Kodekvalitet", "Klientside" ],
-        starts: new Date(0000, 00, 00, 00, 00, 00),
-        ends: new Date(0000, 00, 00, 00, 00, 00)
+        starts: new Date(2012, 09, 29, 10, 00, 00),
+        ends: new Date(2012, 09, 29, 10, 50, 00),
+        track: 2
     },
     {
         id: 7,
@@ -66,8 +72,9 @@ TrondheimDC.Data.sessions = [
         abstract: "The word Agile has passed into the wider buzzwordsphere familiar to all in development. But that does not mean its concepts, culture, associated processes and practices or implications are as widely understood. Agile development involves more than a passing familiarity with Scrum terminology, more than the occasional use of an automated testing framework and more than simply rebranding either a chaotic or bureaucratic in-house process and proclaiming 'We're Agile!'' Architecture is often placed falsely in conflict with Agile approaches, and vice versa. Architecture is not something that is completed and set in stone in a design phase, caught and trapped in a document, administered and policed by a select few. Architecture defines the significant decisions that characterise a system, decisions that are discovered and made at different times during the process of development, and by different roles. This session explores the practical relationship between Agile process and Agile architecture.",
         speakerIds: [1],
         tags: [ "Lyntale", "Arkitektur", "Smidig" ],
-        starts: new Date(0000, 00, 00, 00, 00, 00),
-        ends: new Date(0000, 00, 00, 00, 00, 00)
+        starts: new Date(2012, 09, 29, 10, 00, 00),
+        ends: new Date(2012, 09, 29, 10, 50, 00),
+        track: 3
     },
     {
         id: 8,
@@ -75,17 +82,19 @@ TrondheimDC.Data.sessions = [
         abstract: "Developing interactive and beautiful apps and websites has been difficult and limited in the past - if you wanted to go fancy, Adobe Flash was the way to go. With Bonsai, an open-source Graphics and Animation Library built in JavaScript, you now can create stunning content similar to Adobe Flash. Bonsai’s simple API makes optimal use of different “HMTL5” technologies such as SVG, CSS3, WebWorkers and even nodejs. During this talk we will look into the unique architecture of Bonsai, including the separation of rendering and script execution and its plugin infrastructure. We will explore the rendering engine(s), such as the SVG renderer and the environment agnostic script runner (running in the window thread, WebWorker or even on nodejs).</p><p>Bonsai is also the JavaScript-Library that powers our new Flash (including ActionScript 3) to JavaScript Converter <a href='http://pixelplant.com'>http://pixelplant.com</a> and its ActionScript 3 plugin tries to preserve Flash semantics in JavaScript, giving Flash developers an easier entry point to JavaScript and HTML5.</p><p>After this talk you will have a good overview of Bonsai’s intuitive and simple JavaScript API and how we use the open web to draw interactive graphics. Find everything at <a href='http://bonsaijs.org'>http://bonsaijs.org</a>",
         speakerIds: [4],
         tags: [ "JavaScript", "Klientside", "Web", "Interaksjon" ],
-        starts: new Date(0000, 00, 00, 00, 00, 00),
-        ends: new Date(0000, 00, 00, 00, 00, 00)
+        starts: new Date(2012, 09, 29, 10, 00, 00),
+        ends: new Date(2012, 09, 29, 10, 50, 00),
+        track: 4
     },
-        {
+    {
         id: 9,
         title: "From Chaos to Self Organization",
         abstract: "Based on his upcoming book, Roy Osherove discusses the three phases software teams may exist in, and how to navigate between them. Being unaware of these phases could be one of the biggest reasons why agile adoption fails in many teams. Roy also discusses the role of the team leader in a team, and how leadership style needs to change between team phases.",
         speakerIds: [2],
         tags: ["Team", "Selvorganiserte team", "Smidig", "Teamledelse" ],
-        starts: new Date(0000, 00, 00, 00, 00, 00),
-        ends: new Date(0000, 00, 00, 00, 00, 00)
+        starts: new Date(2012, 09, 29, 11, 00, 00),
+        ends: new Date(2012, 09, 29, 11, 50, 00),
+        track: 1
     },
     {
         id: 10,
@@ -93,8 +102,9 @@ TrondheimDC.Data.sessions = [
         abstract: 'In this talk Roy Osherove, author of "The art of Unit Testing", discusses one of the biggest unknowns to most people doing unit testing and tdd - how isolation(mocking) frameworks work, and why do some of them have very different abilities than others. Why can some frameworks fake static calls and others can&#39;t for example. After this talk you will be better equipped to choose a framework for your next project.',
         speakerIds: [2],
         tags: [".NET", "TDD", "Enhetstesting", "Mocking", "Verktøy" ],
-        starts: new Date(0000, 00, 00, 00, 00, 00),
-        ends: new Date(0000, 00, 00, 00, 00, 00)
+        starts: new Date(2012, 09, 29, 11, 00, 00),
+        ends: new Date(2012, 09, 29, 11, 50, 00),
+        track: 2
     },
     {
         id: 11,
@@ -102,8 +112,9 @@ TrondheimDC.Data.sessions = [
         abstract: "Arkitektur-patterns som kan være med deg fra forsiktig start til viral vekst. Systemarkitektur for web-baserte applikasjoner, fra nøktern hardware til gradvis og plutselig vekst. Praktiske eksempler i forskjellige språk vil bli presentert.",
         speakerIds: [19],
         tags: [ "Arkitektur", "Web", "Back-end"],
-        starts: new Date(0000, 00, 00, 00, 00, 00),
-        ends: new Date(0000, 00, 00, 00, 00, 00)
+        starts: new Date(2012, 09, 29, 11, 00, 00),
+        ends: new Date(2012, 09, 29, 11, 50, 00),
+        track: 3
     },
     {
         id: 12,
@@ -111,8 +122,9 @@ TrondheimDC.Data.sessions = [
         abstract: "Beskrivelse: «Erfaringsbasert presentasjon av betingelsene for at scrum og iterasjoner kan gi verdi og hvorfor det noen ganger er mindre viktig. Kjennskap til scrum er en fordel.»",
         speakerIds: [12],
         tags: [ "Lyntale",  "Iterasjoner", "Scrum", "Smidig"],
-        starts: new Date(0000, 00, 00, 00, 00, 00),
-        ends: new Date(0000, 00, 00, 00, 00, 00)
+        starts: new Date(2012, 09, 29, 11, 00, 00),
+        ends: new Date(2012, 09, 29, 11, 50, 00),
+        track: 4
     },
     {
         id: 13,
@@ -120,8 +132,9 @@ TrondheimDC.Data.sessions = [
         abstract: "Lean production can be described as both a philosophy and set of tools and techniques that aims to identify and eliminate all waste in manufacturing operations. The lean paradigm stems from the Just-in-Time (JIT) movement of the 1980s, and has its roots set firmly in the Toyota Production System (TPS). A central element of JIT and TPS is the Kanban system. Powell presents the development of the Kanban system and explains the underlying assumptions which are critical to the success of this approach.",
         speakerIds: [11],
         tags: [ "Lyntale", "Kanban", "Smidig", "Lean" ],
-        starts: new Date(0000, 00, 00, 00, 00, 00),
-        ends: new Date(0000, 00, 00, 00, 00, 00)
+        starts: new Date(2012, 09, 29, 12, 00, 00),
+        ends: new Date(2012, 09, 29, 12, 50, 00),
+        track: 0
     },
     {
         id: 14,
@@ -129,8 +142,9 @@ TrondheimDC.Data.sessions = [
         abstract: "Ingen lager lite brukervennlige systemer med vilje. Hvorfor hvis alle gjør sitt beste, hvorfor blir ikke systemene automatisk brukervennlig? En av grunnene er at det du synes er logisk ikke nødvendigvis er logisk for andre. I foredraget gir jeg eksempler på grunnleggende prinsipper innen interaksjonsdesign og viser eksempler fra arbeid med å sikre brukervennligheten til virksomhetskritiske it-systemer.",
         speakerIds: [6],
         tags: [ "Brukeropplevelse", "Interaksjon" ],
-        starts: new Date(0000, 00, 00, 00, 00, 00),
-        ends: new Date(0000, 00, 00, 00, 00, 00)
+        starts: new Date(2012, 09, 29, 12, 00, 00),
+        ends: new Date(2012, 09, 29, 12, 50, 00),
+        track: 0
     },
     {
         id: 15,
@@ -138,8 +152,9 @@ TrondheimDC.Data.sessions = [
         abstract: 'In this talk we will look at a real and fairly complex implementation of a "mobile application" based on open web standards. We will look at how the application is build to adopt itself to different screen sizes, how it uses modern browser API&#39;s and how it live on both a URL and can be shipped to several app stores with more or less no code adjustment.<br/> We will look at different challenges one face in the client when doing mobile development and how they have been conquer. We will look at do and do not do&#39;s and we will draw out the underlaying architecture of the whole application and what has led to the different choices. <br/>The application is written entirely in JavaScript and when designing the client it became clear it would be a huge benefit to have the same language running on the server side. We will also look at how node.js made it possible to deal with real time data in a way that benefits the mobile client.',
         speakerIds: [3],
         tags: [ "JavaScript", "Klientside", "Mobil", "Kryss-plattform"],
-        starts: new Date(0000, 00, 00, 00, 00, 00),
-        ends: new Date(0000, 00, 00, 00, 00, 00)
+        starts: new Date(2012, 09, 29, 12, 00, 00),
+        ends: new Date(2012, 09, 29, 12, 50, 00),
+        track: 0
     },
     {
         id: 16,
@@ -147,8 +162,9 @@ TrondheimDC.Data.sessions = [
         abstract: "Hvor viktig er det å kunne noe om psykologi for designere? Hvorfor er det viktig, og når kan det hjelpe? Hvilke deler av psykologien bør vi se til? Hvilke konkrete regler og prinsipper kan vi dra ut av dette? Kom og lær!",
         speakerIds: [22],
         tags: [ "Design", "Interaksjon", "Psykologi" ],
-        starts: new Date(0000, 00, 00, 00, 00, 00),
-        ends: new Date(0000, 00, 00, 00, 00, 00)
+        starts: new Date(2012, 09, 29, 12, 00, 00),
+        ends: new Date(2012, 09, 29, 12, 50, 00),
+        track: 0
     },  
     {
         id: 17,
@@ -156,8 +172,9 @@ TrondheimDC.Data.sessions = [
         abstract: "Storbritannia og USA har ledet an i bevegelsen for å dele strukturerte data åpent på nett i semantisk form. Denne presentasjonen ser på fordeler og ulemper med å dele data på denne måten, og hva semantikk faktisk kan gjøre for oss. Vi tar også for oss noen konkrete eksempler.",
         speakerIds: [15],
         tags: [ "Web", "API" ],
-        starts: new Date(0000, 00, 00, 00, 00, 00),
-        ends: new Date(0000, 00, 00, 00, 00, 00)
+        starts: new Date(2012, 09, 29, 12, 00, 00),
+        ends: new Date(2012, 09, 29, 12, 50, 00),
+        track: 0
     },
     {
         id: 18,
@@ -165,8 +182,9 @@ TrondheimDC.Data.sessions = [
         abstract: "Det er på tide å kalle en spade en spade. En feature er ikke ferdig før den er i produksjon, og fungerer, og brukes. Tore forteller hvordan man blir helt ferdig, og hvem som må sørge for at det skjer.",
         speakerIds: [18],
         tags: [ "Smidig", "Organisasjon", "Lyntale" ],
-        starts: new Date(0000, 00, 00, 00, 00, 00),
-        ends: new Date(0000, 00, 00, 00, 00, 00)
+        starts: new Date(2012, 09, 29, 12, 00, 00),
+        ends: new Date(2012, 09, 29, 12, 50, 00),
+        track: 0
     },
     {
         id: 19,
@@ -174,8 +192,9 @@ TrondheimDC.Data.sessions = [
         abstract: "Trondheims-baserte Outracks Technologies utvikler verktøyet Realtime Studio som lover å ta interaktive og grafiske brukeropplevelser til et helt nytt nivå. Ved hjelp av et grensesprengende nytt programmeringsspråk kalt Uno og det visuelle designverktøyet Realtime Studio får du tilgang til all kraften i grafikkprosessoren (GPU'en) i enhetene rundt deg, for eksempel PCer, nettlesere, mobiltelefoner og tablets.<br/>Du kan lage interaktive programmer i 2D eller 3D, og eksportere fra en enkelt kodebase til alle mulige platformer, enten som native apps eller som HTML5-sider uten behov for plug-ins. Uno tilbyr utviklere en myk overgang fra konservativ HTML5 til å kunne leke med effekter og teknikker gjort mulig av nye teknologier som WebGL, OpenGL ES 3.0 og DirectX 11, uten å låse seg til en enkelt platform.<br/>Anders Lassen gir oss i denne showcasen en innføring i tankegangen og de tekniske gjennombruddene som gjør Realtime Studio mulig, og inviterer deltakere på TDC til å melde seg på et eksklusivt pilotprogram.",
         speakerIds: [21],
         tags: [ "Interaksjon", "Verktøy", "Klientside", "Programmeringsspråk" ],
-        starts: new Date(0000, 00, 00, 00, 00, 00),
-        ends: new Date(0000, 00, 00, 00, 00, 00)
+        starts: new Date(2012, 09, 29, 12, 00, 00),
+        ends: new Date(2012, 09, 29, 12, 50, 00),
+        track: 0
     },
     {
         id: 20,
@@ -183,8 +202,9 @@ TrondheimDC.Data.sessions = [
         abstract: "Ein kort kikk på kvifor nokre ting fungerer betre, med utgangspunkt i psykologi og vitenskap i Kanban.",
         speakerIds: [20],
         tags: [ "Smidig", "Kanban", "Psykologi", "Lyntale" ],
-        starts: new Date(0000, 00, 00, 00, 00, 00),
-        ends: new Date(0000, 00, 00, 00, 00, 00)
+        starts: new Date(2012, 09, 29, 12, 00, 00),
+        ends: new Date(2012, 09, 29, 12, 50, 00),
+        track: 0
     },     
     {
         id: 21,
@@ -192,8 +212,9 @@ TrondheimDC.Data.sessions = [
         abstract: "Ikke alle lever og jobber i en verden som består langvarige, store prosjekter og dedikerte team. Vi deler erfaringer fra en hverdag fylt med en uforutsigbar blanding av forvaltning, nyutvikling og adhoc-oppgaver hvor vi likevel greier å bevare team-følelse, samt gjøre kundene fornøyde.",
         speakerIds: [13, 14],
         tags: [ "Lyntale", "Team", "Smidig" ],
-        starts: new Date(0000, 00, 00, 00, 00, 00),
-        ends: new Date(0000, 00, 00, 00, 00, 00)
+        starts: new Date(2012, 09, 29, 12, 00, 00),
+        ends: new Date(2012, 09, 29, 12, 50, 00),
+        track: 0
     },
     {
         id: 22,
@@ -201,8 +222,9 @@ TrondheimDC.Data.sessions = [
         abstract: "Developers are not known for their social skills. They're more characterized as geeks, centered around their coding and dealing with complex algorithms and problems to solve. This is not only depicted in Hollywood movies but also promoted within the community of developers itself, and those surrounding developers. Managers often say &quot;Oh he's a developers. Great at cranking out code, but you can't really talk to him&quot;.<br/> Although it seems harmless and fun at times to characterize developers in this way, it is actually a source of many problems when it comes to working on teams and dealing with customers. By somewhat justifying this kind of behavior, all we're doing is promoting it, saying &quot;it's OK&quot;.<br/> Yet my over 20 years experience in software development has shown me one thing if not anything else: lack of good communication can kill a team, can kill a product and can kill a company. Having dealt with hundreds of developers, managed many teams and started my own company, I have seen how team moral can be killed when communication is hindered. I have seen how products can fail when customers are ignored.<br/> Learning to communicate with team members, with customers, being in touch with those you are working with, with those you are working for is fundamental in being successful. Developers needs to learn how to be social. Because only then, can communication flow freely and properly.",
         speakerIds: [9],
         tags: [ "Team" ],
-        starts: new Date(0000, 00, 00, 00, 00, 00),
-        ends: new Date(0000, 00, 00, 00, 00, 00)
+        starts: new Date(2012, 09, 29, 12, 00, 00),
+        ends: new Date(2012, 09, 29, 12, 50, 00),
+        track: 0
     },
     {
         id: 23,
@@ -210,8 +232,9 @@ TrondheimDC.Data.sessions = [
         abstract: "Testdrevet utvikling (TDD) har blitt en foretrukket arbeidsmetode, men utvikleres verktøykasse for rask testdrevet utvikling med god kvalitet er ofte mangelfull. Håvard Stranden vil gi en generell introduksjon til kontinuerlig testing, gi en oversikt over verktøy, og vise eksempler i C#/.NET.",
         speakerIds: [23],
         tags: [ "Testing", "TDD", "Kodekvalitet", "Verktøy", "Lyntale" ],
-        starts: new Date(0000, 00, 00, 00, 00, 00),
-        ends: new Date(0000, 00, 00, 00, 00, 00)
+        starts: new Date(2012, 09, 29, 12, 00, 00),
+        ends: new Date(2012, 09, 29, 12, 50, 00),
+        track: 0
     },
     {
         id: 24,
@@ -219,9 +242,10 @@ TrondheimDC.Data.sessions = [
         abstract: "Arnulf Krokeide, systemarkitekt og seniorutvikler hos Confirmit AS oppsummerer fem års erfaring med innføring av smidig utvikling i en produktbedrift. Hvilken effekt har smidige teknikker hatt i et firma med en stor kodebase?",
         speakerIds: [24],
         tags: [ "Smidig", "Organisasjon", "Teamledelse", "Lyntale" ],
-        starts: new Date(0000, 00, 00, 00, 00, 00),
-        ends: new Date(0000, 00, 00, 00, 00, 00)
-    },
+        starts: new Date(2012, 09, 29, 12, 00, 00),
+        ends: new Date(2012, 09, 29, 12, 50, 00),
+        track: 0
+    }
 
 ];
 
