@@ -9,6 +9,7 @@
     setupSessionsList();
     
     setupRoutes();
+    beginListeningForCustomEvents();
     
     
     //
@@ -87,6 +88,16 @@
         });
         
         Backbone.history.start();
+    }
+    
+    function beginListeningForCustomEvents() {
+        console.log
+        window.app.on('session:favourite', function(id) {
+            //_gaq.push(['_trackEvent', 'favourite', id]);
+        });
+        window.app.on('session:unfavourite', function(id) {
+            //_gaq.push(['_trackEvent', 'unfavourite', id]);
+        });
     }
 
 })();
