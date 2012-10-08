@@ -101,7 +101,7 @@
                 <ul>
                 <% _.each(speakers, function(speaker, index) { %>
                     <li class="speaker">
-                        <span><%= speaker.name %></span>
+                        <a href="speakers/<%= speaker.id %>"><%= speaker.name %></a>
                         <% if(index+1 !== speakers.length) print(',') %>
                     </li>
                 <% }); %>
