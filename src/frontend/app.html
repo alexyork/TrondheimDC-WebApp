@@ -97,7 +97,7 @@
             <p><%= abstract %></p>
             
             <div class="speakers">
-                <h2>Speakers:</h2> 
+                <h2>Speaker<%= speakers.length > 1 ? "s" : "" %>:</h2> 
                 <ul>
                 <% _.each(speakers, function(speaker, index) { %>
                     <li class="speaker">
