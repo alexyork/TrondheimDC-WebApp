@@ -14,6 +14,7 @@
         <link rel="stylesheet" type="text/css" href="css/default.css">
         <link rel="stylesheet" type="text/css" href="css/sessions.css">
         <link rel="stylesheet" type="text/css" href="css/speakers.css">
+        <link rel="stylesheet" type="text/css" href="css/sessiondetailview.css">
         <link rel="shortcut icon" href="graphics/favicon.ico" />
         <link rel="apple-touch-icon" href="graphics/favicon_iphone.png" />
 
@@ -94,21 +95,29 @@
             <h1><%= title %></h1>
             <p><%= abstract %></p>
             
-            <p>
-                Speakers:
+            <div class="speakers">
+                <h2>Speakers:</h2> 
+                <ul>
                 <% _.each(speakers, function(speaker, index) { %>
-                    <span><%= speaker.name %></span>,
+                    <li class="speaker">
+                        <span><%= speaker.name %></span>
+                        <% if(index+1 !== speakers.length) print(',') %>
+                    </li>
                 <% }); %>
-            </p>
+                </ul>
+            </div>
             
-            <p>
-                Tags:
+            <div class="tags">
+                <h2>Tagged:</h2>           
+                <ul>
                 <% _.each(tags, function(tag, index) { %>
-                    <span><%= tag %></span>,
+                    <li class="tag">
+                        <span><%= tag %></span>
+                    </li>
                 <% }); %>
-            </p>
+                </ul>
+            </div>
             
-            <p>ID: <%= id %></p>
             <p>Start: <%= starts %></p>
             <p>End: <%= ends %></p>
         </script>
