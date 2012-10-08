@@ -91,7 +91,6 @@
     }
     
     function beginListeningForCustomEvents() {
-        console.log
         window.app.on('session:favourite', function(id) {
             //_gaq.push(['_trackEvent', 'favourite', id]);
         });
