@@ -51,8 +51,11 @@ TrondheimDC.Views.SessionView = Backbone.View.extend({
     toggleFavourite: function( event ) {
         if (event.currentTarget.checked) {
             this.model.favourite();
+            this.trackEvent("Session", "Favorite", "SessionID-" + this.model.get("id"), 1);
+
         } else {
             this.model.unfavourite();
+            this.trackEvent("Session", "Favorite", "SessionID-" + this.model.get("id"), -1);
         }
     },
     
