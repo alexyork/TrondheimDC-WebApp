@@ -87,9 +87,17 @@ TrondheimDC.Models.Session = Backbone.Model.extend({
     },
 
     toJSON: function() {
-        var json = this.attributes
-        json.favourited = this.isFavourited()
-        return json
+        var json = this.attributes;
+        json.favourited = this.isFavourited();
+        json.starts = this.prettyDate("starts");
+        json.ends = this.prettyDate("ends");
+        return json;
+    },
+
+    prettyDate: function(attribute) {
+        var hours = this.get(attribute).getHours();
+        var minutes = this.get(attribute).getMinutes();
+        return (hours < 10 ? "0" : "") + hours + ":" + (minutes < 10 ? "0" : "") + minutes;
     }
     
 },
