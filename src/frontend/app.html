@@ -76,7 +76,7 @@
         <!-- Template: Session -->
         <script id="session-template" type="text/template">
             <input class="favourite" type="checkbox"  <% if(favourited){ %> checked <% } %> />
-            <h1 class="title"><a href="sessions/<%= id %>"><%= title %></a></h1>
+            <h1 class="title"><a href="/sessions/<%= id %>"><%= title %></a></h1>
             <h2>
                 av
                 <% _.each(speakers, function(speaker, index) { %>
@@ -119,8 +119,8 @@
                 </ul>
             </div>
             
-            <p>Start: <%= starts %></p>
-            <p>End: <%= ends %></p>
+            <p>Start: <%= moment(starts).format("HH:mm") %></p>
+            <p>End: <%= moment(ends).formate("HH:mm") %></p>
             <p>Track: <%= track %></p>
         </script>
         
