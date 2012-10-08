@@ -64,6 +64,7 @@ TrondheimDC.Models.Session = Backbone.Model.extend({
                 return null
             currentFavourites.push(this.get('id'))
             localStorage.setItem( TrondheimDC.Models.Session.localStorageFavouritesKey, JSON.stringify(currentFavourites) )
+            this.trigger('change:favourited', this, true)
         } catch (e) {
             this.trigger('error', e)
         }
@@ -78,6 +79,7 @@ TrondheimDC.Models.Session = Backbone.Model.extend({
                 if(idIndex !== -1)
                     currentFavourites.splice(idIndex, 1)
                 localStorage.setItem( TrondheimDC.Models.Session.localStorageFavouritesKey, JSON.stringify(currentFavourites) )
+                this.trigger('change:favourited', this, false)
             }   
         } catch(e) {
             this.trigger('error', e)

@@ -131,6 +131,25 @@ describe("Session", function() {
                 expect(favouriteIds).toContain(122);
             });
 
+            it("Should trigger the 'change:favourited' event with parameter true of false coresponsing to state", function( done ) {
+              var sessionA = new TrondheimDC.Models.Session({})
+
+              var states = []
+
+              sessionA.on('change:favourited', function(model, state) {
+                states.push(state)
+              })
+
+              sessionA.favourite()
+              sessionA.unfavourite()
+              sessionA.favourite()
+
+              expect(states[ 0 ]).toEqual( true )
+              expect(states[ 1 ]).toEqual( false )
+              expect(states[ 2 ]).toEqual( true  )
+
+            })
+
         });
 
         describe("unfavourite", function() {

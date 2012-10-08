@@ -8,10 +8,11 @@ if (typeof TrondheimDC.Views === "undefined" || !TrondheimDC.Views) {
 TrondheimDC.Views.SessionDetailView = Backbone.View.extend({
     
     tagName: 'div',
-    className: 'session',
+    className: 'session detail',
     template: _.template( document.getElementById('session-detail-template').innerHTML ),
     
     events: {
+        'click .tag': 'tagClick'
     },
     
     initialize: function() {
@@ -19,11 +20,21 @@ TrondheimDC.Views.SessionDetailView = Backbone.View.extend({
     
     render: function() {
         var json = this.collection.toJSON();
-        json.speakers = app.speakersList.getByIds(json.speakerIds).toJSON();
+        json.speakers = app.speakersList.getByIds( json.speakerIds ).toJSON();
         
-        var speakerHtml = this.template(json);
-        this.$el.html(speakerHtml);
+        var speakerHtml = this.template( json );
+        this.$el.html( speakerHtml );
         return this;
+    },
+
+    tagClick: function( event ) {
+        var tag = event.currentTarget.innerText;
+
+        // somewhat dirty, but works
+        window.location = "#sessions"
+        setTimeout(function() {
+            window.app.trigger( "filter:tag", tag );
+        }, 50)
     }
     
 });
