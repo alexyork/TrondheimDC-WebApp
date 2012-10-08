@@ -18,8 +18,9 @@ TrondheimDC.Models.Session = Backbone.Model.extend({
     isPresentedBy: function(speakerId) {
         var speakers = this.get("speakers");
         for (var i = 0; i < speakers.length; i++) {
-            if (speakers[i].id == speakerId)
+            if (speakers[i].id == speakerId) {
                 return true;
+            }
         }
         return false;
     },
@@ -31,69 +32,70 @@ TrondheimDC.Models.Session = Backbone.Model.extend({
             if (tagToSearchFor.toLowerCase() === tag.toLowerCase()) {
                 matchFound = true;
             }
-        })
+        });
         return matchFound;
     },
 
     timeslotConflictsWith: function(session) {
-        if(
-            (session.get('starts') >= this.get('starts') && session.get('starts') <= this.get('ends')) ||
-            (session.get('ends') >= this.get('starts') && session.get('ends') <= this.get('ends'))
-        ) {
-            return true
+        if ((session.get('starts') >= this.get('starts') && session.get('starts') <= this.get('ends')) ||
+            (session.get('ends') >= this.get('starts') && session.get('ends') <= this.get('ends'))) {
+            return true;
         } else {
-            return false
+            return false;
         }
     },
 
     isFavourited: function() {
-        var currentFavourites
-        currentFavourites = JSON.parse( localStorage.getItem(TrondheimDC.Models.Session.localStorageFavouritesKey) )
-        if(!currentFavourites || !currentFavourites.length)
-            return false
-        return ( currentFavourites.indexOf(this.get('id')) !== -1 )
+        var currentFavourites = JSON.parse( localStorage.getItem(TrondheimDC.Models.Session.localStorageFavouritesKey) );
+        if (!currentFavourites || !currentFavourites.length) {
+            return false;
+        }
+        return ( currentFavourites.indexOf(this.get('id')) !== -1 );
     },
 
     favourite: function() {
-        var currentFavourites
+        var currentFavourites;
         try {
-            currentFavourites = JSON.parse( localStorage.getItem(TrondheimDC.Models.Session.localStorageFavouritesKey) )
-            if(!currentFavourites)
-                currentFavourites = []
-            if(this.isFavourited()) 
-                return null
-            currentFavourites.push(this.get('id'))
-            localStorage.setItem( TrondheimDC.Models.Session.localStorageFavouritesKey, JSON.stringify(currentFavourites) )
-            this.trigger('change:favourited', this, true)
+            currentFavourites = JSON.parse( localStorage.getItem(TrondheimDC.Models.Session.localStorageFavouritesKey) );
+            if (!currentFavourites) {
+                currentFavourites = [];
+            }
+            if (this.isFavourited()) { 
+                return null;
+            }
+            currentFavourites.push(this.get('id'));
+            localStorage.setItem( TrondheimDC.Models.Session.localStorageFavouritesKey, JSON.stringify(currentFavourites) );
+            this.trigger('change:favourited', this, true);
         } catch (e) {
-            this.trigger('error', e)
+            this.trigger('error', e);
         }
     },
 
     unfavourite: function() {
-        var currentFavourites, idIndex
+        var currentFavourites, idIndex;
         try {
-            currentFavourites = JSON.parse( localStorage.getItem(TrondheimDC.Models.Session.localStorageFavouritesKey) )
-            if(currentFavourites) {
-                idIndex = currentFavourites.indexOf(this.get('id'))
-                if(idIndex !== -1)
-                    currentFavourites.splice(idIndex, 1)
-                localStorage.setItem( TrondheimDC.Models.Session.localStorageFavouritesKey, JSON.stringify(currentFavourites) )
-                this.trigger('change:favourited', this, false)
+            currentFavourites = JSON.parse( localStorage.getItem(TrondheimDC.Models.Session.localStorageFavouritesKey) );
+            if (currentFavourites) {
+                idIndex = currentFavourites.indexOf(this.get('id'));
+                if (idIndex !== -1) {
+                    currentFavourites.splice(idIndex, 1);
+                }
+                localStorage.setItem( TrondheimDC.Models.Session.localStorageFavouritesKey, JSON.stringify(currentFavourites) );
+                this.trigger('change:favourited', this, false);
             }   
         } catch(e) {
-            this.trigger('error', e)
+            this.trigger('error', e);
         }
     },
 
     toJSON: function() {
-        var json = this.attributes
-        json.favourited = this.isFavourited()
-        return json
+        var json = this.attributes;
+        json.favourited = this.isFavourited();
+        return json;
     }
     
 },
 {
-    //Statics
+    // Statics
     localStorageFavouritesKey: "favouriteSessions"
 });
