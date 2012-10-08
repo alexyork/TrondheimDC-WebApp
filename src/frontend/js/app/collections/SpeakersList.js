@@ -28,21 +28,13 @@ TrondheimDC.Collections.SpeakersList = Backbone.Collection.extend({
     },
 
     getByIds: function(ids) {
-        /*
-        var speakers = [];
-        _.each(json.speakerIds, function(speakerId, index) {
-            var speaker = app.speakersList.getById(speakerId).toJSON();
-            speakers.push(speaker);
-        });
-        json.speakers = speakers;
-        console.log(json.speakers);
-        */
         
         var filteredSpeakersList = new TrondheimDC.Collections.SpeakersList();
         filteredSpeakersList.reset(
             this.filter(function(speaker) {
                 if (!speaker) return false;
-                return ids.indexOf( speaker.get("id") ) > -1;
+                var speakerId = parseFloat(speaker.get("id"))
+                return ids.indexOf( speakerId ) > -1;
             })
         );
         return filteredSpeakersList;
