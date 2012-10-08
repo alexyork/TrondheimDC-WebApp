@@ -5,13 +5,13 @@ var fs = require('fs');
  */
 exports.index = function( req, res ) {
 
-    var htmlStream = fs.createReadStream( __dirname + '/../frontend/app.html' )
+    var htmlStream = fs.createReadStream( __dirname + '/../public/app.html' );
 
     htmlStream.on( 'error', function( err ) {
-      console.log( 'error', err )
-      res.send( 'internal server error', 500 )
-    })
+        console.log( 'error', err );
+        res.send( 'internal server error', 500 );
+    });
     
-    htmlStream.pipe( res )
+    htmlStream.pipe( res );
 
 }
