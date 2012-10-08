@@ -65,7 +65,9 @@ TrondheimDC.Models.Session = Backbone.Model.extend({
             }
             currentFavourites.push(this.get('id'));
             localStorage.setItem( TrondheimDC.Models.Session.localStorageFavouritesKey, JSON.stringify(currentFavourites) );
+            
             this.trigger('change:favourited', this, true);
+            window.app.trigger('change:favourited', this, true);
         } catch (e) {
             this.trigger('error', e);
         }
@@ -81,7 +83,9 @@ TrondheimDC.Models.Session = Backbone.Model.extend({
                     currentFavourites.splice(idIndex, 1);
                 }
                 localStorage.setItem( TrondheimDC.Models.Session.localStorageFavouritesKey, JSON.stringify(currentFavourites) );
+                
                 this.trigger('change:favourited', this, false);
+                window.app.trigger('change:favourited', this, false);
             }   
         } catch(e) {
             this.trigger('error', e);

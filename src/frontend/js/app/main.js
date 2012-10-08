@@ -91,11 +91,9 @@
     }
     
     function beginListeningForCustomEvents() {
-        window.app.on('session:favourite', function(id) {
+        window.app.on('change:favourited', function( session, isFavourited ) {
+            var id = session.get("id");
             //_gaq.push(['_trackEvent', 'favourite', id]);
-        });
-        window.app.on('session:unfavourite', function(id) {
-            //_gaq.push(['_trackEvent', 'unfavourite', id]);
         });
     }
 

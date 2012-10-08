@@ -14,8 +14,8 @@ TrondheimDC.Views.FavouritedSessionView = TrondheimDC.Views.SessionView.extend({
     },
 
     changeFavouritedState: function( session, isFavourited ) {
-        if( !isFavourited ) {
-            this.remove()
+        if (!isFavourited) {
+            this.remove();
         }
     }
         
