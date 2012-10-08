@@ -124,7 +124,7 @@ footer {
             border-bottom: 1px solid #fff;
             }
 
-            .favourite {
+            input.favourite {
                 /* TODO: ADD STAR ICON; CHECKED AND UNCEHCKED */
                 float: left;
                 margin-top: 0.6em;
@@ -134,13 +134,13 @@ footer {
 
                 -webkit-appearance: none;
                 -moz-appearance: none;
-                background: transparent url(../graphics/fav_no.png) no-repeat;
-                border: 0; 
+                -ie-appearance: none;
+                appearence: none;
+                background: transparent url(../graphics/fav_no.png) center no-repeat;
+                border: 1px solid transparent; 
                 }
 
-            .favourite:checked {
-                background: url(../graphics/fav_yes.png);
-                }
+            .favourite:checked { background-image: url(../graphics/fav_yes.png); }
 
             .sessions-list h1 {
                 display: inline;                
