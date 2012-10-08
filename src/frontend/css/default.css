@@ -112,6 +112,7 @@ footer {
     }
 
 /* REUSABLES */
+
     /* SESSION LIST */
     .sessions-list ul {
         list-style-type: none;
@@ -128,6 +129,18 @@ footer {
                 float: left;
                 margin-top: 1em;
                 margin-right: 1.2em;
+                width: 10px;
+                height: 10px;
+
+                -webkit-appearance: none;
+                -moz-appearance: none;
+                background-color: red; 
+                border: solid 1px #000; 
+                }
+
+            .favourite:checked {
+                width: 20px;
+                height: 20px;
                 }
 
             .sessions-list h1 {
