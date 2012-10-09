@@ -1,10 +1,11 @@
 {
   "name": "trondheim-dc-2012",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "dependencies": {
-    "express": "~3.0.0rc4"
+    "express": "3.0.0rc4"
   },
   "engines": {
-    "node": "0.4.7"
+    "node": "0.8.x",
+    "npm":  "1.1.x"
   }
 }
