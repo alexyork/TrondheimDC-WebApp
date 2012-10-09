@@ -2,7 +2,8 @@
   "name": "trondheim-dc-2012",
   "version": "0.0.2",
   "dependencies": {
-    "express": "3.0.0rc3"
+    "express": "3.0.0rc3",
+    "walk": "2.2.1"
   },
   "engines": {
     "node": "0.8.x",
