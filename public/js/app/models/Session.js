@@ -12,7 +12,13 @@ TrondheimDC.Models.Session = Backbone.Model.extend({
     },
 
     matchesSpeaker: function(searchTerm) {
-    	return this.speaker.get("name").toLowerCase().indexOf(searchTerm.toLowerCase()) > -1;
+        var speakers = this.get("speakers");
+        for ( var i = 0; i < speakers.length; i++ ) {
+            if( speakers[i] && speakers[i].name && speakers[i].name.toLowerCase().match(searchTerm.toLowerCase()) ) {
+                return true
+            }
+        }
+        return false;
     },
 
     isPresentedBy: function(speakerId) {
@@ -25,6 +31,12 @@ TrondheimDC.Models.Session = Backbone.Model.extend({
         return false;
     },
     
+    matchesTrack: function(searchTerm) {
+        if( this.get("track") == searchTerm.match(/track\s*([1-9]*)/i)[1] )
+            return true
+        return false;
+    },
+
     containsTag: function(tagToSearchFor) {
         var tags = this.get("tags");
         var matchFound = false;
