@@ -1,14 +1,4 @@
 (function() {
-
-    Backbone.View.prototype.trackEvent = function(category, action, label, value) {
-        window.app.trigger('ga:trackEvent', {
-            category: category,
-            action: action,
-            label: label,
-            value: value
-        });
-    };
-    
     
     //
     // Startup
@@ -101,15 +91,11 @@
     }
     
     function beginListeningForCustomEvents() {
-        window.app.on('change:favourited', function( session, isFavourited ) {
-            var id = session.get("id");
-            //_gaq.push(['_trackEvent', 'favourite', id]);
-        });
-
+        
         window.app.on('ga:trackEvent', function(trackingData) {
-            console.log(trackingData);
             _gaq.push(['_trackEvent', trackingData.category, trackingData.action, trackingData.label, trackingData.value]);
         });
+
     }
 
 })();

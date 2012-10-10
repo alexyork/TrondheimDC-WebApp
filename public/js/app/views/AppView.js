@@ -5,7 +5,7 @@ if (typeof TrondheimDC.Views === "undefined" || !TrondheimDC.Views) {
     TrondheimDC.Views = {};
 }
 
-TrondheimDC.Views.AppView = Backbone.View.extend({
+TrondheimDC.Views.AppView = TrondheimDC.Views.TDCView.extend({
     
     el: $("body"),
 

@@ -5,7 +5,7 @@ if (typeof TrondheimDC.Views === "undefined" || !TrondheimDC.Views) {
     TrondheimDC.Views = {};
 }
 
-TrondheimDC.Views.SpeakerDetailView = Backbone.View.extend({
+TrondheimDC.Views.SpeakerDetailView = TrondheimDC.Views.TDCView.extend({
     
     tagName: 'div',
     className: 'speaker',
