@@ -10,6 +10,8 @@
     
     setupRoutes();
     beginListeningForCustomEvents();
+
+    init();
     
     
     //
@@ -19,6 +21,14 @@
         // Core pub sub message handler for cross module messaging
         window.app = Object.create( Backbone.Events );
         
+        if( window.navigator.standalone ) {
+            $("#splash").css("display", "block")
+            $("body").bind("touchstart.lock", function( event ) {
+                event.preventDefault()
+                return null
+            })
+        }
+
         app.view = new TrondheimDC.Views.AppView()
     
         app.router = new TrondheimDC.Routers.AppRouter({
@@ -96,6 +106,17 @@
             _gaq.push(['_trackEvent', trackingData.category, trackingData.action, trackingData.label, trackingData.value]);
         });
 
+        window.app.on("ready", function() {
+            $("#splash").addClass("hidden")
+            $("body").unbind("touchstart.lock")
+        })
+
+    }
+
+    function init() {
+        setTimeout(function() {
+            window.app.trigger("ready")
+        }, 2000)
     }
 
 })();
