@@ -21,7 +21,9 @@ TrondheimDC.Models.Session = Backbone.Model.extend({
         }
 
         for ( var i = 0; i < speakers.length; i++ ) {
-            if( clean(speakers[i].name).match(clean(searchTerm)) ) {
+            var cleanedSpeakerName = clean(speakers[i].name)
+            if(!cleanedSpeakerName) return false
+            if( cleanedSpeakerName.match(clean(searchTerm)) ) {
                 return true
             }
         }
