@@ -26,7 +26,7 @@ app.configure('development', function(){
 app.configure('production', function(){
     app.use(express.errorHandler());
     app.use(manifest({
-      'url': '/app.manifest',
+      'url': '/cache.manifest',
       'root': staticPath,
       'extensions': ['js', 'css', 'jpg', 'png', 'ico', 'html']
     }))
