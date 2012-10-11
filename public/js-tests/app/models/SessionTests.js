@@ -37,6 +37,38 @@ describe("Session", function() {
         
     });
     
+    describe("matchesSpeaker", function() {
+
+      it("should be ignorant of whitespace", function() {
+        var session = new TrondheimDC.Models.Session({
+          speakers: [{
+            name: "Alex York"
+          }]
+        })
+
+        expect(session.matchesSpeaker("Alex   York")).toEqual(true)
+        expect(session.matchesSpeaker("AlexYork  ")).toEqual(true)
+        expect(session.matchesSpeaker("  Alex  York")).toEqual(true)
+
+      })
+
+      it("should match on one or none parts of the name on name regardless of case", function() {
+        var session = new TrondheimDC.Models.Session({
+          speakers: [{
+            name: "Andre Tangen"
+          }]
+        })
+
+        expect(session.matchesSpeaker("Andre Tangen")).toEqual(true)
+        expect(session.matchesSpeaker("andre tangen")).toEqual(true)
+        expect(session.matchesSpeaker("andre tangen")).toEqual(true)
+        expect(session.matchesSpeaker("andRe")).toEqual(true)
+        expect(session.matchesSpeaker("tangeN")).toEqual(true)
+
+      })
+
+    })
+
     describe("matchesTitle", function() {
     
         it("should match search terms if it is found in the session title", function() {
@@ -70,6 +102,51 @@ describe("Session", function() {
         });
     
     });
+
+    describe("matchesTrack", function() {
+
+      it("should match the track regardless of spacing between between 'track' and id", function() {
+          var session = new TrondheimDC.Models.Session({
+            track: 1
+          })
+
+          expect(session.matchesTrack("track1")).toEqual(true)
+          expect(session.matchesTrack("track 1")).toEqual(true)
+          expect(session.matchesTrack("track     1")).toEqual(true)
+
+      })
+
+      it("should match on track:id and track:  id", function() {
+        var session = new TrondheimDC.Models.Session({
+          track: 2
+        })
+
+        expect(session.matchesTrack("track:2")).toEqual(true)
+        expect(session.matchesTrack("track: 2")).toEqual(true)
+      })
+
+      it("should match the track regardless of casing", function() {
+        var session = new TrondheimDC.Models.Session({
+          track: 3
+        })
+
+        expect(session.matchesTrack("track 3")).toEqual(true)
+        expect(session.matchesTrack("TraCk 3")).toEqual(true)
+        expect(session.matchesTrack("TRACK 3")).toEqual(true)
+
+      })
+
+      it("should not match if the term contains track but uncorect id, and not on correct id but not containing keyword track", function() {
+        var session = new TrondheimDC.Models.Session({
+          track: 4
+        })
+
+        expect(session.matchesTrack("track 3")).toEqual(false)
+        expect(session.matchesTrack("trackss 4")).toEqual(false)
+
+      })
+
+    })
 
     describe("isPresentedBy", function() {
         
