@@ -32,7 +32,8 @@ TrondheimDC.Models.Session = Backbone.Model.extend({
     },
     
     matchesTrack: function(searchTerm) {
-        if( this.get("track") == searchTerm.match(/track\s*([1-9]*)/i)[1] )
+        var match = searchTerm.match(/track\s*([1-9]*)/i)
+        if( match && match.length && this.get("track") == match[1] )
             return true
         return false;
     },
