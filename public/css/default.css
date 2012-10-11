@@ -34,6 +34,7 @@ a:hover { text-decoration: none; }
 
 /* Elements */
 html { 
+    display: none;
     border-top: 10px solid #fff;
     background: #6cfffe url(../graphics/bg_dots.png) top center repeat; 
     }

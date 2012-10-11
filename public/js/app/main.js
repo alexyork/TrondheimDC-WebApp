@@ -29,6 +29,8 @@
             })
         }
 
+        $("html").css("display", "block")
+
         app.view = new TrondheimDC.Views.AppView()
     
         app.router = new TrondheimDC.Routers.AppRouter({
