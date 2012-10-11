@@ -13,8 +13,15 @@ TrondheimDC.Models.Session = Backbone.Model.extend({
 
     matchesSpeaker: function(searchTerm) {
         var speakers = this.get("speakers");
+        if(!speakers) return false
+
+        function clean(s) {
+            if(!s) return null
+            return s.replace(/\s*/g, "").toLowerCase()
+        }
+
         for ( var i = 0; i < speakers.length; i++ ) {
-            if( speakers[i] && speakers[i].name && speakers[i].name.toLowerCase().match(searchTerm.toLowerCase()) ) {
+            if( clean(speakers[i].name).match(clean(searchTerm)) ) {
                 return true
             }
         }
@@ -23,6 +30,7 @@ TrondheimDC.Models.Session = Backbone.Model.extend({
 
     isPresentedBy: function(speakerId) {
         var speakers = this.get("speakers");
+        if(!speakers) return false
         for (var i = 0; i < speakers.length; i++) {
             if (speakers[i].id == speakerId) {
                 return true;
@@ -32,7 +40,7 @@ TrondheimDC.Models.Session = Backbone.Model.extend({
     },
     
     matchesTrack: function(searchTerm) {
-        var match = searchTerm.match(/track\s*([1-9]*)/i)
+        var match = searchTerm.match(/track[\s|\:]*([1-9]*)/i)
         if( match && match.length && this.get("track") == match[1] )
             return true
         return false;
