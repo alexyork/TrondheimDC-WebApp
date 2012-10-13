@@ -45,6 +45,7 @@ TrondheimDC.Views.SessionView = TrondheimDC.Views.TDCView.extend({
     
     filterByTag: function( event ) {
         var tag = event.currentTarget.innerText;
+        app.router.navigate("sessions", {trigger:true});
         window.app.trigger( "filter:tag", tag );
     },
 

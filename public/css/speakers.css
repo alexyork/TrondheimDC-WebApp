@@ -8,6 +8,11 @@
 	
 	.speakers-list li:hover, .speakers-list li:focus { background-color: #06F4ED; }
 
+.speaker {
+	clear: left;
+	overflow: auto;
+	}
+
 .speaker h1,
 .speaker p {
 	float: left;
@@ -16,11 +21,12 @@
 
 .speaker img {
 	float: left;
-	width: 20%;
+	width: 10%;
+	min-width: 70px;
 	margin-right: 2%;
 	}
 
 .speaker h2 {
-	clear: left;
+	float: left;
 	padding-top: 20px;
 	}
