@@ -20,28 +20,22 @@
 
 	.speaker h1 {
 		float: left;
-		width: 75%;
+		width: 65%;
 		margin-top: 10px;
 		}
 
 	.speaker img {
 		float: left;
-		width: 10%;
-		min-width: 70px;
+		width: 23%;
+		max-width: 100px;
 		margin-right: 2%;
 		margin-bottom: 5px;
 		display: block;
 		}
 
-	.speaker p {
-		clear: both;
-		}
+	.speaker p { clear: both; }
 
-	.speaker h2 {
-		padding-top: 20px;
-		}
-
-	.speaker ul { }
+	.speaker h2 { padding-top: 20px; }
 
 		.speaker ul li {
 			list-style-type: disc;
