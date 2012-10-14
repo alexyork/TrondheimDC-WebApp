@@ -63,6 +63,12 @@
     }
     
     function setupRoutes() {
+        app.router.route('', 'sessions', function() {
+            var timeslotsListView = new TrondheimDC.Views.SessionsByTimeslotListView({ collection: app.sessionsList });
+            timeslotsListView.render();
+            app.view.setContentView( 'sessions', timeslotsListView );
+        });
+        
         app.router.route('sessions', 'sessions', function() {
             var timeslotsListView = new TrondheimDC.Views.SessionsByTimeslotListView({ collection: app.sessionsList });
             timeslotsListView.render();
