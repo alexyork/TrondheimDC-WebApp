@@ -53,7 +53,7 @@ TrondheimDC.Collections.SessionsList = Backbone.Collection.extend({
         }
     },
     
-    groupByTimeslot: function() {
+    groupedByTimeslot: function() {
         var groupedSessions = _.groupBy(this.models, function(session) {
             var startingHour = session.get("starts").getHours();
             switch (startingHour) {
@@ -63,7 +63,6 @@ TrondheimDC.Collections.SessionsList = Backbone.Collection.extend({
                 case 12: return "12:00 - 13:00";
             }
         });
-        // TODO: should I be returning a backbone collection here?
         return groupedSessions;
     }
     

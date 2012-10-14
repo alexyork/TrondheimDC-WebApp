@@ -23,6 +23,8 @@ TrondheimDC.Views.SessionsByTimeslotListView = TrondheimDC.Views.TDCView.extend(
     
     render: function(collection) {
         var collection = collection || this.collection;
+        collection = collection.groupedByTimeslot();
+        
         var sessionListHtml = this.template(this.model);
         
         this.$el.empty();

@@ -117,7 +117,7 @@ describe("SessionsList", function() {
                 new TrondheimDC.Models.Session({ id: 4, title: "Session 4", starts: new Date(2012, 09, 29, 11, 00, 00), ends: new Date(2012, 09, 29, 11, 50, 00) })
             ]);
             
-            var groupedSessions = sessionsList.groupByTimeslot();
+            var groupedSessions = sessionsList.groupedByTimeslot();
             
             expect( groupedSessions["09:00 - 10:00"].length ).toEqual(1);
             expect( groupedSessions["10:00 - 11:00"].length ).toEqual(2);
