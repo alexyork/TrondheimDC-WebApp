@@ -124,6 +124,29 @@ describe("SessionsList", function() {
             expect( groupedSessions["11:00 - 12:00"].length ).toEqual(1);
         });
     
+        it("should return them ordered by time", function() {
+            var sessionsList = new TrondheimDC.Collections.SessionsList();
+
+            sessionsList.reset([
+                new TrondheimDC.Models.Session({ id: 1, title: "Session 1", starts: new Date(2012, 09, 29, 09, 00, 00), ends: new Date(2012, 09, 29, 10, 00, 00) }),
+                new TrondheimDC.Models.Session({ id: 2, title: "Session 4", starts: new Date(2012, 09, 29, 12, 00, 00), ends: new Date(2012, 09, 29, 13, 00, 00) }),
+                new TrondheimDC.Models.Session({ id: 3, title: "Session 3", starts: new Date(2012, 09, 29, 11, 00, 00), ends: new Date(2012, 09, 29, 12, 00, 00) }),
+                new TrondheimDC.Models.Session({ id: 4, title: "Session 2", starts: new Date(2012, 09, 29, 10, 00, 00), ends: new Date(2012, 09, 29, 11, 00, 00) })
+            ]);
+            
+            var groupedSessions = sessionsList.groupedByTimeslot();
+            
+            var i = 0;
+            for (var timeslot in groupedSessions) {
+                if (i == 0) expect(timeslot).toEqual("09:00 - 10:00");
+                if (i == 1) expect(timeslot).toEqual("10:00 - 11:00");
+                if (i == 2) expect(timeslot).toEqual("11:00 - 12:00");
+                if (i == 3) expect(timeslot).toEqual("12:00 - 13:00");
+                
+                i++;
+            }
+        });
+    
     });
     
 });

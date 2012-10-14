@@ -54,23 +54,25 @@ TrondheimDC.Collections.SessionsList = Backbone.Collection.extend({
     },
     
     groupedByTimeslot: function() {
-        var groupedSessions = _.groupBy(this.models, function(session) {
-            var startingHour = session.get("starts").getHours();
-            switch (startingHour) {
-                case 9:  return "09:00 - 10:00";
-                case 10: return "10:00 - 11:00";
-                case 11: return "11:00 - 12:00";
-                case 12: return "12:00 - 13:00";
-                case 13: return "13:00 - 14:00";
-                case 14: return "14:00 - 15:00";
-                case 15: return "15:00 - 16:00";
-                case 16: return "16:00 - 17:00";
-                case 17: return "17:00 - 18:00";
-                case 18: return "18:00 - 19:00";
-            }
-        });
+        var _models = this.models;
+        var filterByStartHour = function(startingHour) {
+            return _.filter(_models, function(session) {
+                return startingHour === session.get("starts").getHours();
+            });
+        };
         
-        return groupedSessions;
+        return {
+            "09:00 - 10:00": filterByStartHour(9),
+            "10:00 - 11:00": filterByStartHour(10),
+            "11:00 - 12:00": filterByStartHour(11),
+            "12:00 - 13:00": filterByStartHour(12),
+            "13:00 - 14:00": filterByStartHour(13),
+            "14:00 - 15:00": [],
+            "15:00 - 16:00": [],
+            "16:00 - 17:00": [],
+            "17:00 - 18:00": [],
+            "18:00 - 19:00": []
+        };
     }
     
 });
