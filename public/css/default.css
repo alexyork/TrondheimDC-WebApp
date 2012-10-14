@@ -69,8 +69,6 @@ body {
         }
     }
 
-
-
 #splash.hidden {
     -ms-transform: translateY(-105%);
     -moz-transform: translateY(-105%);
@@ -268,6 +266,10 @@ footer {
         }
     .reset:hover, .reset:focus { color: #000; }
 
+
+@media all and (min-width: 321px) {
+  #mastHead hgroup { height: 95px; }
+}
 
 @media all and (min-width: 400px) {
     #mastHead { margin-bottom: 10px; }    
