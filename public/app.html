@@ -114,22 +114,21 @@
         <!-- Template: Session Detail -->
         <script id="session-detail-template" type="text/template">
             <h1><%= title %></h1>
+            <div class="speakers">
+                av 
+                <% _.each(speakers, function(speaker, index) { %>
+                        <a href="speakers/<%= speaker.id %>"><%= speaker.name %></a>
+                        <% if (index+1 !== speakers.length) print('og') %>
+                <% }); %>
+                på spor <%= track %>, kl <%= moment(starts).format("HH:mm") %> - <%= moment(ends).format("HH:mm") %>
+            </div>
+
+
             <p><%= abstract %></p>
             
-            <div class="speakers">
-                <h2>Speaker<%= speakers.length > 1 ? "s" : "" %>:</h2> 
-                <ul>
-                <% _.each(speakers, function(speaker, index) { %>
-                    <li class="speaker">
-                        <a href="speakers/<%= speaker.id %>"><%= speaker.name %></a>
-                        <% if (index+1 !== speakers.length) print(',') %>
-                    </li>
-                <% }); %>
-                </ul>
-            </div>
+            
             
             <div class="tags">
-                <h2>Tagged:</h2>           
                 <ul>
                 <% _.each(tags, function(tag, index) { %>
                     <li class="tag">
@@ -138,10 +137,6 @@
                 <% }); %>
                 </ul>
             </div>
-            
-            <p>Start: <%= moment(starts).format("HH:mm") %></p>
-            <p>End: <%= moment(ends).format("HH:mm") %></p>
-            <p>Track: <%= track %></p>
         </script>
         
         <!-- Template: Speaker -->
