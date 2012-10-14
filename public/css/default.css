@@ -6,10 +6,7 @@ THIS DOCUMENT SHOULD ONLY CONTAIN COMMON STYLES AND BASIC LAYOUT STYLES
 @import url("http://fnt.webink.com/wfs/webink.css?project=048E1F9E-653B-46E4-95B5-B105967752C5&fonts=C62E2C20-BEE2-86B6-FE22-96C38B6818CF:family=AbrilText-Bold,459E4BD0-C12A-EE14-2ABB-37D7192D1AAA:family=AbrilText-ExtraBold,20615D9B-B1A8-988E-EF5E-4BF7DB5C8886:family=AbrilText-ExtraBoldItalic,3E55D2F1-1F5E-63EE-5EC0-8AE57E0AB083:family=AbrilText-Regular");
 
 /* BASE TYPOGRAPHY */
-body { 
-    font: normal normal normal 1em/1.2em 'AbrilText', Georgia, Serif; 
-    border-top: 10px solid white;
-    }
+body { font: normal normal normal 1em/1.2em 'AbrilText', Georgia, Serif; }
 
 h1 {
     font-size: 1.5em;
@@ -40,7 +37,10 @@ html {
     background: #6cfffe url(../graphics/bg_dots.png) top center repeat; 
     }
 
-body { min-width: 280px; }
+body { 
+    min-width: 280px; 
+    border-top: 10px solid white;
+    }
 
 
 /* MAIN LAYOUT CONTAINERS */
@@ -72,7 +72,7 @@ body { min-width: 280px; }
     }
 
 #wrapper {
-    width: 96%;
+    width: 94%;
     margin: 1em auto;
     border: none;
     }
