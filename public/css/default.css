@@ -147,13 +147,19 @@ footer {
                 }
             
             @media only screen and (-webkit-min-device-pixel-ratio:1.5) { 
-                label.favourite { background-image:; url(../graphics/fav_no_highRed.png) }
+                label.favourite { 
+                    background-image: url(../graphics/fav_no_highRed.png);
+                    background-size: 30px 30px;
+                }
             }
 
             input.favourite:checked + label { background-image: url(../graphics/fav_yes.png); }
 
             @media only screen and (-webkit-min-device-pixel-ratio:1.5) { 
-                input.favourite:checked + label { background-image: url(../graphics/fav_yes_highRes.png); }
+                input.favourite:checked + label { 
+                    background-image: url(../graphics/fav_yes_highRes.png); 
+                    background-size: 30px 30px;
+                }
             }
 
             .sessions-list h1 { 
