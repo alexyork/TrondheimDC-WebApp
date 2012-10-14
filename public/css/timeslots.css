@@ -1,16 +1,7 @@
-.timeslots-list {
-}
-
-    .timeslots-list ul {
+  .timeslot-header {
+    background-color: #9BE599;
+    padding: 0.3em;
+    border-top: 1px solid white;
+    font-weight: bold;
+    margin-top: 40px;
     }
-    
-        .timeslots-list ul li.timeslot {
-        }
-    
-            .timeslot-header {
-                background-color: #9BE599;
-                padding: 0.3em;
-                border-top: 1px solid white;
-                font-weight: bold;
-                margin-top: 40px;
-                }
