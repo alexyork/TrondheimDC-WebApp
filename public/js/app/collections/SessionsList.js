@@ -61,8 +61,15 @@ TrondheimDC.Collections.SessionsList = Backbone.Collection.extend({
                 case 10: return "10:00 - 11:00";
                 case 11: return "11:00 - 12:00";
                 case 12: return "12:00 - 13:00";
+                case 13: return "13:00 - 14:00";
+                case 14: return "14:00 - 15:00";
+                case 15: return "15:00 - 16:00";
+                case 16: return "16:00 - 17:00";
+                case 17: return "17:00 - 18:00";
+                case 18: return "18:00 - 19:00";
             }
         });
+        
         return groupedSessions;
     }
     
