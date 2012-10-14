@@ -105,7 +105,7 @@ describe("SessionsList", function() {
     
     });
     
-    describe("groupByTimeslot", function() {
+    describe("groupedByTimeslot", function() {
     
         it("should return sessions grouped by timeslot", function() {
             var sessionsList = new TrondheimDC.Collections.SessionsList();

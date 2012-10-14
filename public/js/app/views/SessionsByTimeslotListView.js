@@ -65,8 +65,8 @@ TrondheimDC.Views.SessionsByTimeslotListView = TrondheimDC.Views.TDCView.extend(
     
     search: function(searchTerm) {
         // TODO: is there a better way than accessing "app.sessionsList" from here?
-        var matchedSessions = app.sessionsList.search(searchTerm);
-        this.render( matchedSessions.groupByTimeslot() );
+        var matchedSessions = app.sessionsList.search( searchTerm );
+        this.render( matchedSessions );
         this.$el.find(".searchTerm").val( searchTerm );
     },
     
