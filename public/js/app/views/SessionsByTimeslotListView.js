@@ -51,6 +51,7 @@ TrondheimDC.Views.SessionsByTimeslotListView = TrondheimDC.Views.TDCView.extend(
     
     searchButtonClicked: function(e) {
         e.preventDefault();
+        
         var searchTerm = this.$el.find('.searchTerm').val();
         this.search( searchTerm );
     },

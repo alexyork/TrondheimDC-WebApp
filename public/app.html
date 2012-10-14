@@ -89,7 +89,8 @@
                     <a class="speaker" href="speakers/<%= speaker.id %>"><%= speaker.name %></a>
                 <% }); %>
             </h2>
-            <p>Track: <%= track %>. Time: <%= moment(starts).format("HH:mm") %> - <%= moment(ends).format("HH:mm") %></p>
+            <p>Track: <%= track %></p>
+            <p>Time: <%= moment(starts).format("HH:mm") %> - <%= moment(ends).format("HH:mm") %></p>
             <div class="tags">
                 <% _.each(tags, function(tag, index) { %>
                     <span class="tag"><%= tag %></span>
@@ -108,7 +109,7 @@
                 <% _.each(speakers, function(speaker, index) { %>
                     <li class="speaker">
                         <a href="speakers/<%= speaker.id %>"><%= speaker.name %></a>
-                        <% if(index+1 !== speakers.length) print(',') %>
+                        <% if (index+1 !== speakers.length) print(',') %>
                     </li>
                 <% }); %>
                 </ul>

@@ -9,7 +9,7 @@ THIS DOCUMENT SHOULD ONLY CONTAIN COMMON STYLES AND BASIC LAYOUT STYLES
 body { font: normal normal normal 1em/1.2em 'AbrilText', Georgia, Serif; }
 
 h1 {
-    font-size: 1.7em;
+    font-size: 1.5em;
     line-height: 1.3em;
     margin-bottom: 0.3em;
     }
@@ -26,7 +26,6 @@ p { max-width: 550px; }
 a {
     text-decoration: underline;
     font-weight: bold;
-    background-color: #06F4ED;
     color: #000;
     }
 
@@ -35,7 +34,6 @@ a:hover { text-decoration: none; }
 /* Elements */
 html { 
     display: none;
-    border-top: 10px solid #fff;
     background: #6cfffe url(../graphics/bg_dots.png) top center repeat; 
     }
 
@@ -149,13 +147,13 @@ footer {
         }
 
         .sessions-list li {
-            padding: 1em 0;
+            padding: 1em 0 0.5em 0;
             border-bottom: 1px solid #fff;
             }
 
             input.favourite {
                 /* TODO: ADD STAR ICON; CHECKED AND UNCEHCKED */
-                float: left;
+                float: right;
                 margin-top: 0.6em;
                 margin-right: 1em;
                 width: 22px;
@@ -172,11 +170,9 @@ footer {
             .favourite:checked { background-image: url(../graphics/fav_yes.png); }
 
             .sessions-list h1 {
-                display: inline;                
                 }
 
             .sessions-list h2 {
-                display: inline;
                 font-size: 0.8em;
                 font-family: Trebuchet, Verdana, sans-serif;
                 }
@@ -194,7 +190,7 @@ footer {
             color: #000;
             font-size: 0.7em;
             font-family: Trebuchet, Verdana, sans-serif;
-            margin-right: 0.3em;
+            margin: 0 0.3em 0.5em 0;
             border-radius: 3px;
             cursor: pointer;
             }
