@@ -7,12 +7,10 @@
         .timeslots-list ul li.timeslot {
         }
     
-            .timeslots-list ul li.timeslot .timeslot-header {
+            .timeslot-header {
                 background-color: #9BE599;
                 padding: 0.3em;
                 border-top: 1px solid white;
                 font-weight: bold;
-            }
-    
-            .timeslots-list ul li.timeslot .sessions-list {
-            }
+                margin-top: 40px;
+                }
