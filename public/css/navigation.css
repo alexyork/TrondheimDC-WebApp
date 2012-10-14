@@ -2,13 +2,14 @@
     #mastHead nav {
         float: right;
         width: 72%;
+        display: table;
         }
 
         #mastHead nav li {
-            display: inline-block;
             width: 48.5%;
             margin-bottom: 0.3em;
             margin-right: 1%;
+            float: left;
             }
         #mastHead nav li.even, header nav li.last { margin-right: 0; }
 

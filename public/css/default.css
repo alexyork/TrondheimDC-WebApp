@@ -81,7 +81,6 @@ body { min-width: 280px; }
 #mastHead {
     text-align: center;
     display: table;
-    margin-bottom: 20px;
     width: 100%;
     }
 
@@ -95,6 +94,12 @@ body { min-width: 280px; }
         max-width: 120px;
         height: 114px;   
         }
+
+        #mastHead hgroup a { 
+            display: block; 
+            height: 100%;
+            text-decoration: none;
+            }
 
         #mastHead h1, #mastHead h2 { display: none; }
 
@@ -199,7 +204,7 @@ footer {
 .searchbar {
     text-align: center;
     text-decoration: none;
-    margin: 1.5em 0;
+    margin: 0;
     position: relative;
     width: 100%;
     }
@@ -244,8 +249,9 @@ footer {
         background-color: #ccc;
         color: whitesmoke;
         position: absolute;
+        line-height: 1.45em;
         left: 64.5%;
-        top: 7px;
+        top: 5px;
         padding: 0;
         border-radius: 30px;
         display: block;
@@ -256,7 +262,7 @@ footer {
 
 
 @media all and (min-width: 400px) {
-    
+    #mastHead { margin-bottom: 10px; }    
 }/* /media all min-width 400px  */
 
 /* FULLWIDTH */
@@ -269,7 +275,7 @@ footer {
         max-width: 675px;
         }
 
-    #app-content { margin-top: 2em; }
+    #app-content { margin-top: 1em; }
 
     .searchbar { max-width: 300px; }
 
@@ -283,11 +289,7 @@ footer {
         text-align: left;
         }
 
-        #mastHead hgroup a {
-            padding-top: 30px;
-            display: block;
-            height: 100%;   
-         }
+        #mastHead hgroup a { padding-top: 30px; }
 
         #mastHead h1, #mastHead h2 {
             display: block;
