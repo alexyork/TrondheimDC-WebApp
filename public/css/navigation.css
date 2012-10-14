@@ -1,0 +1,52 @@
+    /* NAV */
+    #mastHead nav {
+        float: right;
+        width: 72%;
+        }
+
+        #mastHead nav li {
+            display: inline-block;
+            width: 48.5%;
+            margin-bottom: 0.3em;
+            margin-right: 1%;
+            }
+        #mastHead nav li.even, header nav li.last { margin-right: 0; }
+
+            #mastHead nav a {
+                text-decoration: none;
+                font-size: 0.7em;
+                text-transform: uppercase;
+                font-family: Trebuchet, Verdana, sans-serif;
+                line-height: 1em;
+                letter-spacing: 1px;
+                font-weight: normal;
+                color: #333;
+                text-overflow: ellipsis;
+                overflow: hidden;
+                display: block;
+                padding: 1.1em 0.6em 1em;
+                background: rgb(188, 237, 109);
+                border-radius: 3px;
+                }
+
+            #mastHead li.selected a, 
+            #mastHead li a:hover,
+            #mastHead li a:focus { background: rgb(241, 254, 126); }
+
+
+@media all and (min-width: 760px) {
+
+    #mastHead nav {
+        width: 100%;
+        float: none;
+        clear: both;
+        }
+
+        #mastHead nav li, #mastHead nav li.even, #mastHead nav li.odd {
+            width: 23%;
+            margin-right: 2%;
+            }
+
+        #mastHead nav li.last { margin-right: 0; }
+
+}
