@@ -64,7 +64,7 @@ body {
 
 @media only screen and (-webkit-min-device-pixel-ratio:1.5) { 
     #splash {
-        background-imge: url(../graphics/splashscreen_logo_highRes.png);
+        background-image: url(../graphics/splashscreen_logo_highRes.png);
         background-size: 300px 147px;
         }
     }
