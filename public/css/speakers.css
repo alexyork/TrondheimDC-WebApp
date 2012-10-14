@@ -8,25 +8,43 @@
 	
 	.speakers-list li:hover, .speakers-list li:focus { background-color: #06F4ED; }
 
+	.speakers-list .speaker h2 {
+		float: left;
+		width: 75%;
+		}
+
 .speaker {
 	clear: left;
 	overflow: auto;
 	}
 
-.speaker h1,
-.speaker p {
-	float: left;
-	width: 78%;
-	}
+	.speaker h1 {
+		float: left;
+		width: 75%;
+		margin-top: 10px;
+		}
 
-.speaker img {
-	float: left;
-	width: 10%;
-	min-width: 70px;
-	margin-right: 2%;
-	}
+	.speaker img {
+		float: left;
+		width: 10%;
+		min-width: 70px;
+		margin-right: 2%;
+		margin-bottom: 5px;
+		display: block;
+		}
 
-.speaker h2 {
-	float: left;
-	padding-top: 20px;
-	}
+	.speaker p {
+		clear: both;
+		}
+
+	.speaker h2 {
+		padding-top: 20px;
+		}
+
+	.speaker ul { }
+
+		.speaker ul li {
+			list-style-type: disc;
+			margin-left: 20px;
+			margin-bottom: 5px;
+			}
