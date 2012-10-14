@@ -335,6 +335,36 @@ TrondheimDC.Data.sessions = [
         starts: new Date(2012, 09, 29, 12, 00, 00),
         ends: new Date(2012, 09, 29, 12, 30, 00),
         track: 1
+    },     
+    {
+        id: 36,
+        title: "TBA",
+        abstract: " ",
+        speakerIds: [],
+        tags: [ "" ],
+        starts: new Date(2012, 09, 29, 16, 15, 00),
+        ends: new Date(2012, 09, 29, 16, 45, 00),
+        track: 1
+    },
+    {
+        id: 37,
+        title: "TBA",
+        abstract: " ",
+        speakerIds: [],
+        tags: [ "" ],
+        starts: new Date(2012, 09, 29, 16, 15, 00),
+        ends: new Date(2012, 09, 29, 16, 45, 00),
+        track: 3
+    },
+    {
+        id: 38,
+        title: "TBA",
+        abstract: " ",
+        speakerIds: [],
+        tags: [ "" ],
+        starts: new Date(2012, 09, 29, 14, 00, 00),
+        ends: new Date(2012, 09, 29, 14, 30, 00),
+        track: 2
     }
 ];
 
