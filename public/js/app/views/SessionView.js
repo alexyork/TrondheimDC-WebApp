@@ -5,22 +5,6 @@ if (typeof TrondheimDC.Views === "undefined" || !TrondheimDC.Views) {
     TrondheimDC.Views = {};
 }
 
-TrondheimDC.Views.TimeslotView = TrondheimDC.Views.TDCView.extend({
-
-    tagName: 'li',
-    className: 'timeslot',
-    
-    initialize: function() {
-    },
-    
-    render: function() {
-        var sessionHtml = "<span>" + this.model + "</span>";
-        this.$el.html( sessionHtml );
-        return this;
-    }
-
-});
-
 TrondheimDC.Views.SessionView = TrondheimDC.Views.TDCView.extend({
     
     tagName: 'li',

@@ -33,17 +33,18 @@ TrondheimDC.Views.SessionsByTimeslotListView = TrondheimDC.Views.TDCView.extend(
         var $list = this.$el.find('ul');
         
         for (var timeslot in collection) {
-            var timeslotView = new TrondheimDC.Views.TimeslotView({ model: timeslot });
+            var timeslotView = new TrondheimDC.Views.TimeslotView({ model: {timeslot: timeslot} });
             timeslotView.render();
-            $list.append( timeslotView.el );
             
             var sessionsList = new TrondheimDC.Collections.SessionsList();
-            var sessionsInTimeslot = collection[timeslot];
-            sessionsList.reset( sessionsInTimeslot );
+            sessionsList.reset( collection[timeslot] );
             
             var sessionsListView = new TrondheimDC.Views.SessionsListView({ collection: sessionsList });
             sessionsListView.render();
-            $list.append( sessionsListView.el );
+            
+            timeslotView.$el.append( sessionsListView.el )
+            
+            $list.append( timeslotView.el );
         }
         
         return this;
