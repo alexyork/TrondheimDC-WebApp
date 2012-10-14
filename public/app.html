@@ -91,7 +91,8 @@
         
         <!-- Template: Session -->
         <script id="session-template" type="text/template">
-            <input class="favourite" type="checkbox"  <% if(favourited){ %> checked <% } %> />
+            <input class="favourite" id="sessionId-<%= id %>" type="checkbox"  <% if(favourited){ %> checked <% } %> />
+            <label class="favourite" for="sessionId-<%= id %>">Favoritt</label>
             <h1 class="title"><a href="/sessions/<%= id %>"><%= title %></a></h1>
             <h2>
                 av

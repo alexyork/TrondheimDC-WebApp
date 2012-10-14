@@ -149,26 +149,41 @@ footer {
         .sessions-list li {
             padding: 1.3em 0 0.8em 0;
             border-bottom: 1px solid #fff;
+            position: relative;
             }
 
-            input.favourite {
-                /* TODO: ADD STAR ICON; CHECKED AND UNCEHCKED */
-                float: right;
-                margin-top: -5px;
-                margin-right: 1em;
+            input.favourite { 
+                visibility: hidden;
+                position: absolute;
+                right: 0;
                 width: 35px;
                 height: 35px;
-                -webkit-appearance: none;
-                -moz-appearance: none;
-                -ie-appearance: none;
-                appearence: none;
-                background: transparent url(../graphics/fav_no.png) center no-repeat;
-                border: 1px solid transparent; 
                 }
 
-            .favourite:checked { background-image: url(../graphics/fav_yes.png); }
+            label.favourite { 
+                position: absolute;
+                right: 0;
+                margin-top: -5px;
+                margin-right: 1em;
+                }
 
-            .sessions-list h1 { margin-bottom: 0; }
+            label.favourite {
+                text-indent: -999em;
+                overflow: hidden;
+                width: 35px;
+                height: 35px;
+                display: block;
+                content: "";
+                color: red;
+                background: transparent url(../graphics/fav_no.png) center no-repeat;
+                }
+
+            input.favourite:checked + label { background-image: url(../graphics/fav_yes.png); }
+
+            .sessions-list h1 { 
+                margin-bottom: 0; 
+                margin-right: 50px;
+                }
 
             .sessions-list small, .sessions-list h2 {
                 font-family: Trebuchet, Verdana, sans-serif;
