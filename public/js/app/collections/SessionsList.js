@@ -53,8 +53,32 @@ TrondheimDC.Collections.SessionsList = Backbone.Collection.extend({
         }
     },
     
-    groupedByTimeslot: function() {
+    groupedByTimeslot: function(timeslots) {
+        // Clone the timeslots
+        var groupedSessions = [];
+        _.each(timeslots, function(timeslot) {
+            var group = _.extend({ sessions: [], title: "" }, timeslot);
+            groupedSessions.push(group);
+        });
+        
+        // Add the sessions to the correct timeslot
+        _.each(this.models, function(session) {
+            var matchingTimeslot = _.find(groupedSessions, function(timeslot) {
+                var sessionJson = session.toJSON();
+                if (sessionJson.starts >= timeslot.starts && sessionJson.ends <= timeslot.ends) {
+                    return timeslot;
+                }
+            });
+            if (matchingTimeslot) {
+                matchingTimeslot.sessions.push(session);
+            }
+        });
+        
+        return groupedSessions;
+        
+        /*
         var _models = this.models;
+        
         var filterByStartHour = function(startingHour) {
             return _.filter(_models, function(session) {
                 return startingHour === session.get("starts").getHours();
@@ -67,12 +91,13 @@ TrondheimDC.Collections.SessionsList = Backbone.Collection.extend({
             "11:00 - 12:00": filterByStartHour(11),
             "12:00 - 13:00": filterByStartHour(12),
             "13:00 - 14:00": filterByStartHour(13),
-            "14:00 - 15:00": [],
-            "15:00 - 16:00": [],
-            "16:00 - 17:00": [],
-            "17:00 - 18:00": [],
-            "18:00 - 19:00": []
+            "14:00 - 15:00": filterByStartHour(14),
+            "15:00 - 16:00": filterByStartHour(15),
+            "16:00 - 17:00": filterByStartHour(16),
+            "17:00 - 18:00": filterByStartHour(17),
+            "18:00 - 19:00": filterByStartHour(18)
         };
+        */
     }
     
 });

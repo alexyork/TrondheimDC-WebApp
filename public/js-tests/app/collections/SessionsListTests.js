@@ -109,21 +109,59 @@ describe("SessionsList", function() {
     
         it("should return sessions grouped by timeslot", function() {
             var sessionsList = new TrondheimDC.Collections.SessionsList();
-
             sessionsList.reset([
-                new TrondheimDC.Models.Session({ id: 1, title: "Session 1", starts: new Date(2012, 09, 29, 09, 00, 00), ends: new Date(2012, 09, 29, 09, 50, 00) }),
-                new TrondheimDC.Models.Session({ id: 2, title: "Session 2", starts: new Date(2012, 09, 29, 10, 00, 00), ends: new Date(2012, 09, 29, 10, 20, 00) }),
-                new TrondheimDC.Models.Session({ id: 3, title: "Session 3", starts: new Date(2012, 09, 29, 10, 30, 00), ends: new Date(2012, 09, 29, 10, 50, 00) }),
-                new TrondheimDC.Models.Session({ id: 4, title: "Session 4", starts: new Date(2012, 09, 29, 11, 00, 00), ends: new Date(2012, 09, 29, 11, 50, 00) })
+                new TrondheimDC.Models.Session({ title: "Session 1", starts: new Date(2012, 09, 29, 09, 00, 00), ends: new Date(2012, 09, 29, 09, 55, 00) }),
+                
+                new TrondheimDC.Models.Session({ title: "Lightning 1", starts: new Date(2012, 09, 29, 10, 00, 00), ends: new Date(2012, 09, 29, 10, 15, 00) }),
+                new TrondheimDC.Models.Session({ title: "Lightning 2", starts: new Date(2012, 09, 29, 10, 15, 00), ends: new Date(2012, 09, 29, 10, 30, 00) }),
+                
+                new TrondheimDC.Models.Session({ title: "Last Session", starts: new Date(2012, 09, 29, 14, 00, 00), ends: new Date(2012, 09, 29, 14, 55, 00) })
             ]);
             
-            var groupedSessions = sessionsList.groupedByTimeslot();
+            var timeslots = [
+                {
+                    starts: new Date(2012, 09, 29, 09, 00, 00),
+                    ends: new Date(2012, 09, 29, 09, 55, 00)
+                },
+                {
+                    starts: new Date(2012, 09, 29, 10, 00, 00),
+                    ends: new Date(2012, 09, 29, 10, 30, 00)
+                },
+                {
+                    starts: new Date(2012, 09, 29, 13, 00, 00),
+                    ends: new Date(2012, 09, 29, 14, 00, 00),
+                    title: "Lunsj"
+                },
+                {
+                    starts: new Date(2012, 09, 29, 14, 00, 00),
+                    ends: new Date(2012, 09, 29, 14, 55, 00)
+                }
+            ];
             
-            expect( groupedSessions["09:00 - 10:00"].length ).toEqual(1);
-            expect( groupedSessions["10:00 - 11:00"].length ).toEqual(2);
-            expect( groupedSessions["11:00 - 12:00"].length ).toEqual(1);
+            var groupedSessions = sessionsList.groupedByTimeslot(timeslots);
+            
+            expect(groupedSessions.length).toEqual(timeslots.length);
+            
+            var nineOClock = groupedSessions[0];
+            expect(nineOClock.starts).toEqual( new Date(2012, 09, 29, 09, 00, 00) );
+            expect(nineOClock.sessions.length).toEqual(1);
+            expect(nineOClock.sessions[0].get("title")).toEqual("Session 1");
+            
+            var tenOClock = groupedSessions[1];
+            expect(tenOClock.sessions.length).toEqual(2);
+            expect(tenOClock.sessions[0].get("title")).toEqual("Lightning 1");
+            expect(tenOClock.sessions[1].get("title")).toEqual("Lightning 2");
+            
+            var lunch = groupedSessions[2];
+            expect(lunch.title).toEqual("Lunsj");
+            expect(lunch.sessions.length).toEqual(0);
+            
+            var twoOClock = groupedSessions[3];
+            expect(twoOClock.sessions.length).toEqual(1);
+            expect(twoOClock.sessions[0].get("title")).toEqual("Last Session");
         });
-    
+        
+        /*
         it("should return them ordered by time", function() {
             var sessionsList = new TrondheimDC.Collections.SessionsList();
 
@@ -146,6 +184,7 @@ describe("SessionsList", function() {
                 i++;
             }
         });
+        */
     
     });
     

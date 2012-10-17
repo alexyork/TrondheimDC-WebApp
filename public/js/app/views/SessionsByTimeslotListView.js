@@ -23,8 +23,7 @@ TrondheimDC.Views.SessionsByTimeslotListView = TrondheimDC.Views.TDCView.extend(
     
     render: function(collection) {
         var collection = collection || this.collection;
-        collection = collection.groupedByTimeslot();
-        
+        var groupedTimeslots = collection.groupedByTimeslot( TrondheimDC.Data.timeslots );
         var sessionListHtml = this.template(this.model);
         
         this.$el.empty();
@@ -32,21 +31,20 @@ TrondheimDC.Views.SessionsByTimeslotListView = TrondheimDC.Views.TDCView.extend(
         
         var $list = this.$el.find('ul');
         
-        for (var timeslot in collection) {
-            var timeslotView = new TrondheimDC.Views.TimeslotView({ model: {timeslot: timeslot} });
+        _.each(groupedTimeslots, function(sessionGroup) {
+            var timeslotView = new TrondheimDC.Views.TimeslotView({ model: sessionGroup });
             timeslotView.render();
             
             var sessionsList = new TrondheimDC.Collections.SessionsList();
-            sessionsList.reset( collection[timeslot] );
+            sessionsList.reset( sessionGroup.sessions );
             
             var sessionsListView = new TrondheimDC.Views.SessionsListView({ collection: sessionsList });
             sessionsListView.render();
             
-            timeslotView.$el.append( sessionsListView.el )
-            
+            timeslotView.$el.append( sessionsListView.el );
             $list.append( timeslotView.el );
-        }
-        
+        });
+       
         return this;
     },
     

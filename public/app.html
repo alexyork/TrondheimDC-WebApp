@@ -84,7 +84,13 @@
         
         <!-- Template: Timeslot -->
         <script id="timeslot-template" type="text/template">
-            <div class="timeslot-header"><%= timeslot %></div>
+            <div class="timeslot-header">
+                <%= moment(starts).format("HH:mm") %> -
+                <%= moment(ends).format("HH:mm") %>
+                <% if (title) { %>
+                    <span><%= title %></span>
+                <% } %>
+            </div>
         </script>
         
         <!-- Template: Sessions List -->
