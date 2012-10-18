@@ -12,6 +12,7 @@ h1 {
     font-size: 1.5em;
     line-height: 1.3em;
     margin-bottom: 0.3em;
+    margin-top: 1em;
     }
 
 h2 {
@@ -59,19 +60,13 @@ body {
     #mastHead hgroup {
         float: left;
         width: 25%;
-        background: url(../graphics/app_logo.jpg) top left no-repeat;
-        background-size: 100%;
-        text-indent: -9999em;
-        overflow: hidden;
         max-width: 120px;
-        height: 114px;   
+        overflow: hidden;
         }
 
-        #mastHead hgroup a { 
-            display: block; 
-            height: 100%;
-            text-decoration: none;
-            }
+        #mastHead hgroup a.logo { height: 100%; }
+
+        #mastHead img { width: 100%; }
 
         #mastHead h1, #mastHead h2 { display: none; }
 
@@ -186,6 +181,8 @@ footer {
     margin: 0;
     position: relative;
     width: 100%;
+    margin-bottom: 20px;
+    float: right;
     }
     
     .searchTerm,
@@ -241,7 +238,7 @@ footer {
 
 
 @media all and (min-width: 321px) {
-  #mastHead hgroup { height: 95px; }
+  #mastHead hgroup {}
 }
 
 @media all and (min-width: 400px) {
@@ -266,19 +263,32 @@ footer {
         width: 100%;
         max-width: 100%;
         text-indent: 0; 
-        height: 148px;
         margin-bottom: 20px;
-        background-size: auto;
         text-align: left;
         }
 
-        #mastHead hgroup a { padding-top: 30px; }
+        #mastHead hgroup a.logo { 
+            display: table; 
+            height: 100%;
+            text-decoration: none;
+            }
+
+        #mastHead img { 
+            float: left;
+            width: 20%;
+            max-width: 130px;
+            margin-right: 2%;
+            }
+
+        #mastHead h1 { margin-top: 20px;}
 
         #mastHead h1, #mastHead h2 {
             display: block;
-            margin-left: 180px;
             margin-bottom: 0;
             text-decoration: none;
+            float: left;
+            width: 78%;
+            clear: right;
             }
     
 } /* /media all min width 600px */

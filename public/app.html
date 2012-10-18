@@ -35,9 +35,16 @@
     </head>
     <body>
         <div id="wrapper">
+            <div class="searchbar">
+                <input class="searchTerm" type="text" placeholder="Søk etter foredrag..." />
+                <a href="#" class="search">Søk</a>
+                <a href="#" class="reset">x</a>
+            </div>
+
             <header id="mastHead">
                 <hgroup>
-                    <a href="/" title="hjem">
+                    <a href="/" class="logo" title="hjem">
+                        <img src="graphics/app_logo.jpg" alt="TDC logo" />
                         <h1>Trondheim Developer Conference</h1>
                         <h2>Rica Nidelven, 29.10.2012</h2>
                     </a>
@@ -74,11 +81,6 @@
         
         <!-- Template: Timeslots List and Speakers List -->
         <script id="list-template" type="text/template">
-            <div class="searchbar">
-                <input class="searchTerm" type="text" placeholder="Søk etter foredrag..." />
-                <a href="#" class="search">Søk</a>
-                <a href="#" class="reset">x</a>
-            </div>
             <ul></ul>
         </script>
         
