@@ -10,8 +10,6 @@
     
     setupRoutes();
     beginListeningForCustomEvents();
-
-    init();
     
     
     //
@@ -20,16 +18,6 @@
     function setupApp() {
         // Core pub sub message handler for cross module messaging
         window.app = Object.create( Backbone.Events );
-        
-        if( window.navigator.standalone ) {
-            $("#splash").css("display", "block")
-            $("body").bind("touchstart.lock", function( event ) {
-                event.preventDefault()
-                return null
-            })
-        }
-
-        $("html").css("display", "block")
 
         app.view = new TrondheimDC.Views.AppView()
     
@@ -109,22 +97,9 @@
     }
     
     function beginListeningForCustomEvents() {
-        
         window.app.on('ga:trackEvent', function(trackingData) {
             _gaq.push(['_trackEvent', trackingData.category, trackingData.action, trackingData.label, trackingData.value]);
         });
-
-        window.app.on("ready", function() {
-            $("#splash").addClass("hidden")
-            $("body").unbind("touchstart.lock")
-        })
-
-    }
-
-    function init() {
-        setTimeout(function() {
-            window.app.trigger("ready")
-        }, 2000)
     }
 
 })();

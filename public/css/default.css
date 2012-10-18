@@ -32,8 +32,7 @@ a {
 a:hover { text-decoration: none; }
 
 /* Elements */
-html { 
-    display: none;
+html {
     background: #6cfffe url(../graphics/bg_dots.png) top center repeat; 
     }
 
@@ -44,39 +43,6 @@ body {
 
 
 /* MAIN LAYOUT CONTAINERS */
-
-#splash {
-    display: none;
-    position: fixed;
-    z-index: 99999;
-    border: 10px solid white;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: #6cfffe url(../graphics/splashscreen_logo.png) center center no-repeat;
-    -mos-transition: -mos-transform 0.6s ease-out;
-    -o-transition: -o-transform 0.6s ease-out;
-    -ms-transition: -ms-transform 0.6s ease-out;
-    -webkit-transition: -webkit-transform 0.6s ease-out;
-    transition: transform 0.6s ease-out;
-    }
-
-@media only screen and (-webkit-min-device-pixel-ratio:1.5) { 
-    #splash {
-        background-image: url(../graphics/splashscreen_logo_highRes.png);
-        background-size: 300px 147px;
-        }
-    }
-
-#splash.hidden {
-    -ms-transform: translateY(-105%);
-    -moz-transform: translateY(-105%);
-    -o-transform: translateY(-105%);
-    -webkit-transform: translateY(-105%);
-    transform: translateY(-105%);
-    }
-
 #wrapper {
     width: 94%;
     margin: 1em auto;
