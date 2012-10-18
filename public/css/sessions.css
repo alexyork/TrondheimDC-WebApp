@@ -2,3 +2,10 @@
 	background: url(../graphics/lightning.png) top left no-repeat;
 	text-indent: 20px;
 	}
+
+@media only screen and (-webkit-min-device-pixel-ratio:1.5) { 
+	.lightningTalk h1 {
+		background-image: url(../graphics/lightning_highRes.png);
+		background-size: 10px;
+	}
+}
