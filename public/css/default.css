@@ -46,7 +46,7 @@ body {
 /* MAIN LAYOUT CONTAINERS */
 #wrapper {
     width: 94%;
-    margin: 1em auto;
+    margin: 0.5em auto 1em;
     border: none;
     }
 
@@ -181,7 +181,7 @@ footer {
     margin: 0;
     position: relative;
     width: 100%;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
     float: right;
     }
     
