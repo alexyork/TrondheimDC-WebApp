@@ -92,8 +92,7 @@ footer {
             position: relative;
             }
 
-        .sessions-list li.session {
-            }
+        .session h1{ margin-top: 0; }
 
         .sessions-list li.lightningTalk {
             /* TODO: style lightning talks differently */
