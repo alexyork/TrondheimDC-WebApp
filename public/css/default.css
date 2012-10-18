@@ -131,6 +131,13 @@ footer {
             position: relative;
             }
 
+        .sessions-list li.session {
+            }
+
+        .sessions-list li.lightningTalk {
+            /* TODO: style lightning talks differently */
+            }
+
             input.favourite { 
                 visibility: hidden;
                 position: absolute;

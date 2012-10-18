@@ -22,6 +22,16 @@ TrondheimDC.Views.SessionView = TrondheimDC.Views.TDCView.extend({
     
     render: function() {
         var json = this.model.toJSON();
+        
+        // TODO: move this code down to the Session model object.
+        // For now I am just shoving it here to make it work, quickly.
+        var duration = moment(json.ends).diff(json.starts, "minutes");
+        json.duration = duration;
+        if (duration === 15) {
+            var cssClass = this.$el.attr("class");
+            this.$el.attr("class", cssClass + " lightningTalk")
+        }
+        
         var sessionHtml = this.template( json );
         this.$el.html( sessionHtml );
         return this;

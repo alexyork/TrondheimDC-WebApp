@@ -109,7 +109,11 @@
                     <a class="speaker" href="speakers/<%= speaker.id %>"><%= speaker.name %></a>
                 <% }); %>
             </h2>
-            <small>på spor <%= track %>, kl <%= moment(starts).format("HH:mm") %> - <%= moment(ends).format("HH:mm") %></small>
+            <small>
+                på spor <%= track %>,
+                kl <%= moment(starts).format("HH:mm") %> - <%= moment(ends).format("HH:mm") %>
+                (<%= duration %> mins)
+            </small>
             <div class="tags">
                 <% _.each(tags, function(tag, index) { %>
                     <span class="tag"><%= tag %></span>
