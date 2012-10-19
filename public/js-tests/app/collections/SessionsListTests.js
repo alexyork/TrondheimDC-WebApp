@@ -110,12 +110,12 @@ describe("SessionsList", function() {
         it("should return sessions grouped by timeslot", function() {
             var sessionsList = new TrondheimDC.Collections.SessionsList();
             sessionsList.reset([
-                new TrondheimDC.Models.Session({ title: "Session 1", starts: new Date(2012, 09, 29, 09, 00, 00), ends: new Date(2012, 09, 29, 09, 55, 00) }),
+                new TrondheimDC.Models.Session({ title: "Session 1", starts: new Date(2012, 09, 29, 09, 00, 00), ends: new Date(2012, 09, 29, 09, 55, 00), track: 1 }),
                 
-                new TrondheimDC.Models.Session({ title: "Lightning 1", starts: new Date(2012, 09, 29, 10, 00, 00), ends: new Date(2012, 09, 29, 10, 15, 00) }),
-                new TrondheimDC.Models.Session({ title: "Lightning 2", starts: new Date(2012, 09, 29, 10, 15, 00), ends: new Date(2012, 09, 29, 10, 30, 00) }),
+                new TrondheimDC.Models.Session({ title: "Lightning 2", starts: new Date(2012, 09, 29, 10, 15, 00), ends: new Date(2012, 09, 29, 10, 30, 00), track: 2 }),
+                new TrondheimDC.Models.Session({ title: "Lightning 1", starts: new Date(2012, 09, 29, 10, 00, 00), ends: new Date(2012, 09, 29, 10, 15, 00), track: 2 }),
                 
-                new TrondheimDC.Models.Session({ title: "Last Session", starts: new Date(2012, 09, 29, 14, 00, 00), ends: new Date(2012, 09, 29, 14, 55, 00) })
+                new TrondheimDC.Models.Session({ title: "Last Session", starts: new Date(2012, 09, 29, 14, 00, 00), ends: new Date(2012, 09, 29, 14, 55, 00), track: 2 })
             ]);
             
             var timeslots = [

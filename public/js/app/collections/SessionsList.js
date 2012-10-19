@@ -73,6 +73,17 @@ TrondheimDC.Collections.SessionsList = Backbone.Collection.extend({
                 matchingTimeslot.sessions.push(session);
             }
         });
+
+        _.each(groupedSessions, function(timeslots) {
+            timeslots.sessions.sort(function(a, b) {
+                var i1 = a.toJSON();
+                var i2 = b.toJSON();
+                if (i1.track != i2.track)
+                    return i1.track - i2.track;
+
+                return i1.starts.getTime() - i2.starts.getTime();
+            });
+        });
         
         return groupedSessions;
         
