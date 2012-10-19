@@ -35,11 +35,6 @@
     </head>
     <body>
         <div id="wrapper">
-            <div class="searchbar">
-                <input class="searchTerm" type="text" placeholder="Søk etter foredrag..." />
-                <a href="#" class="search">Søk</a>
-                <a href="#" class="reset">x</a>
-            </div>
 
             <header id="mastHead">
                 <hgroup>
@@ -60,11 +55,20 @@
                         <li class="odd">
                             <a href="favourites">Favoritter</a>
                         </li>
+                        <li class="even" id="search">
+                            <a>Søk</a>
+                        </li>
                         <!-- <li class="even last">
                             <a href="tweets">Kvitter</a>
                         </li>-->
                     </ul>
                 </nav>
+                
+                <div class="searchbar">
+                    <input class="searchTerm" type="text" placeholder="Søk etter foredrag..." />
+                    <a href="#" class="search">Søk</a>
+                    <a href="#" class="reset">x</a>
+                </div>
             </header>
             <section id="app-content">
                 <!-- Content loaded in here dynamically -->
@@ -196,6 +200,7 @@
         
         <!-- Scripts: Ours -->
         <script type="text/javascript" src="http://trondheimdc.no/data.js"></script>
+        <script type="text/javascript" src="js/app/data3.js"></script>
         
         <script type="text/javascript" src="js/app/models/Session.js"></script>
         <script type="text/javascript" src="js/app/models/Speaker.js"></script>

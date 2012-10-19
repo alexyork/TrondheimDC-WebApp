@@ -179,9 +179,10 @@ footer {
     text-decoration: none;
     margin: 0;
     position: relative;
-    width: 100%;
-    margin-bottom: 25px;
+    width: 72%;
+    margin-bottom: -30px;
     float: right;
+    display: none;
     }
     
     .searchTerm,
@@ -256,7 +257,10 @@ footer {
 
     #app-content { margin-top: 1em; }
 
-    .searchbar { max-width: 300px; }
+    .searchbar {
+        max-width: 300px;
+        margin-right: 9px;
+        }
 
     #mastHead hgroup { 
         width: 100%;
