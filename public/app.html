@@ -170,7 +170,7 @@
 
         <!-- Template: Speaker Detail -->
         <script id="speaker-detail-template" type="text/template">
-            <% if (image != "") { %>
+            <% if (image) { %>
                 <img src="http://trondheimdc.no/<%= image %>" alt="Bilde av <%= name %>" />
             <% } %>
             <h1><%= name %></h1>
