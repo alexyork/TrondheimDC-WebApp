@@ -182,16 +182,11 @@ footer {
     
         .searchbar .header h3 {
             padding: 0.3em;
-            margin: 1em 0;
+            margin: 1em 0 0.5em 0;
             font-size: 0.9em;
             font-family: Trebuchet, Verdana, sans-serif;
             font-weight: bold;
             text-decoration: underline;
-            /*
-            background-color: #F1FE7E;
-            border-top: 1px solid white;
-            border-bottom: 1px solid white;
-            */
             }
         
             .searchbar .header h3 a {
@@ -209,10 +204,11 @@ footer {
             margin: 0;
             font-size: 1em;
             font-weight: normal;
-            width: 70%;
+            width: 96%;
             border: none;
             border-radius: 3px;
-            padding: 0.4em;
+            padding: 0.4em 2%;
+            box-shadow: inset 0px 0px 12px 1px rgba(20, 20, 20, 0.1);
         }
     
     .searchbar .inner .buttonsContainer {
