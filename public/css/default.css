@@ -87,7 +87,7 @@ footer {
         }
 
         .sessions-list li {
-            padding: 1.3em 0 0.8em 0;
+            padding: 0.5em 0;
             border-bottom: 1px solid #fff;
             position: relative;
             }
@@ -175,56 +175,78 @@ footer {
 
 /* SEARCH */
 .searchbar {
-    padding: 0.5em 0;
     text-align: center;
     clear: both;
     }
-        .searchTerm {
-            }
     
-    .searchTermContainer {
+    .searchbar .header {
+        }
+    
+        .searchbar .header h3 {
+            padding: 0.3em;
+            margin: 1em 0;
+            font-size: 0.9em;
+            font-family: Trebuchet, Verdana, sans-serif;
+            font-weight: bold;
+            text-decoration: underline;
+            /*
+            background-color: #F1FE7E;
+            border-top: 1px solid white;
+            border-bottom: 1px solid white;
+            */
+            }
+        
+            .searchbar .header h3 a {
+                }
+    
+    .searchbar .inner {
+        display: none;
+        }
+    
+    .searchbar .inner .searchTermContainer {
         margin-bottom: 0.7em
         }
         
-        .searchTerm {
+        .searchbar .inner .searchTermContainer .searchTerm {
             margin: 0;
             font-size: 1em;
             font-weight: normal;
-            width: 97%;
+            width: 70%;
             border: none;
             border-radius: 3px;
-            padding: 0.3em 1.5%;
+            padding: 0.4em;
         }
     
-    .buttonsContainer {
+    .searchbar .inner .buttonsContainer {
         }
         
-        .search,
-        .reset {
+        .searchbar .inner .buttonsContainer .search,
+        .searchbar .inner .buttonsContainer .reset {
             text-align: center;
             text-decoration: none;
             display: inline-block;
             margin: 0 0.4em;
             }
     
-        .search {
+        .searchbar .inner .buttonsContainer .search {
             font-family: Trebuchet, Verdana, sans-serif;
             background-color: #BCED6D;
             border-radius: 3px;
             text-transform: uppercase;
             padding: 0.4em 2em;
             }
-        .search:hover, .search:focus {
+        .searchbar .inner .buttonsContainer .search:hover,
+        .searchbar .inner .buttonsContainer .search:focus {
             background-color: #F1FE7E;
             }
     
-        .reset {
+        .searchbar .inner .buttonsContainer .reset {
             font-family: Trebuchet, Verdana, sans-serif;
             font-weight: normal;
             text-decoration: underline;
             }
-        .reset:hover,
-        .reset:focus {
+        .searchbar .inner .buttonsContainer .reset:hover,
+        .searchbar .inner .buttonsContainer .reset:focus {
             color: #000;
             }
 

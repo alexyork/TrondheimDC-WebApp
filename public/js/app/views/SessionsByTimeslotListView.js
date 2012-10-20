@@ -14,14 +14,15 @@ TrondheimDC.Views.SessionsByTimeslotListView = TrondheimDC.Views.TDCView.extend(
     events: {
         'click .search': 'searchButtonClicked',
         'click .reset': 'resetButtonClicked',
-        'keydown .searchTerm': 'keydownSearch'
+        'keydown .searchTerm': 'keydownSearch',
+        'click .toggleSearch': 'toggleSearchSection'
     },
     
     initialize: function() {
         window.app.on('filter:tag', this.search, this);
     },
     
-    render: function(collection) {
+    render: function(collection, showSearchArea) {
         var collection = collection || this.collection;
         var groupedTimeslots = collection.groupedByTimeslot( TrondheimDC.Data.timeslots );
         var sessionListHtml = this.template(this.model);
@@ -44,6 +45,13 @@ TrondheimDC.Views.SessionsByTimeslotListView = TrondheimDC.Views.TDCView.extend(
             timeslotView.$el.append( sessionsListView.el );
             $list.append( timeslotView.el );
         });
+        
+        if (showSearchArea) {
+            this.$el.find(".inner").css("display", "block");
+        } else {
+            this.$el.find(".inner").css("display", "none");
+        }
+        this.setSearchHeaderText(showSearchArea);
        
         return this;
     },
@@ -65,7 +73,8 @@ TrondheimDC.Views.SessionsByTimeslotListView = TrondheimDC.Views.TDCView.extend(
     search: function(searchTerm) {
         // TODO: is there a better way than accessing "app.sessionsList" from here?
         var matchedSessions = app.sessionsList.search( searchTerm );
-        this.render( matchedSessions );
+        var showSearchArea = true;
+        this.render( matchedSessions, showSearchArea );
         this.$el.find(".searchTerm").val( searchTerm );
     },
     
@@ -73,7 +82,31 @@ TrondheimDC.Views.SessionsByTimeslotListView = TrondheimDC.Views.TDCView.extend(
         e.preventDefault();
         e.stopPropagation();
         
-        this.render();
+        var showSearchArea = true;
+        this.render(null, showSearchArea);
+    },
+    
+    toggleSearchSection: function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        
+        var $searchArea = this.$el.find(".inner");
+        var searchAreaIsVisible = $searchArea.is(":visible");
+        
+        if (searchAreaIsVisible) {
+            $searchArea.slideUp(50);
+        } else {
+            $searchArea.slideDown(50);
+        }
+        
+        this.setSearchHeaderText(!searchAreaIsVisible);
+    },
+    
+    setSearchHeaderText: function(searchAreaIsVisible) {
+        this.$el.find(".header h3 a").text(
+            searchAreaIsVisible
+                ? "Sjul søk område"
+                : "Trykk for å søk etter foredrag");
     }
     
 });

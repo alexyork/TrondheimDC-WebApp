@@ -74,12 +74,19 @@
         <!-- Template: Sessions by timeslot -->
         <script id="sessions-by-timeslot-list-template" type="text/template">
             <div class="searchbar">
-                <div class="searchTermContainer">
-                    <input class="searchTerm" type="text" placeholder="Søk etter foredrag..." />
+                <div class="header">
+                    <h3>
+                        <a href="#" class="toggleSearch">Trykk for å søk etter foredrag</a>
+                    </h3>
                 </div>
-                <div class="buttonsContainer">
-                    <a href="#" class="search">Søk</a>
-                    <a href="#" class="reset">Nullstill</a>
+                <div class="inner">
+                    <div class="searchTermContainer">
+                        <input class="searchTerm" type="text" placeholder="Søk etter foredrag..." />
+                    </div>
+                    <div class="buttonsContainer">
+                        <a href="#" class="search">Søk</a>
+                        <a href="#" class="reset">Nullstill</a>
+                    </div>
                 </div>
                 <div class="clear"></div>
             </div>
