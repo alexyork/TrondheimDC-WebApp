@@ -55,24 +55,12 @@
                         <li class="odd">
                             <a href="favourites">Favoritter</a>
                         </li>
-                        <!--<li class="even last" id="search">
-                            <a>Søk</a>
-                        </li>-->
-                        <!-- <li class="even last">
-                            <a href="tweets">Kvitter</a>
-                        </li>-->
                     </ul>
                 </nav>
-                
-                <div class="searchbar">
-                    <input class="searchTerm" type="text" placeholder="Søk etter foredrag..." />
-                    <a href="#" class="search">Søk</a>
-                    <a href="#" class="reset">x</a>
-                </div>
             </header>
             <section id="app-content">
                 <!-- Content loaded in here dynamically -->
-                Loading...
+                <p>Laster...</p>
             </section>
             <footer>
                 <p>
@@ -83,8 +71,18 @@
             </footer>
         </div>
         
-        <!-- Template: Timeslots List and Speakers List -->
-        <script id="list-template" type="text/template">
+        <!-- Template: Sessions by timeslot -->
+        <script id="sessions-by-timeslot-list-template" type="text/template">
+            <div class="searchbar">
+                <div class="searchTermContainer">
+                    <input class="searchTerm" type="text" placeholder="Søk etter foredrag..." />
+                </div>
+                <div class="buttonsContainer">
+                    <a href="#" class="search">Søk</a>
+                    <a href="#" class="reset">Nullstill</a>
+                </div>
+                <div class="clear"></div>
+            </div>
             <ul></ul>
         </script>
         
@@ -106,7 +104,7 @@
         
         <!-- Template: Session -->
         <script id="session-template" type="text/template">
-            <input class="favourite" id="sessionId-<%= id %>" type="checkbox"  <% if(favourited){ %> checked <% } %> />
+            <input class="favourite" id="sessionId-<%= id %>" type="checkbox"  <% if (favourited) { %> checked <% } %> />
             <label class="favourite" for="sessionId-<%= id %>">Favoritt</label>
             <h1 class="title"><a href="/sessions/<%= id %>"><%= title %></a></h1>
             <h2>
@@ -150,6 +148,11 @@
                 <% }); %>
                 </ul>
             </div>
+        </script>
+        
+        <!-- Template: Speakers List -->
+        <script id="speakers-list-template" type="text/template">
+            <ul></ul>
         </script>
         
         <!-- Template: Speaker -->

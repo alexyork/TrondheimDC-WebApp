@@ -9,12 +9,9 @@ TrondheimDC.Views.SpeakersListView = TrondheimDC.Views.TDCView.extend({
     
     tagName: 'div',
     className: 'speakers-list',
-    template: _.template( document.getElementById('list-template').innerHTML ),
+    template: _.template( document.getElementById('speakers-list-template').innerHTML ),
     
     events: {
-        'click .search': 'searchButtonClicked',
-        'click .reset': 'resetButtonClicked',
-        'keydown .searchTerm': 'keydownSearch'
     },
     
     initialize: function() {
@@ -34,27 +31,6 @@ TrondheimDC.Views.SpeakersListView = TrondheimDC.Views.TDCView.extend({
             this.$el.find('ul').append(speakerView.el);
         }, this);
         return this;
-    },
-    
-    searchButtonClicked: function(e) {
-        e.preventDefault();
-        var searchTerm = this.$el.find('.searchTerm').val();
-        this.search(searchTerm);
-    },
-
-    keydownSearch: function(e) {
-        if (e.keyCode == 13)
-            this.search($(".searchTerm").val());
-    },
-    
-    search: function(searchTerm) {
-        var matchedSpeakers = this.collection.search(searchTerm);
-        this.render(matchedSpeakers);
-        $(".searchTerm").val(searchTerm);
-    },
-    
-    resetButtonClicked: function(e) {
-        this.render();
     }
     
 });

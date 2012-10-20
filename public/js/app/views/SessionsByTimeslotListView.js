@@ -9,7 +9,7 @@ TrondheimDC.Views.SessionsByTimeslotListView = TrondheimDC.Views.TDCView.extend(
     
     tagName: 'div',
     className: 'timeslots-list',
-    template: _.template( document.getElementById('list-template').innerHTML ),
+    template: _.template( document.getElementById('sessions-by-timeslot-list-template').innerHTML ),
 
     events: {
         'click .search': 'searchButtonClicked',
@@ -50,6 +50,7 @@ TrondheimDC.Views.SessionsByTimeslotListView = TrondheimDC.Views.TDCView.extend(
     
     searchButtonClicked: function(e) {
         e.preventDefault();
+        e.stopPropagation();
         
         var searchTerm = this.$el.find('.searchTerm').val();
         this.search( searchTerm );
@@ -69,6 +70,9 @@ TrondheimDC.Views.SessionsByTimeslotListView = TrondheimDC.Views.TDCView.extend(
     },
     
     resetButtonClicked: function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        
         this.render();
     }
     

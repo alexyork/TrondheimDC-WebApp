@@ -9,6 +9,9 @@ TrondheimDC.Views.AppView = TrondheimDC.Views.TDCView.extend({
     
     el: $("body"),
 
+    events: {
+    },
+
     setSelectedTab: function( name ) {
         this.$el.find( 'header nav ul li.selected' ).removeClass( 'selected' );
         this.$el.find( 'header nav ul li a[href="' + name + '"]' ).parents( 'li' ).addClass( 'selected' );
