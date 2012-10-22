@@ -14,7 +14,7 @@ TrondheimDC.Views.SessionView = TrondheimDC.Views.TDCView.extend({
     events: {
         "click .title": "navigateToSession",
         "click .tag": "filterByTag",
-        "click .favourite": "toggleFavourite"
+        "click input.favourite": "toggleFavourite"
     },
     
     initialize: function() {
