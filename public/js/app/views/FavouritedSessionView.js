@@ -10,7 +10,7 @@ TrondheimDC.Views.FavouritedSessionView = TrondheimDC.Views.SessionView.extend({
     events: _.extend( { }, TrondheimDC.Views.SessionView.prototype.events ),
 
     initialize: function() {
-        this.model.on( 'change:favourited', this.changeFavouritedState, this )
+        this.model.on( 'change:favourited', this.changeFavouritedState, this );
     },
 
     changeFavouritedState: function( session, isFavourited ) {
