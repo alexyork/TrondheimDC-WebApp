@@ -26,6 +26,7 @@ TrondheimDC.Views.AppView = TrondheimDC.Views.TDCView.extend({
             this.setSelectedTab( name );
             this.contentView = view;
             this.$el.find("#app-content").html( $(this.contentView.el) );
+            scrollTo(0, 0);
         }
     }
     
