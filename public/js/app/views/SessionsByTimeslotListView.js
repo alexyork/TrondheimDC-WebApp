@@ -18,6 +18,8 @@ TrondheimDC.Views.SessionsByTimeslotListView = TrondheimDC.Views.TDCView.extend(
         'click .toggleSearch': 'toggleSearchSection'
     },
     
+    ListViewClass: TrondheimDC.Views.SessionsListView,
+
     initialize: function() {
         window.app.on('filter:tag', this.search, this);
     },
@@ -39,12 +41,12 @@ TrondheimDC.Views.SessionsByTimeslotListView = TrondheimDC.Views.TDCView.extend(
             var sessionsList = new TrondheimDC.Collections.SessionsList();
             sessionsList.reset( sessionGroup.sessions );
             
-            var sessionsListView = new TrondheimDC.Views.SessionsListView({ collection: sessionsList });
+            var sessionsListView = new this.ListViewClass({ collection: sessionsList });
             sessionsListView.render();
             
             timeslotView.$el.append( sessionsListView.el );
             $list.append( timeslotView.el );
-        });
+        }, this);
         
         if (showSearchArea) {
             this.$el.find(".inner").css("display", "block");
