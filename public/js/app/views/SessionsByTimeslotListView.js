@@ -107,7 +107,7 @@ TrondheimDC.Views.SessionsByTimeslotListView = TrondheimDC.Views.TDCView.extend(
     setSearchHeaderText: function(searchAreaIsVisible) {
         this.$el.find(".header h3 a").text(
             searchAreaIsVisible
-                ? "Sjul søk område"
+                ? "Skjul søkefelt"
                 : "Trykk for å søk etter foredrag");
     }
     
